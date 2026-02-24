@@ -820,7 +820,7 @@ def manage_certificate_status(request, certificate_uuid):
 @require_feature("certificate_detail")
 def certificate_detail(request, certificate_uuid):
     certificate = get_object_or_404(
-        Certificate.objects.select_related("template", "issued_by"),
+        Certificate.objects.select_related("template", "issued_by").prefetch_related("overlay_images"),
         id=certificate_uuid,
     )
     verification_logs = certificate.verification_logs.all()[:20]

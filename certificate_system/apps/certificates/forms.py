@@ -45,16 +45,24 @@ class CertificateGenerateForm(forms.Form):
     issue_date = forms.DateField(widget=forms.DateInput(attrs={"class": "form-control", "type": "date"}))
     serial_number = forms.CharField(max_length=100, widget=forms.TextInput(attrs={"class": "form-control"}))
 
-    logo_image = forms.ImageField(required=False, widget=forms.ClearableFileInput(attrs={"class": "form-control"}))
+    logo_image = forms.ImageField(
+        required=False,
+        widget=forms.ClearableFileInput(attrs={"class": "form-control"}),
+        help_text="Optional. Default placement: top-left (120×120). Can be positioned via template dynamic_fields using name=logo_image.",
+    )
     signature_image = forms.ImageField(
         required=False,
         widget=forms.ClearableFileInput(attrs={"class": "form-control"}),
+        help_text="Optional. Default placement: bottom-left (160×60). Can be positioned via template dynamic_fields using name=signature_image.",
     )
 
     extra_images = MultipleImageField(
         required=False,
         widget=MultipleFileInput(attrs={"class": "form-control", "multiple": True}),
-        help_text="Optional: upload additional overlay images (multiple allowed).",
+        help_text=(
+            "Optional: upload additional overlay images (multiple allowed). "
+            "Default placement: top-right corner (80×80), stacked downward with a small gap."
+        ),
     )
 
     def clean_extra_images(self):
