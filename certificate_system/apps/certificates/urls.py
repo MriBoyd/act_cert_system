@@ -64,7 +64,17 @@ urlpatterns = [
     path("admin/dashboard/", admin_views.dashboard, name="admin-dashboard"),
     path("admin/feature-flags/", admin_views.feature_flags_management, name="admin-feature-flags"),
     path("admin/certificates/", admin_views.certificate_list, name="admin-certificate-list"),
+    path(
+        "admin/certificates/bulk-actions/",
+        admin_views.bulk_certificate_actions,
+        name="admin-certificate-bulk-actions",
+    ),
     path("admin/templates/", admin_views.template_list, name="admin-template-list"),
+    path(
+        "admin/templates/bulk-actions/",
+        admin_views.bulk_template_actions,
+        name="admin-template-bulk-actions",
+    ),
     path(
         "admin/certificates/<uuid:certificate_uuid>/",
         admin_views.certificate_detail,

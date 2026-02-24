@@ -113,4 +113,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (activePortaled?.menuEl === menuEl) activePortaled = null;
   });
+
+  const updateSelectAllState = (group) => {
+    const selectAll = document.querySelector(`[data-bulk-select-all="${group}"]`);
+    if (!selectAll) return;
+    const items = Array.from(document.querySelectorAll(`[data-bulk-select-item="${group}"]`));
+    if (items.length === 0) {
+      selectAll.checked = false;
+      selectAll.indeterminate = false;
+      return;
+    }
+    const checked = items.filter((el) => el.checked).length;
+    selectAll.checked = checked === items.length;
+    selectAll.indeterminate = checked > 0 && checked < items.length;
+  };
+
+  document.querySelectorAll('[data-bulk-select-all]').forEach((selectAll) => {
+    const group = selectAll.getAttribute('data-bulk-select-all');
+    if (!group) return;
+
+    selectAll.addEventListener('change', () => {
+      document.querySelectorAll(`[data-bulk-select-item="${group}"]`).forEach((item) => {
+        item.checked = selectAll.checked;
+      });
+      updateSelectAllState(group);
+    });
+
+    updateSelectAllState(group);
+  });
+
+  document.querySelectorAll('[data-bulk-select-item]').forEach((item) => {
+    const group = item.getAttribute('data-bulk-select-item');
+    if (!group) return;
+    item.addEventListener('change', () => updateSelectAllState(group));
+  });
 });

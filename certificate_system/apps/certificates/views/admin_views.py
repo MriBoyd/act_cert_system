@@ -3,6 +3,7 @@ from functools import wraps
 import logging
 from pathlib import Path
 from typing import Final
+import uuid
 
 from django.contrib import messages
 from django.contrib.admin.views.decorators import staff_member_required
@@ -15,6 +16,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from django.utils import timezone
+from django.utils.http import url_has_allowed_host_and_scheme
 
 from apps.certificates.forms import (
     BulkCertificateUploadForm,
@@ -362,6 +364,265 @@ def toggle_template_status(request, template_uuid):
     status_text = "activated" if template.is_active else "deactivated"
     messages.success(request, f"Template {status_text} successfully.")
     return redirect("admin-template-list")
+
+
+@certificate_admin_required
+@require_feature("template_management")
+def bulk_template_actions(request):
+    if request.method != "POST":
+        return redirect("admin-template-list")
+
+    next_url = request.POST.get("next") or reverse("admin-template-list")
+    if not url_has_allowed_host_and_scheme(
+        next_url,
+        allowed_hosts={request.get_host()},
+        require_https=request.is_secure(),
+    ):
+        next_url = reverse("admin-template-list")
+
+    action = (request.POST.get("action") or "").strip()
+    raw_ids = request.POST.getlist("selected_ids")
+
+    allowed_actions = {"activate", "deactivate", "delete"}
+    if action not in allowed_actions:
+        messages.error(request, "Invalid bulk action.")
+        return redirect(next_url)
+
+    if not raw_ids:
+        messages.error(request, "Select at least one template.")
+        return redirect(next_url)
+
+    selected_ids: list[uuid.UUID] = []
+    for raw_id in raw_ids:
+        try:
+            selected_ids.append(uuid.UUID(str(raw_id)))
+        except (TypeError, ValueError):
+            continue
+
+    if not selected_ids:
+        messages.error(request, "No valid template IDs selected.")
+        return redirect(next_url)
+
+    qs = CertificateTemplate.objects.filter(id__in=selected_ids)
+    total = qs.count()
+    if total == 0:
+        messages.error(request, "No matching templates found.")
+        return redirect(next_url)
+
+    now = timezone.now()
+    username = request.user.get_username()
+
+    if action == "activate":
+        updated = qs.update(is_active=True, updated_at=now)
+        messages.success(request, f"Activated {updated} template(s).")
+        audit_logger.info(
+            "event=bulk_template_activate requested=%s updated=%s by=%s",
+            total,
+            updated,
+            username,
+        )
+        return redirect(next_url)
+
+    if action == "deactivate":
+        updated = qs.update(is_active=False, updated_at=now)
+        messages.success(request, f"Deactivated {updated} template(s).")
+        audit_logger.info(
+            "event=bulk_template_deactivate requested=%s updated=%s by=%s",
+            total,
+            updated,
+            username,
+        )
+        return redirect(next_url)
+
+    # action == "delete"
+    templates = list(qs.only("id", "name", "background_image"))
+    files_to_cleanup = []
+    skipped_in_use = 0
+    deleted = 0
+
+    with transaction.atomic():
+        for template in templates:
+            if template.certificates.exists():
+                skipped_in_use += 1
+                continue
+
+            files_to_cleanup.append((template.background_image,))
+            template.delete()
+            deleted += 1
+
+        def _cleanup_all():
+            for batch in files_to_cleanup:
+                _delete_storage_files(*batch)
+
+        transaction.on_commit(_cleanup_all)
+
+    if deleted:
+        messages.success(request, f"Deleted {deleted} template(s) and cleaned up background images.")
+    if skipped_in_use:
+        messages.warning(request, f"Skipped {skipped_in_use} template(s) currently in use.")
+    audit_logger.info(
+        "event=bulk_template_delete requested=%s deleted=%s skipped_in_use=%s by=%s",
+        total,
+        deleted,
+        skipped_in_use,
+        username,
+    )
+    return redirect(next_url)
+
+
+@certificate_admin_required
+@require_feature("certificate_management")
+def bulk_certificate_actions(request):
+    if request.method != "POST":
+        return redirect("admin-certificate-list")
+
+    next_url = request.POST.get("next") or reverse("admin-certificate-list")
+    if not url_has_allowed_host_and_scheme(
+        next_url,
+        allowed_hosts={request.get_host()},
+        require_https=request.is_secure(),
+    ):
+        next_url = reverse("admin-certificate-list")
+
+    action = (request.POST.get("action") or "").strip()
+    raw_ids = request.POST.getlist("selected_ids")
+
+    allowed_actions = {
+        "enable",
+        "disable",
+        "mark_valid",
+        "mark_revoked",
+        "mark_disabled",
+        "delete",
+    }
+    if action not in allowed_actions:
+        messages.error(request, "Invalid bulk action.")
+        return redirect(next_url)
+
+    if not raw_ids:
+        messages.error(request, "Select at least one certificate.")
+        return redirect(next_url)
+
+    selected_ids: list[uuid.UUID] = []
+    for raw_id in raw_ids:
+        try:
+            selected_ids.append(uuid.UUID(str(raw_id)))
+        except (TypeError, ValueError):
+            continue
+
+    if not selected_ids:
+        messages.error(request, "No valid certificate IDs selected.")
+        return redirect(next_url)
+
+    qs = Certificate.objects.filter(id__in=selected_ids)
+    total = qs.count()
+    if total == 0:
+        messages.error(request, "No matching certificates found.")
+        return redirect(next_url)
+
+    now = timezone.now()
+    username = request.user.get_username()
+
+    if action == "enable":
+        updated = qs.filter(status=Certificate.Status.VALID).update(is_enabled=True, updated_at=now)
+        skipped = total - updated
+        if updated:
+            messages.success(request, f"Enabled {updated} certificate(s).")
+        if skipped:
+            messages.warning(request, f"Skipped {skipped} non-VALID certificate(s).")
+        audit_logger.info(
+            "event=bulk_certificate_enable requested=%s updated=%s skipped=%s by=%s",
+            total,
+            updated,
+            skipped,
+            username,
+        )
+        return redirect(next_url)
+
+    if action == "disable":
+        updated = qs.update(is_enabled=False, updated_at=now)
+        messages.success(request, f"Disabled {updated} certificate(s).")
+        audit_logger.info(
+            "event=bulk_certificate_disable requested=%s updated=%s by=%s",
+            total,
+            updated,
+            username,
+        )
+        return redirect(next_url)
+
+    if action == "mark_valid":
+        updated = qs.update(status=Certificate.Status.VALID, updated_at=now)
+        messages.success(request, f"Marked {updated} certificate(s) as VALID.")
+        audit_logger.info(
+            "event=bulk_certificate_mark_valid requested=%s updated=%s by=%s",
+            total,
+            updated,
+            username,
+        )
+        return redirect(next_url)
+
+    if action == "mark_revoked":
+        updated = qs.update(status=Certificate.Status.REVOKED, is_enabled=False, updated_at=now)
+        messages.success(request, f"Revoked {updated} certificate(s).")
+        audit_logger.info(
+            "event=bulk_certificate_mark_revoked requested=%s updated=%s by=%s",
+            total,
+            updated,
+            username,
+        )
+        return redirect(next_url)
+
+    if action == "mark_disabled":
+        updated = qs.update(status=Certificate.Status.DISABLED, is_enabled=False, updated_at=now)
+        messages.success(request, f"Marked {updated} certificate(s) as DISABLED.")
+        audit_logger.info(
+            "event=bulk_certificate_mark_disabled requested=%s updated=%s by=%s",
+            total,
+            updated,
+            username,
+        )
+        return redirect(next_url)
+
+    # action == "delete"
+    certs = list(
+        qs.only(
+            "id",
+            "serial_number",
+            "pdf_file",
+            "qr_code_image",
+            "png_file",
+            "jpg_file",
+        )
+    )
+    files_to_cleanup: list[tuple] = []
+    deleted = 0
+    with transaction.atomic():
+        for cert in certs:
+            files_to_cleanup.append(
+                (
+                    cert.pdf_file,
+                    cert.qr_code_image,
+                    getattr(cert, "png_file", None),
+                    getattr(cert, "jpg_file", None),
+                )
+            )
+            cert.delete()
+            deleted += 1
+
+        def _cleanup_all():
+            for batch in files_to_cleanup:
+                _delete_storage_files(*batch)
+
+        transaction.on_commit(_cleanup_all)
+
+    messages.success(request, f"Deleted {deleted} certificate(s) and cleaned up files.")
+    audit_logger.info(
+        "event=bulk_certificate_delete requested=%s deleted=%s by=%s",
+        total,
+        deleted,
+        username,
+    )
+    return redirect(next_url)
 
 
 @certificate_admin_required

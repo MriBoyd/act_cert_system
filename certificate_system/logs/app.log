@@ -1852,3 +1852,98 @@ INFO 2026-02-24 12:43:46,564 django.server [rid= uid= ip=]   - "GET /static/css/
 INFO 2026-02-24 12:43:46,565 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
 INFO 2026-02-24 12:43:49,208 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 12976
 INFO 2026-02-24 12:43:54,085 django.server [rid= uid= ip=]   - "GET /admin/templates/?search=&active=&per_page=25&sort=created_at&dir=desc HTTP/1.1" 200 13156
+INFO 2026-02-24 12:48:01,469 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:48:03,305 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14570
+INFO 2026-02-24 12:48:03,330 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2934
+INFO 2026-02-24 12:48:03,331 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-02-24 12:48:03,349 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 3639
+INFO 2026-02-24 12:50:32,888 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-02-24 12:50:33,236 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:50:43,656 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/urls.py changed, reloading.
+INFO 2026-02-24 12:50:43,954 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:51:45,186 django.server [rid= uid= ip=]   - "GET /admin/templates/?search=&active=&per_page=25&sort=created_at&dir=desc HTTP/1.1" 200 13156
+INFO 2026-02-24 12:51:45,208 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:51:45,209 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 304 0
+INFO 2026-02-24 12:51:45,236 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-02-24 12:51:45,928 django.server [rid= uid= ip=]   - "GET /admin/templates/?search=&active=&per_page=25&sort=created_at&dir=desc HTTP/1.1" 200 13156
+INFO 2026-02-24 12:51:47,995 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14570
+INFO 2026-02-24 12:51:50,490 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 16038
+INFO 2026-02-24 12:51:50,507 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:52:30,006 django.server [rid= uid= ip=]   - "GET /admin/certificates/?sort=recipient_name&dir=asc HTTP/1.1" 200 16074
+INFO 2026-02-24 12:52:30,051 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:52:31,472 django.server [rid= uid= ip=]   - "GET /admin/certificates/?sort=recipient_name&dir=desc HTTP/1.1" 200 16075
+INFO 2026-02-24 12:52:32,445 django.server [rid= uid= ip=]   - "GET /admin/certificates/?sort=course_name&dir=asc HTTP/1.1" 200 16068
+INFO 2026-02-24 12:52:33,532 django.server [rid= uid= ip=]   - "GET /admin/certificates/?sort=serial_number&dir=asc HTTP/1.1" 200 16072
+INFO 2026-02-24 12:52:35,019 django.server [rid= uid= ip=]   - "GET /admin/certificates/?sort=issue_date&dir=asc HTTP/1.1" 200 16066
+INFO 2026-02-24 12:52:37,516 django.server [rid= uid= ip=]   - "GET /admin/certificates/?sort=status&dir=asc HTTP/1.1" 200 16058
+INFO 2026-02-24 12:52:39,026 django.server [rid= uid= ip=]   - "GET /admin/certificates/?sort=status&dir=desc HTTP/1.1" 200 16059
+INFO 2026-02-24 12:52:39,047 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:52:41,036 django.server [rid= uid= ip=]   - "GET /admin/certificates/?sort=status&dir=asc HTTP/1.1" 200 16058
+INFO 2026-02-24 12:52:46,016 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/urls.py changed, reloading.
+INFO 2026-02-24 12:52:46,314 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:53:02,373 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 12976
+INFO 2026-02-24 12:53:02,403 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:53:02,411 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-02-24 12:53:07,011 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14570
+INFO 2026-02-24 12:53:07,032 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:53:29,233 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-02-24 12:53:29,526 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:53:31,862 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 12976
+INFO 2026-02-24 12:53:31,885 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:53:32,854 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/urls.py changed, reloading.
+INFO 2026-02-24 12:53:33,164 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:53:33,927 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 12976
+INFO 2026-02-24 12:53:34,590 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 12976
+INFO 2026-02-24 12:53:37,980 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 12976
+INFO 2026-02-24 12:53:37,996 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:53:58,904 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 15755
+INFO 2026-02-24 12:53:58,925 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:53:59,668 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 15755
+INFO 2026-02-24 12:54:09,658 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14570
+INFO 2026-02-24 12:54:09,678 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:54:09,684 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:54:10,878 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 24020
+INFO 2026-02-24 12:54:14,747 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14570
+INFO 2026-02-24 12:54:21,391 django.server [rid= uid= ip=]   - "GET /admin/templates/create/ HTTP/1.1" 200 4235
+INFO 2026-02-24 12:54:21,413 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:54:30,213 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-02-24 12:54:30,546 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:54:32,617 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 15755
+INFO 2026-02-24 12:54:32,643 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:54:37,212 django.server [rid= uid= ip=]   - "POST /admin/templates/bulk-actions/ HTTP/1.1" 302 0
+INFO 2026-02-24 12:54:37,239 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 16047
+INFO 2026-02-24 12:54:41,422 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 15757
+INFO 2026-02-24 12:54:41,443 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 304 0
+INFO 2026-02-24 12:54:41,998 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 15757
+INFO 2026-02-24 12:54:49,886 django.server [rid= uid= ip=]   - "POST /admin/templates/bulk-actions/ HTTP/1.1" 302 0
+INFO 2026-02-24 12:54:49,913 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 16044
+INFO 2026-02-24 12:54:49,973 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:54:51,781 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 15756
+INFO 2026-02-24 12:54:55,946 django.server [rid= uid= ip=]   - "POST /admin/templates/bulk-actions/ HTTP/1.1" 302 0
+INFO 2026-02-24 12:54:55,973 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 16043
+INFO 2026-02-24 12:54:57,969 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 15755
+INFO 2026-02-24 12:54:58,698 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 15755
+INFO 2026-02-24 12:54:59,100 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 15755
+INFO 2026-02-24 12:54:59,889 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 15755
+INFO 2026-02-24 12:55:00,006 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 15755
+INFO 2026-02-24 12:55:00,301 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 15755
+INFO 2026-02-24 12:55:00,750 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 15755
+INFO 2026-02-24 12:55:04,339 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14570
+INFO 2026-02-24 12:55:04,370 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:55:07,766 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14570
+INFO 2026-02-24 12:55:08,014 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14570
+INFO 2026-02-24 12:55:08,145 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14570
+INFO 2026-02-24 12:55:09,489 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 16038
+INFO 2026-02-24 12:55:14,820 django.server [rid= uid= ip=]   - "POST /admin/certificates/bulk-actions/ HTTP/1.1" 302 0
+INFO 2026-02-24 12:55:14,850 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 11502
+INFO 2026-02-24 12:55:17,596 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 9882
+INFO 2026-02-24 12:55:19,868 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 11192
+INFO 2026-02-24 12:55:19,894 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:55:23,986 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 15755
+INFO 2026-02-24 12:55:24,002 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:55:26,641 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 15755
+INFO 2026-02-24 12:55:32,387 django.server [rid= uid= ip=]   - "POST /admin/templates/bulk-actions/ HTTP/1.1" 302 0
+INFO 2026-02-24 12:55:32,413 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 8782
+INFO 2026-02-24 12:55:36,670 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 8463
+INFO 2026-02-24 12:55:37,450 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 8463
+INFO 2026-02-24 12:55:37,469 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0

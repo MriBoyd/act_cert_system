@@ -49,10 +49,40 @@
 
 <div class="card border-0 shadow-sm">
     <div class="card-body">
+        {% if feature_flags.template_management %}
+            <form
+                id="bulkTemplateForm"
+                method="post"
+                action="{% url 'admin-template-bulk-actions' %}"
+                class="d-flex gap-2 flex-wrap align-items-center mb-3"
+            >
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+                <select name="action" class="form-select form-select-sm w-auto" required>
+                    <option value="" selected disabled>Bulk actions...</option>
+                    <option value="activate">Activate</option>
+                    <option value="deactivate">Deactivate</option>
+                    <option value="delete">Delete (if not in use)</option>
+                </select>
+                <button type="submit" class="btn btn-sm btn-outline-primary">
+                    <i class="bi bi-lightning-charge me-1"></i>Apply to selected
+                </button>
+                <small class="text-muted">Select rows using the checkboxes.</small>
+            </form>
+        {% endif %}
+
         <div class="table-responsive">
             <table class="table table-hover align-middle">
                 <thead>
                     <tr>
+                        <th class="text-center" style="width: 2.5rem;">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                data-bulk-select-all="templates"
+                                aria-label="Select all templates"
+                            />
+                        </th>
                         <th>
                             <a class="text-decoration-none" href="?{{ sort_querystring }}{% if sort_querystring %}&{% endif %}sort=name&dir={% if sort_by == 'name' and sort_dir == 'asc' %}desc{% else %}asc{% endif %}">Template Name</a>
                         </th>
@@ -74,6 +104,17 @@
                 <tbody>
                     {% for template in templates %}
                         <tr>
+                            <td class="text-center">
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    name="selected_ids"
+                                    value="{{ template.id }}"
+                                    form="bulkTemplateForm"
+                                    data-bulk-select-item="templates"
+                                    aria-label="Select template {{ template.name }}"
+                                />
+                            </td>
                             <td>{{ template.name }}</td>
                             <td>{{ template.issuer_name }}</td>
                             <td>
@@ -123,7 +164,7 @@
                         </tr>
                     {% empty %}
                         <tr>
-                            <td colspan="6">No templates found.</td>
+                            <td colspan="7">No templates found.</td>
                         </tr>
                     {% endfor %}
                 </tbody>

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from django.core.files.storage import default_storage
 from django.test import TestCase
 from django.urls import reverse
 
@@ -58,3 +59,73 @@ class TemplateManagementTests(TestCase):
 
         template.refresh_from_db()
         self.assertFalse(template.is_active)
+
+
+class TemplateBulkActionsTests(TestCase):
+    def setUp(self):
+        self.admin = make_admin_user()
+        self.client.force_login(self.admin)
+
+    def test_bulk_activate_and_deactivate(self):
+        t1 = make_template(name="T1", issuer="I")
+        t2 = make_template(name="T2", issuer="I")
+        t1.is_active = False
+        t2.is_active = False
+        t1.save(update_fields=["is_active"])
+        t2.save(update_fields=["is_active"])
+
+        resp = self.client.post(
+            reverse("admin-template-bulk-actions"),
+            data={
+                "action": "activate",
+                "selected_ids": [str(t1.id), str(t2.id)],
+                "next": reverse("admin-template-list"),
+            },
+        )
+        self.assertEqual(resp.status_code, 302)
+        t1.refresh_from_db()
+        t2.refresh_from_db()
+        self.assertTrue(t1.is_active)
+        self.assertTrue(t2.is_active)
+
+        resp = self.client.post(
+            reverse("admin-template-bulk-actions"),
+            data={
+                "action": "deactivate",
+                "selected_ids": [str(t1.id), str(t2.id)],
+                "next": reverse("admin-template-list"),
+            },
+        )
+        self.assertEqual(resp.status_code, 302)
+        t1.refresh_from_db()
+        t2.refresh_from_db()
+        self.assertFalse(t1.is_active)
+        self.assertFalse(t2.is_active)
+
+    def test_bulk_delete_skips_in_use_and_cleans_background(self):
+        t_in_use = make_template(name="INUSE", issuer="I")
+        t_free = make_template(name="FREE", issuer="I")
+
+        # Make one template in-use
+        make_certificate(template=t_in_use, issued_by=self.admin, serial_number="SN-INUSE")
+
+        bg_free = t_free.background_image.name
+        self.assertTrue(bool(bg_free))
+        self.assertTrue(default_storage.exists(bg_free))
+
+        with self.captureOnCommitCallbacks(execute=True):
+            resp = self.client.post(
+                reverse("admin-template-bulk-actions"),
+                data={
+                    "action": "delete",
+                    "selected_ids": [str(t_in_use.id), str(t_free.id)],
+                    "next": reverse("admin-template-list"),
+                },
+            )
+        self.assertEqual(resp.status_code, 302)
+
+        # In-use should remain; free should be deleted
+        self.assertTrue(type(t_in_use).objects.filter(id=t_in_use.id).exists())
+        self.assertFalse(type(t_free).objects.filter(id=t_free.id).exists())
+
+        self.assertFalse(default_storage.exists(bg_free))

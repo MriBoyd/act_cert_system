@@ -102,10 +102,43 @@
 
 <div class="card border-0 shadow-sm">
     <div class="card-body">
+        {% if feature_flags.certificate_management %}
+            <form
+                id="bulkCertificateForm"
+                method="post"
+                action="{% url 'admin-certificate-bulk-actions' %}"
+                class="d-flex gap-2 flex-wrap align-items-center mb-3"
+            >
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+                <select name="action" class="form-select form-select-sm w-auto" required>
+                    <option value="" selected disabled>Bulk actions...</option>
+                    <option value="enable">Enable (VALID only)</option>
+                    <option value="disable">Disable</option>
+                    <option value="mark_valid">Mark status: VALID</option>
+                    <option value="mark_revoked">Mark status: REVOKED</option>
+                    <option value="mark_disabled">Mark status: DISABLED</option>
+                    <option value="delete">Delete (and remove files)</option>
+                </select>
+                <button type="submit" class="btn btn-sm btn-outline-primary">
+                    <i class="bi bi-lightning-charge me-1"></i>Apply to selected
+                </button>
+                <small class="text-muted">Select rows using the checkboxes.</small>
+            </form>
+        {% endif %}
+
         <div class="table-responsive">
             <table class="table table-hover align-middle">
                 <thead>
                     <tr>
+                        <th class="text-center" style="width: 2.5rem;">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                data-bulk-select-all="certificates"
+                                aria-label="Select all certificates"
+                            />
+                        </th>
                         <th>
                             <a class="text-decoration-none" href="?{{ sort_querystring }}{% if sort_querystring %}&{% endif %}sort=recipient_name&dir={% if sort_by == 'recipient_name' and sort_dir == 'asc' %}desc{% else %}asc{% endif %}">Recipient</a>
                         </th>
@@ -129,6 +162,17 @@
                 <tbody>
                     {% for certificate in certificates %}
                         <tr>
+                            <td class="text-center">
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    name="selected_ids"
+                                    value="{{ certificate.id }}"
+                                    form="bulkCertificateForm"
+                                    data-bulk-select-item="certificates"
+                                    aria-label="Select certificate {{ certificate.serial_number }}"
+                                />
+                            </td>
                             <td>{{ certificate.recipient_name }}</td>
                             <td>{{ certificate.course_name }}</td>
                             <td>{{ certificate.serial_number }}</td>
@@ -192,7 +236,7 @@
                         </tr>
                     {% empty %}
                         <tr>
-                            <td colspan="8">No certificates found.</td>
+                            <td colspan="9">No certificates found.</td>
                         </tr>
                     {% endfor %}
                 </tbody>
