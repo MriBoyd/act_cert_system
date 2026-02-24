@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}Verification Result{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+                <h2 class="mb-3"><i class="bi bi-patch-check me-1"></i>Verification Result</h2>
+                {% if certificate %}
+                    <div class="verify-summary-card p-3 mb-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item px-0"><strong>Certificate ID:</strong> {{ certificate.id }}</li>
+                            <li class="list-group-item px-0"><strong>Name:</strong> {{ certificate.recipient_name }}</li>
+                            <li class="list-group-item px-0"><strong>Course:</strong> {{ certificate.course_name }}</li>
+                            <li class="list-group-item px-0"><strong>Issuer:</strong> {{ certificate.template.issuer_name }}</li>
+                            <li class="list-group-item px-0"><strong>Issue Date:</strong> {{ certificate.issue_date }}</li>
+                            <li class="list-group-item px-0"><strong>Status:</strong>
+                                {% if is_valid %}
+                                    {% if show_animation %}
+                                        <span class="valid-badge-animated"><i class="bi bi-check-circle-fill"></i>Valid</span>
+                                        <span class="valid-stamp ms-2"><i class="bi bi-patch-check-fill"></i>Verified</span>
+                                    {% else %}
+                                        <span class="badge bg-success">Valid</span>
+                                    {% endif %}
+                                {% else %}
+                                    <span class="badge bg-danger">Revoked / Disabled</span>
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6 class="mb-2"><i class="bi bi-image me-1"></i>Certificate Preview</h6>
+                        {% if certificate.pdf_file %}
+                            <object data="{{ certificate.pdf_file.url }}" type="application/pdf" class="certificate-preview" height="460">
+                                <a href="{{ certificate.pdf_file.url }}" class="btn btn-outline-primary btn-sm mt-2">
+                                    <i class="bi bi-file-earmark-pdf me-1"></i>Open Certificate PDF
+                                </a>
+                            </object>
+                        {% elif certificate.template.background_image %}
+                            <img src="{{ certificate.template.background_image.url }}" alt="Certificate image" class="certificate-preview" />
+                        {% endif %}
+                    </div>
+                {% else %}
+                    <div class="alert alert-danger mb-0">Certificate not found.</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

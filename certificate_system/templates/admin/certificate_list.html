@@ -1,0 +1,239 @@
+{% extends 'base.html' %}
+{% block title %}Manage Certificates{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="mb-1"><i class="bi bi-kanban me-1"></i>Certificate Management</h2>
+        <p class="text-muted mb-0">Search, review status, and download PDF/PNG/JPG/QR for issued certificates.</p>
+    </div>
+    <div class="d-flex gap-2 flex-wrap toolbar-actions">
+        <a href="{% url 'admin-dashboard' %}" class="btn btn-outline-secondary"><i class="bi bi-arrow-left me-1"></i>Back to Dashboard</a>
+        {% if feature_flags.template_management %}
+            <a href="{% url 'admin-template-list' %}" class="btn btn-outline-dark"><i class="bi bi-layout-text-window-reverse me-1"></i>Templates</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="card border-0 shadow-sm mb-3">
+    <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 class="mb-0"><i class="bi bi-funnel me-1"></i>Filters</h6>
+            <button
+                class="btn btn-sm btn-outline-secondary"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#certificateFilters"
+                aria-expanded="{% if search or status_filter or enabled_filter or template_filter or issuer_filter or date_from or date_to or per_page != 25 %}true{% else %}false{% endif %}"
+                aria-controls="certificateFilters"
+            >
+                <i class="bi bi-chevron-expand me-1"></i>Toggle Filters
+            </button>
+        </div>
+
+        <div id="certificateFilters" class="collapse {% if search or status_filter or enabled_filter or template_filter or issuer_filter or date_from or date_to or per_page != 25 %}show{% endif %}">
+        <form method="get" class="row g-2 align-items-end">
+            <div class="col-md-4">
+                <label class="form-label">Search</label>
+                <input type="text" class="form-control" name="search" value="{{ search }}" placeholder="Recipient, serial, or course" />
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Status</label>
+                <select name="status" class="form-select">
+                    <option value="">All</option>
+                    {% for value, label in status_choices %}
+                        <option value="{{ value }}" {% if status_filter == value %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Enabled</label>
+                <select name="enabled" class="form-select">
+                    <option value="">All</option>
+                    <option value="true" {% if enabled_filter == 'true' %}selected{% endif %}>Enabled</option>
+                    <option value="false" {% if enabled_filter == 'false' %}selected{% endif %}>Disabled</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Template</label>
+                <select name="template" class="form-select">
+                    <option value="">All</option>
+                    {% for template in templates %}
+                        <option value="{{ template.id }}" {% if template_filter == template.id|stringformat:'s' %}selected{% endif %}>{{ template.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Issuer</label>
+                <select name="issuer" class="form-select">
+                    <option value="">All</option>
+                    {% for issuer in issuers %}
+                        <option value="{{ issuer.issued_by_id }}" {% if issuer_filter == issuer.issued_by_id|stringformat:'s' %}selected{% endif %}>{{ issuer.issued_by__username }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Issue Date From</label>
+                <input type="date" class="form-control" name="date_from" value="{{ date_from }}" />
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Issue Date To</label>
+                <input type="date" class="form-control" name="date_to" value="{{ date_to }}" />
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Per Page</label>
+                <select name="per_page" class="form-select">
+                    <option value="10" {% if per_page == 10 %}selected{% endif %}>10</option>
+                    <option value="25" {% if per_page == 25 %}selected{% endif %}>25</option>
+                    <option value="50" {% if per_page == 50 %}selected{% endif %}>50</option>
+                    <option value="100" {% if per_page == 100 %}selected{% endif %}>100</option>
+                </select>
+            </div>
+            <input type="hidden" name="sort" value="{{ sort_by }}" />
+            <input type="hidden" name="dir" value="{{ sort_dir }}" />
+            <div class="col-md-4 d-flex gap-2 flex-wrap action-group">
+                <button class="btn btn-primary" type="submit"><i class="bi bi-check2-circle me-1"></i>Apply</button>
+                <a class="btn btn-outline-secondary" href="{% url 'admin-certificate-list' %}"><i class="bi bi-arrow-counterclockwise me-1"></i>Reset</a>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+<div class="card border-0 shadow-sm">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>
+                            <a class="text-decoration-none" href="?{{ sort_querystring }}{% if sort_querystring %}&{% endif %}sort=recipient_name&dir={% if sort_by == 'recipient_name' and sort_dir == 'asc' %}desc{% else %}asc{% endif %}">Recipient</a>
+                        </th>
+                        <th>
+                            <a class="text-decoration-none" href="?{{ sort_querystring }}{% if sort_querystring %}&{% endif %}sort=course_name&dir={% if sort_by == 'course_name' and sort_dir == 'asc' %}desc{% else %}asc{% endif %}">Course</a>
+                        </th>
+                        <th>
+                            <a class="text-decoration-none" href="?{{ sort_querystring }}{% if sort_querystring %}&{% endif %}sort=serial_number&dir={% if sort_by == 'serial_number' and sort_dir == 'asc' %}desc{% else %}asc{% endif %}">Serial</a>
+                        </th>
+                        <th>Issued By</th>
+                        <th>
+                            <a class="text-decoration-none" href="?{{ sort_querystring }}{% if sort_querystring %}&{% endif %}sort=issue_date&dir={% if sort_by == 'issue_date' and sort_dir == 'asc' %}desc{% else %}asc{% endif %}">Date</a>
+                        </th>
+                        <th>
+                            <a class="text-decoration-none" href="?{{ sort_querystring }}{% if sort_querystring %}&{% endif %}sort=status&dir={% if sort_by == 'status' and sort_dir == 'asc' %}desc{% else %}asc{% endif %}">Status</a>
+                        </th>
+                        <th>Enabled</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for certificate in certificates %}
+                        <tr>
+                            <td>{{ certificate.recipient_name }}</td>
+                            <td>{{ certificate.course_name }}</td>
+                            <td>{{ certificate.serial_number }}</td>
+                            <td>{{ certificate.issued_by.username }}</td>
+                            <td>{{ certificate.issue_date }}</td>
+                            <td>{{ certificate.status }}</td>
+                            <td>
+                                {% if certificate.is_enabled %}
+                                    <span class="badge bg-success">Yes</span>
+                                {% else %}
+                                    <span class="badge bg-secondary">No</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        {% if feature_flags.certificate_detail %}
+                                            <li>
+                                                <a class="dropdown-item" href="{% url 'admin-certificate-detail' certificate.id %}"><i class="bi bi-eye me-2"></i>View</a>
+                                            </li>
+                                        {% endif %}
+                                        {% if feature_flags.certificate_management %}
+                                            <li>
+                                                <a class="dropdown-item" href="{% url 'admin-certificate-status' certificate.id %}"><i class="bi bi-sliders me-2"></i>Status</a>
+                                            </li>
+                                        {% endif %}
+                                        {% if feature_flags.certificate_download %}
+                                            <li><hr class="dropdown-divider" /></li>
+                                            <li><h6 class="dropdown-header">Downloads</h6></li>
+                                            <li>
+                                                <a class="dropdown-item" href="{% url 'admin-download-certificate-pdf' certificate.id %}"><i class="bi bi-filetype-pdf me-2"></i>PDF</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="{% url 'admin-download-certificate-png' certificate.id %}"><i class="bi bi-filetype-png me-2"></i>PNG</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="{% url 'admin-download-certificate-jpg' certificate.id %}"><i class="bi bi-filetype-jpg me-2"></i>JPG</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="{% url 'admin-download-certificate-qr' certificate.id %}"><i class="bi bi-qr-code me-2"></i>QR</a>
+                                            </li>
+                                        {% endif %}
+
+                                        {% if feature_flags.certificate_management %}
+                                            <li><hr class="dropdown-divider" /></li>
+                                            <li>
+                                                <form method="post" action="{% url 'admin-certificate-delete' certificate.id %}" onsubmit="return confirm('Delete this certificate and its files?');">
+                                                    {% csrf_token %}
+                                                    <button type="submit" class="dropdown-item text-danger">
+                                                        <i class="bi bi-trash me-2"></i>Delete
+                                                    </button>
+                                                </form>
+                                            </li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="8">No certificates found.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mt-3 gap-2">
+            <div class="text-muted small">
+                Page {{ page_obj.number }} of {{ paginator.num_pages }}
+                ({{ paginator.count }} total certificates)
+            </div>
+            <nav aria-label="Certificates pagination">
+                <ul class="pagination pagination-sm mb-0">
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?{{ querystring }}{% if querystring %}&{% endif %}page=1"><i class="bi bi-chevron-double-left me-1"></i>First</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="?{{ querystring }}{% if querystring %}&{% endif %}page={{ page_obj.previous_page_number }}"><i class="bi bi-chevron-left me-1"></i>Prev</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled"><span class="page-link"><i class="bi bi-chevron-double-left me-1"></i>First</span></li>
+                        <li class="page-item disabled"><span class="page-link"><i class="bi bi-chevron-left me-1"></i>Prev</span></li>
+                    {% endif %}
+
+                    <li class="page-item active"><span class="page-link">{{ page_obj.number }}</span></li>
+
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?{{ querystring }}{% if querystring %}&{% endif %}page={{ page_obj.next_page_number }}">Next<i class="bi bi-chevron-right ms-1"></i></a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="?{{ querystring }}{% if querystring %}&{% endif %}page={{ paginator.num_pages }}">Last<i class="bi bi-chevron-double-right ms-1"></i></a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled"><span class="page-link">Next<i class="bi bi-chevron-right ms-1"></i></span></li>
+                        <li class="page-item disabled"><span class="page-link">Last<i class="bi bi-chevron-double-right ms-1"></i></span></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endblock %}

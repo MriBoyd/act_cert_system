@@ -1,0 +1,1854 @@
+INFO 2026-02-24 08:35:02,256 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 08:35:08,556 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/users/apps.py changed, reloading.
+INFO 2026-02-24 08:35:08,851 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 08:37:33,623 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 08:37:35,868 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/config/request_context.py changed, reloading.
+INFO 2026-02-24 08:37:36,210 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 08:37:38,965 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 11799
+INFO 2026-02-24 08:37:39,005 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 08:37:39,011 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 08:37:44,728 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 11799
+INFO 2026-02-24 08:37:45,511 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 11799
+INFO 2026-02-24 08:37:46,527 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 11799
+INFO 2026-02-24 08:37:46,552 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+INFO 2026-02-24 08:37:46,555 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+WARNING 2026-02-24 08:37:46,837 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 7819
+INFO 2026-02-24 08:37:53,201 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 14368
+INFO 2026-02-24 08:38:05,264 django.server [rid= uid= ip=]   - "GET /verify/3e06bb60-4476-4d45-82fb-2f3bbc93e92d/ HTTP/1.1" 200 3753
+INFO 2026-02-24 08:38:05,536 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 08:38:05,536 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+INFO 2026-02-24 08:38:06,852 django.server [rid= uid= ip=]   - "GET /verify/3e06bb60-4476-4d45-82fb-2f3bbc93e92d/ HTTP/1.1" 200 3753
+INFO 2026-02-24 08:38:09,102 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12933
+INFO 2026-02-24 08:39:45,560 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/config/settings/base.py changed, reloading.
+INFO 2026-02-24 08:39:45,864 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 08:40:03,290 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-02-24 08:40:03,575 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 08:40:08,886 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/urls.py changed, reloading.
+INFO 2026-02-24 08:40:09,175 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 08:41:40,635 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/urls.py changed, reloading.
+INFO 2026-02-24 08:41:40,912 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 08:41:56,973 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:41:57,020 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 08:41:58,137 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:42:09,394 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:42:09,425 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+INFO 2026-02-24 08:42:09,426 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+WARNING 2026-02-24 08:42:09,703 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 8686
+INFO 2026-02-24 08:42:10,021 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:42:10,044 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+INFO 2026-02-24 08:42:10,047 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+WARNING 2026-02-24 08:42:10,318 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 8686
+INFO 2026-02-24 08:42:10,486 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:42:10,533 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+INFO 2026-02-24 08:42:10,534 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+WARNING 2026-02-24 08:42:10,848 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 8686
+INFO 2026-02-24 08:42:10,851 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:42:11,057 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+INFO 2026-02-24 08:42:11,057 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+INFO 2026-02-24 08:42:11,125 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:42:11,154 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+INFO 2026-02-24 08:42:11,155 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+WARNING 2026-02-24 08:42:11,416 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 8686
+INFO 2026-02-24 08:42:11,418 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:42:11,641 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+INFO 2026-02-24 08:42:11,641 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+INFO 2026-02-24 08:42:11,664 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:42:11,689 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+INFO 2026-02-24 08:42:11,689 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+INFO 2026-02-24 08:42:11,900 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:42:12,035 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+INFO 2026-02-24 08:42:12,036 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+INFO 2026-02-24 08:42:12,197 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:42:12,238 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+INFO 2026-02-24 08:42:12,238 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+WARNING 2026-02-24 08:42:12,546 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 8686
+INFO 2026-02-24 08:42:29,776 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 3865
+INFO 2026-02-24 08:43:21,325 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:43:21,363 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+INFO 2026-02-24 08:43:21,364 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+WARNING 2026-02-24 08:43:21,647 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 8686
+INFO 2026-02-24 08:43:34,808 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:43:35,409 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:43:35,452 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:43:35,589 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:43:35,995 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:43:36,590 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:43:36,943 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:43:37,238 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:43:37,644 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:43:38,085 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:43:38,447 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:43:38,906 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:43:39,316 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:44:37,062 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:44:37,820 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:44:38,146 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:44:38,586 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:44:39,100 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:45:08,899 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 08:45:10,352 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:45:10,395 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 08:45:11,082 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:45:11,524 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:45:12,205 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:45:12,655 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 12942
+INFO 2026-02-24 08:46:14,125 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/feature_flags.py changed, reloading.
+INFO 2026-02-24 08:46:14,419 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 08:46:30,884 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/feature_flags.py changed, reloading.
+INFO 2026-02-24 08:46:31,160 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 08:46:31,769 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 13068
+INFO 2026-02-24 08:46:32,610 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 13068
+INFO 2026-02-24 08:46:34,045 django.server [rid= uid= ip=]   - "GET /admin/logs/ HTTP/1.1" 200 16942
+INFO 2026-02-24 08:46:39,793 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=security&lines=200 HTTP/1.1" 200 4700
+INFO 2026-02-24 08:46:42,874 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=app&lines=200 HTTP/1.1" 200 17190
+INFO 2026-02-24 08:46:42,900 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 08:46:44,111 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=app&lines=200 HTTP/1.1" 200 17438
+INFO 2026-02-24 08:46:44,706 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=app&lines=200 HTTP/1.1" 200 17571
+INFO 2026-02-24 08:46:47,624 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=app&lines=200 HTTP/1.1" 200 17704
+WARNING 2026-02-24 08:46:51,458 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8797
+INFO 2026-02-24 08:47:02,594 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 13068
+INFO 2026-02-24 08:47:05,956 django.server [rid= uid= ip=]   - "GET /admin/logs/ HTTP/1.1" 200 18103
+INFO 2026-02-24 08:47:09,441 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 13068
+INFO 2026-02-24 08:48:28,811 django.server [rid= uid= ip=]   - "GET /admin/logs/ HTTP/1.1" 200 18330
+INFO 2026-02-24 08:48:28,922 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 08:48:31,450 django.server [rid= uid= ip=]   - "GET /admin/logs/ HTTP/1.1" 200 18556
+INFO 2026-02-24 08:48:32,241 django.server [rid= uid= ip=]   - "GET /admin/logs/ HTTP/1.1" 200 18667
+INFO 2026-02-24 08:48:32,892 django.server [rid= uid= ip=]   - "GET /admin/logs/ HTTP/1.1" 200 18778
+INFO 2026-02-24 08:48:53,787 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=app&lines=200 HTTP/1.1" 200 20180
+INFO 2026-02-24 08:48:55,600 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=security&lines=200 HTTP/1.1" 200 5967
+INFO 2026-02-24 08:48:57,199 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=audit&lines=200 HTTP/1.1" 200 6683
+INFO 2026-02-24 08:48:59,165 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=security&lines=200 HTTP/1.1" 200 5967
+INFO 2026-02-24 08:48:59,817 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=security&lines=200 HTTP/1.1" 200 5967
+INFO 2026-02-24 08:49:00,498 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=app&lines=200 HTTP/1.1" 200 20858
+INFO 2026-02-24 08:49:03,532 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=app&lines=200 HTTP/1.1" 200 20991
+INFO 2026-02-24 08:49:05,183 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=app&lines=200 HTTP/1.1" 200 21124
+INFO 2026-02-24 08:49:10,869 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 13068
+INFO 2026-02-24 08:50:11,646 django.server [rid= uid= ip=]   - "GET /admin/certificates/307fdeaa-37ee-4924-87db-5ee156387916/ HTTP/1.1" 200 6403
+INFO 2026-02-24 08:50:11,824 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/307fdeaa-37ee-4924-87db-5ee156387916.png HTTP/1.1" 304 0
+INFO 2026-02-24 08:50:11,825 django.server [rid= uid= ip=]   - "GET /media/templates/backgrounds/enhanced_image.png HTTP/1.1" 304 0
+INFO 2026-02-24 08:50:49,396 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-24 08:50:49,400 django.server [rid= uid= ip=]   - "GET /django-admin/login/?next=/admin/dashboard/ HTTP/1.1" 200 2656
+INFO 2026-02-24 08:50:49,471 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+INFO 2026-02-24 08:50:49,471 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+INFO 2026-02-24 08:51:02,877 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 15021
+INFO 2026-02-24 08:51:02,930 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 08:51:02,931 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 08:51:08,142 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 3865
+INFO 2026-02-24 08:51:10,245 django.server [rid= uid= ip=]   - "GET /admin/certificates/bulk/ HTTP/1.1" 200 3261
+INFO 2026-02-24 08:51:15,016 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 14368
+INFO 2026-02-24 08:51:17,922 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 7290
+INFO 2026-02-24 08:51:48,848 django.server [rid= uid= ip=]   - "GET /admin/logs/ HTTP/1.1" 200 23142
+INFO 2026-02-24 08:51:52,033 django.server [rid= uid= ip=]   - "GET /admin/templates/create/ HTTP/1.1" 200 4024
+WARNING 2026-02-24 08:51:59,692 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8797
+INFO 2026-02-24 08:52:05,558 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 15021
+WARNING 2026-02-24 08:52:05,611 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8797
+INFO 2026-02-24 08:52:25,625 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-02-24 08:52:25,927 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 08:52:30,392 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 7290
+INFO 2026-02-24 08:52:56,621 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-02-24 08:52:56,901 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 08:52:57,972 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 9579
+INFO 2026-02-24 08:52:58,972 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 9579
+INFO 2026-02-24 08:53:02,840 django.server [rid= uid= ip=]   - "GET /admin/templates/?search=&active=&per_page=25&sort=created_at&dir=desc HTTP/1.1" 200 9759
+INFO 2026-02-24 08:53:10,416 django.server [rid= uid= ip=]   - "GET /admin/templates/?search=&active=true&per_page=50&sort=created_at&dir=desc HTTP/1.1" 200 9787
+INFO 2026-02-24 08:53:10,439 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 08:53:13,582 django.server [rid= uid= ip=]   - "GET /admin/templates/?search=&active=false&per_page=50&sort=created_at&dir=desc HTTP/1.1" 200 6909
+INFO 2026-02-24 08:53:18,851 django.server [rid= uid= ip=]   - "GET /admin/logs/ HTTP/1.1" 200 25398
+INFO 2026-02-24 08:53:21,492 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=audit&lines=200 HTTP/1.1" 200 6683
+INFO 2026-02-24 08:53:22,219 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=security&lines=200 HTTP/1.1" 200 5967
+INFO 2026-02-24 08:53:22,671 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=app&lines=200 HTTP/1.1" 200 25780
+INFO 2026-02-24 08:54:00,741 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 15021
+INFO 2026-02-24 08:54:02,070 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-02-24 08:54:02,358 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 08:54:07,288 django.server [rid= uid= ip=]   - "GET /admin/certificates/307fdeaa-37ee-4924-87db-5ee156387916/ HTTP/1.1" 200 6403
+INFO 2026-02-24 08:54:09,124 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 14368
+INFO 2026-02-24 08:54:12,984 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 15021
+INFO 2026-02-24 08:54:39,154 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-02-24 08:54:39,439 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 08:54:40,569 django.server [rid= uid= ip=]   - "GET /admin/logs/ HTTP/1.1" 200 28313
+INFO 2026-02-24 08:54:43,963 django.server [rid= uid= ip=]   - "GET /admin/logs/ HTTP/1.1" 200 28424
+INFO 2026-02-24 08:54:56,297 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=app&q=&lines=2000 HTTP/1.1" 200 28543
+INFO 2026-02-24 08:55:12,969 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=app&q=admin&lines=2000 HTTP/1.1" 200 20101
+INFO 2026-02-24 08:55:23,702 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 15021
+INFO 2026-02-24 08:56:01,907 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-24 08:56:01,924 django.server [rid= uid= ip=]   - "GET /django-admin/login/?next=/admin/dashboard/ HTTP/1.1" 200 2656
+INFO 2026-02-24 08:56:02,131 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+INFO 2026-02-24 08:56:02,131 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+WARNING 2026-02-24 08:56:02,877 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 8689
+INFO 2026-02-24 08:56:17,699 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-24 08:56:17,775 django.server [rid= uid= ip=]   - "GET /django-admin/login/?next=/admin/dashboard/ HTTP/1.1" 200 2656
+INFO 2026-02-24 08:56:17,816 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+INFO 2026-02-24 08:56:17,819 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+WARNING 2026-02-24 08:56:19,046 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 8689
+INFO 2026-02-24 08:56:30,622 django.server [rid= uid= ip=]   - "POST /django-admin/login/?next=/admin/dashboard/ HTTP/1.1" 302 0
+INFO 2026-02-24 08:56:30,779 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 15021
+INFO 2026-02-24 08:56:48,298 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 3865
+INFO 2026-02-24 08:56:48,461 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 15021
+INFO 2026-02-24 08:56:48,510 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 08:56:51,873 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 15021
+INFO 2026-02-24 08:57:58,911 django.server [rid= uid= ip=]   - "POST /admin/certificates/generate/ HTTP/1.1" 302 0
+INFO 2026-02-24 08:57:59,046 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 17502
+INFO 2026-02-24 08:58:02,694 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/ HTTP/1.1" 200 6400
+INFO 2026-02-24 08:58:02,798 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/4cf3708c-6dc8-46ad-a939-d205faf606dd.png HTTP/1.1" 200 943
+INFO 2026-02-24 08:58:02,799 django.server [rid= uid= ip=]   - "GET /media/templates/backgrounds/enhanced_image.png HTTP/1.1" 200 7367
+INFO 2026-02-24 08:58:07,461 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/status/ HTTP/1.1" 200 3115
+INFO 2026-02-24 08:58:13,710 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/download/pdf/ HTTP/1.1" 200 17946
+INFO 2026-02-24 08:58:16,147 django.server [rid= uid= ip=]   - code 400, message Bad request version ('\x98\x1b7oBÉLÛHµ\x16o\x96\x18¯\x0eé:/')
+ERROR 2026-02-24 08:58:16,148 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-02-24 08:58:16,149 django.server [rid= uid= ip=]   - code 400, message Bad request version ('\x1a\x1a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063**\x00\x00\x00')
+ERROR 2026-02-24 08:58:16,149 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-02-24 08:58:16,153 django.server [rid= uid= ip=]   - code 400, message Bad request version ('ZZ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06S')
+ERROR 2026-02-24 08:58:16,153 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-02-24 08:58:16,153 django.server [rid= uid= ip=]   - code 400, message Bad request version ('Ì\x9a¹*\x88?É¦Eõ-4»ÍM«\x00')
+ERROR 2026-02-24 08:58:16,153 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-02-24 08:58:26,135 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/ HTTP/1.1" 200 6400
+INFO 2026-02-24 08:58:26,234 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/4cf3708c-6dc8-46ad-a939-d205faf606dd.png HTTP/1.1" 304 0
+INFO 2026-02-24 08:58:32,216 django.server [rid= uid= ip=]   - code 400, message Bad request version ('**\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93ºº\x00\x00\x00')
+ERROR 2026-02-24 08:58:32,217 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-02-24 08:58:32,221 django.server [rid= uid= ip=]   - code 400, message Bad request version ('ã\x92·Æ|NQ>×h³)hj\x81\x10\x8dy"Îàürj.\x89â\x87\x8bò\x99÷»Hè\x94éÞYX&ÛõfÖ\x00\x17\x00\x00\x00\x12\x00\x00\x00\x1b\x00\x03\x02\x00\x02\x00')
+ERROR 2026-02-24 08:58:32,221 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-02-24 08:58:35,812 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2449
+INFO 2026-02-24 08:58:35,879 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+INFO 2026-02-24 08:58:35,879 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+INFO 2026-02-24 08:58:35,923 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+WARNING 2026-02-24 08:58:37,309 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 8689
+INFO 2026-02-24 08:58:41,904 django.server [rid= uid= ip=]   - "POST / HTTP/1.1" 200 2555
+INFO 2026-02-24 08:58:48,034 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 2656
+INFO 2026-02-24 08:59:02,978 django.server [rid= uid= ip=]   - "POST /login/ HTTP/1.1" 302 0
+INFO 2026-02-24 08:59:03,006 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 17171
+INFO 2026-02-24 08:59:06,018 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 16137
+INFO 2026-02-24 08:59:06,058 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 08:59:07,666 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/status/ HTTP/1.1" 200 3115
+INFO 2026-02-24 08:59:10,899 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/download/pdf/ HTTP/1.1" 200 17946
+INFO 2026-02-24 08:59:20,922 django.server [rid= uid= ip=]   - "GET /admin/certificates/bulk/ HTTP/1.1" 200 3261
+INFO 2026-02-24 08:59:26,496 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 16137
+INFO 2026-02-24 08:59:28,133 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 9579
+INFO 2026-02-24 08:59:29,200 django.server [rid= uid= ip=]   - "GET /admin/templates/create/ HTTP/1.1" 200 4024
+INFO 2026-02-24 08:59:30,843 django.server [rid= uid= ip=]   - "GET /admin/logs/ HTTP/1.1" 200 33153
+INFO 2026-02-24 08:59:32,409 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 3865
+INFO 2026-02-24 08:59:38,803 django.server [rid= uid= ip=]   - "GET /admin/templates/create/ HTTP/1.1" 200 4024
+INFO 2026-02-24 08:59:56,468 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 17171
+INFO 2026-02-24 08:59:57,575 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 17171
+INFO 2026-02-24 08:59:58,779 django.server [rid= uid= ip=]   - "GET /qr-tools/ HTTP/1.1" 200 7612
+INFO 2026-02-24 09:00:00,064 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2877
+INFO 2026-02-24 09:00:00,888 django.server [rid= uid= ip=]   - "GET /qr-tools/ HTTP/1.1" 200 7612
+INFO 2026-02-24 09:00:01,302 django.server [rid= uid= ip=]   - "GET /qr-tools/ HTTP/1.1" 200 7612
+INFO 2026-02-24 09:00:01,648 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 17171
+INFO 2026-02-24 09:02:20,718 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 3865
+INFO 2026-02-24 09:02:20,893 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 09:06:36,527 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-02-24 09:06:36,893 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 09:07:25,754 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-02-24 09:07:26,042 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 09:15:03,323 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 09:15:07,691 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2449
+INFO 2026-02-24 09:15:07,751 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+INFO 2026-02-24 09:15:07,755 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+WARNING 2026-02-24 09:15:08,552 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 8684
+INFO 2026-02-24 09:15:09,729 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 2656
+INFO 2026-02-24 09:15:14,463 django.server [rid= uid= ip=]   - "POST /login/ HTTP/1.1" 302 0
+INFO 2026-02-24 09:15:14,492 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 17171
+INFO 2026-02-24 09:20:48,933 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/users/models.py changed, reloading.
+INFO 2026-02-24 09:20:49,349 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 09:21:30,259 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/config/settings/base.py changed, reloading.
+INFO 2026-02-24 09:21:30,567 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 09:21:38,931 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/urls.py changed, reloading.
+INFO 2026-02-24 09:21:39,221 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 09:22:29,984 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 17171
+INFO 2026-02-24 09:22:30,022 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 09:22:46,461 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/api_permissions.py changed, reloading.
+INFO 2026-02-24 09:22:46,856 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 09:23:35,829 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/config/api_key_auth.py changed, reloading.
+INFO 2026-02-24 09:23:36,123 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 09:24:13,835 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/feature_flags.py changed, reloading.
+INFO 2026-02-24 09:24:14,122 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 09:27:28,363 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/serializers_integration.py changed, reloading.
+INFO 2026-02-24 09:27:28,720 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 09:29:04,363 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/PIL/TiffTags.py changed, reloading.
+INFO 2026-02-24 09:29:04,640 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 09:30:48,323 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/integration_api_views.py changed, reloading.
+INFO 2026-02-24 09:30:48,633 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 09:31:47,060 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 09:32:14,629 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 17171
+INFO 2026-02-24 09:32:14,670 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+INFO 2026-02-24 09:32:14,670 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+WARNING 2026-02-24 09:32:15,459 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 10973
+INFO 2026-02-24 09:32:17,534 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 17171
+INFO 2026-02-24 11:40:18,430 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 16137
+INFO 2026-02-24 11:40:18,459 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 11:40:18,459 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 11:40:27,441 django.server [rid= uid= ip=]   - "GET /admin/templates/create/ HTTP/1.1" 200 4024
+INFO 2026-02-24 11:40:59,014 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/integration_api_views.py changed, reloading.
+INFO 2026-02-24 11:40:59,393 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 11:41:00,631 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/services/image_generator.py changed, reloading.
+INFO 2026-02-24 11:41:00,984 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 11:42:39,294 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/ HTTP/1.1" 200 6400
+INFO 2026-02-24 11:42:39,343 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/4cf3708c-6dc8-46ad-a939-d205faf606dd.png HTTP/1.1" 200 943
+INFO 2026-02-24 11:42:39,344 django.server [rid= uid= ip=]   - "GET /media/templates/backgrounds/enhanced_image.png HTTP/1.1" 200 7367
+INFO 2026-02-24 11:42:45,855 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/urls.py changed, reloading.
+INFO 2026-02-24 11:42:46,164 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 11:43:02,639 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 16137
+INFO 2026-02-24 11:43:06,991 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 16137
+INFO 2026-02-24 11:43:11,940 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 9579
+INFO 2026-02-24 11:46:51,055 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-02-24 11:46:51,351 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 11:46:54,875 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 9579
+INFO 2026-02-24 11:46:57,288 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 18891
+INFO 2026-02-24 11:47:01,418 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/download/png/ HTTP/1.1" 200 630881
+INFO 2026-02-24 11:48:13,962 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/models.py changed, reloading.
+INFO 2026-02-24 11:48:14,324 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 11:50:22,229 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 17801
+ERROR 2026-02-24 11:50:25,393 django.request [rid= uid= ip=]   - Internal Server Error: /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column certificates_certificate.png_file does not exist
+LINE 1: ...de_image", "certificates_certificate"."pdf_file", "certifica...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "certificates_certificate.pdf_file".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py", line 93, in _wrapped
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/feature_flags.py", line 37, in _wrapped
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py", line 385, in certificate_detail
+    certificate = get_object_or_404(
+                  ^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 631, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 368, in __len__
+    self._fetch_all()
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1954, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column certificates_certificate.png_file does not exist
+LINE 1: ...de_image", "certificates_certificate"."pdf_file", "certifica...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "certificates_certificate.pdf_file".
+
+ERROR 2026-02-24 11:50:25,396 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/ HTTP/1.1" 500 182807
+ERROR 2026-02-24 11:50:29,237 django.request [rid= uid= ip=]   - Internal Server Error: /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column certificates_certificate.png_file does not exist
+LINE 1: ...de_image", "certificates_certificate"."pdf_file", "certifica...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "certificates_certificate.pdf_file".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py", line 93, in _wrapped
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/feature_flags.py", line 37, in _wrapped
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py", line 385, in certificate_detail
+    certificate = get_object_or_404(
+                  ^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 631, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 368, in __len__
+    self._fetch_all()
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1954, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column certificates_certificate.png_file does not exist
+LINE 1: ...de_image", "certificates_certificate"."pdf_file", "certifica...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "certificates_certificate.pdf_file".
+
+ERROR 2026-02-24 11:50:29,238 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/ HTTP/1.1" 500 182944
+ERROR 2026-02-24 11:50:29,928 django.request [rid= uid= ip=]   - Internal Server Error: /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column certificates_certificate.png_file does not exist
+LINE 1: ...de_image", "certificates_certificate"."pdf_file", "certifica...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "certificates_certificate.pdf_file".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py", line 93, in _wrapped
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/feature_flags.py", line 37, in _wrapped
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py", line 385, in certificate_detail
+    certificate = get_object_or_404(
+                  ^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 631, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 368, in __len__
+    self._fetch_all()
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1954, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column certificates_certificate.png_file does not exist
+LINE 1: ...de_image", "certificates_certificate"."pdf_file", "certifica...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "certificates_certificate.pdf_file".
+
+ERROR 2026-02-24 11:50:29,930 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/ HTTP/1.1" 500 182944
+ERROR 2026-02-24 11:50:30,673 django.request [rid= uid= ip=]   - Internal Server Error: /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column certificates_certificate.png_file does not exist
+LINE 1: ...de_image", "certificates_certificate"."pdf_file", "certifica...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "certificates_certificate.pdf_file".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py", line 93, in _wrapped
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/feature_flags.py", line 37, in _wrapped
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py", line 385, in certificate_detail
+    certificate = get_object_or_404(
+                  ^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 631, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 368, in __len__
+    self._fetch_all()
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1954, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column certificates_certificate.png_file does not exist
+LINE 1: ...de_image", "certificates_certificate"."pdf_file", "certifica...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "certificates_certificate.pdf_file".
+
+ERROR 2026-02-24 11:50:30,675 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/ HTTP/1.1" 500 182944
+ERROR 2026-02-24 11:50:31,186 django.request [rid= uid= ip=]   - Internal Server Error: /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column certificates_certificate.png_file does not exist
+LINE 1: ...de_image", "certificates_certificate"."pdf_file", "certifica...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "certificates_certificate.pdf_file".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py", line 93, in _wrapped
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/feature_flags.py", line 37, in _wrapped
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py", line 385, in certificate_detail
+    certificate = get_object_or_404(
+                  ^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 631, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 368, in __len__
+    self._fetch_all()
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1954, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column certificates_certificate.png_file does not exist
+LINE 1: ...de_image", "certificates_certificate"."pdf_file", "certifica...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "certificates_certificate.pdf_file".
+
+ERROR 2026-02-24 11:50:31,187 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/ HTTP/1.1" 500 182944
+ERROR 2026-02-24 11:50:31,494 django.request [rid= uid= ip=]   - Internal Server Error: /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column certificates_certificate.png_file does not exist
+LINE 1: ...de_image", "certificates_certificate"."pdf_file", "certifica...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "certificates_certificate.pdf_file".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py", line 93, in _wrapped
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/feature_flags.py", line 37, in _wrapped
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py", line 385, in certificate_detail
+    certificate = get_object_or_404(
+                  ^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 631, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 368, in __len__
+    self._fetch_all()
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1954, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column certificates_certificate.png_file does not exist
+LINE 1: ...de_image", "certificates_certificate"."pdf_file", "certifica...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "certificates_certificate.pdf_file".
+
+ERROR 2026-02-24 11:50:31,495 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/ HTTP/1.1" 500 182944
+ERROR 2026-02-24 11:50:31,888 django.request [rid= uid= ip=]   - Internal Server Error: /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column certificates_certificate.png_file does not exist
+LINE 1: ...de_image", "certificates_certificate"."pdf_file", "certifica...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "certificates_certificate.pdf_file".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py", line 93, in _wrapped
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/feature_flags.py", line 37, in _wrapped
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py", line 385, in certificate_detail
+    certificate = get_object_or_404(
+                  ^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 631, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 368, in __len__
+    self._fetch_all()
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1954, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column certificates_certificate.png_file does not exist
+LINE 1: ...de_image", "certificates_certificate"."pdf_file", "certifica...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "certificates_certificate.pdf_file".
+
+ERROR 2026-02-24 11:50:31,889 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/ HTTP/1.1" 500 182944
+INFO 2026-02-24 11:50:35,772 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/integration_api_views.py changed, reloading.
+INFO 2026-02-24 11:50:36,161 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 11:50:48,422 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 11:50:49,722 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/ HTTP/1.1" 200 6762
+INFO 2026-02-24 11:50:50,469 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/ HTTP/1.1" 200 6762
+INFO 2026-02-24 11:50:51,266 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/ HTTP/1.1" 200 6762
+INFO 2026-02-24 11:50:52,167 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/ HTTP/1.1" 200 6762
+INFO 2026-02-24 11:50:59,975 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/download/png/ HTTP/1.1" 200 630881
+INFO 2026-02-24 11:51:30,580 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 17801
+INFO 2026-02-24 11:51:46,770 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 18891
+INFO 2026-02-24 11:53:45,448 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 22357
+INFO 2026-02-24 11:54:04,581 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 22357
+INFO 2026-02-24 11:54:18,764 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 11041
+INFO 2026-02-24 11:54:26,400 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24055
+INFO 2026-02-24 11:54:29,597 django.server [rid= uid= ip=]   - "GET /admin/templates/create/ HTTP/1.1" 200 4024
+INFO 2026-02-24 11:54:35,928 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 11041
+INFO 2026-02-24 11:54:40,393 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24055
+INFO 2026-02-24 11:54:43,077 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 3865
+INFO 2026-02-24 11:54:45,377 django.server [rid= uid= ip=]   - "GET /admin/certificates/bulk/ HTTP/1.1" 200 3261
+INFO 2026-02-24 11:54:47,678 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 22357
+INFO 2026-02-24 11:54:50,704 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24055
+INFO 2026-02-24 11:54:59,124 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 22357
+INFO 2026-02-24 11:55:02,125 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24055
+INFO 2026-02-24 11:55:03,243 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 3865
+INFO 2026-02-24 11:55:07,758 django.server [rid= uid= ip=]   - "GET /admin/certificates/bulk/ HTTP/1.1" 200 3261
+INFO 2026-02-24 11:56:16,125 django.server [rid= uid= ip=]   - "GET /admin/certificates/bulk/ HTTP/1.1" 200 3261
+INFO 2026-02-24 11:57:45,120 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/urls.py changed, reloading.
+INFO 2026-02-24 11:57:45,478 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:00:57,579 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:01:00,826 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24055
+INFO 2026-02-24 12:01:00,858 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:01:01,636 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24055
+INFO 2026-02-24 12:02:31,403 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2877
+INFO 2026-02-24 12:02:33,790 django.server [rid= uid= ip=]   - "GET /qr-tools/ HTTP/1.1" 200 7612
+INFO 2026-02-24 12:03:19,094 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/models.py changed, reloading.
+INFO 2026-02-24 12:03:19,488 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:03:42,055 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-02-24 12:03:42,434 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:04:17,214 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/models.py changed, reloading.
+INFO 2026-02-24 12:04:17,520 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:04:22,825 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/migrations/0004_featureflagoverride.py changed, reloading.
+INFO 2026-02-24 12:04:23,120 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:05:13,038 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:05:14,294 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/feature_flags.py changed, reloading.
+INFO 2026-02-24 12:05:14,582 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+WARNING 2026-02-24 12:05:20,759 django.server [rid= uid= ip=]   - "GET /api HTTP/1.1" 404 12898
+WARNING 2026-02-24 12:05:20,905 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 12922
+WARNING 2026-02-24 12:05:21,591 django.server [rid= uid= ip=]   - "GET /api HTTP/1.1" 404 12898
+WARNING 2026-02-24 12:05:22,277 django.server [rid= uid= ip=]   - "GET /api HTTP/1.1" 404 12898
+INFO 2026-02-24 12:07:02,804 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2449
+INFO 2026-02-24 12:07:02,853 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2793
+INFO 2026-02-24 12:07:02,853 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+INFO 2026-02-24 12:07:05,150 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 2656
+INFO 2026-02-24 12:07:10,705 django.server [rid= uid= ip=]   - "POST /login/ HTTP/1.1" 302 0
+INFO 2026-02-24 12:07:10,745 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24253
+INFO 2026-02-24 12:07:58,671 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 23809
+INFO 2026-02-24 12:08:19,690 django.server [rid= uid= ip=]   - "POST /admin/feature-flags/ HTTP/1.1" 302 0
+INFO 2026-02-24 12:08:19,716 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 24264
+INFO 2026-02-24 12:08:22,051 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24090
+INFO 2026-02-24 12:08:26,992 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 23974
+INFO 2026-02-24 12:08:29,881 django.server [rid= uid= ip=]   - "POST /admin/feature-flags/ HTTP/1.1" 302 0
+INFO 2026-02-24 12:08:29,907 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 24263
+INFO 2026-02-24 12:08:30,983 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24253
+INFO 2026-02-24 12:12:16,550 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/config/settings/base.py changed, reloading.
+INFO 2026-02-24 12:12:16,985 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:12:52,756 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/config/settings/base.py changed, reloading.
+INFO 2026-02-24 12:12:53,148 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:24:09,048 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:24:10,397 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24253
+INFO 2026-02-24 12:24:11,083 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24253
+INFO 2026-02-24 12:24:14,448 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24253
+INFO 2026-02-24 12:24:15,052 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24253
+INFO 2026-02-24 12:24:15,199 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24253
+INFO 2026-02-24 12:24:15,434 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24253
+INFO 2026-02-24 12:24:15,818 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24253
+INFO 2026-02-24 12:24:16,032 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24253
+INFO 2026-02-24 12:24:16,329 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24253
+INFO 2026-02-24 12:24:16,513 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24253
+INFO 2026-02-24 12:24:16,818 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24253
+INFO 2026-02-24 12:24:17,230 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24253
+INFO 2026-02-24 12:24:19,204 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24420
+WARNING 2026-02-24 12:24:19,231 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 404 2002
+INFO 2026-02-24 12:24:20,014 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24420
+WARNING 2026-02-24 12:24:20,032 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 404 2002
+INFO 2026-02-24 12:24:20,463 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24420
+WARNING 2026-02-24 12:24:20,504 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 404 2002
+INFO 2026-02-24 12:24:21,071 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24420
+WARNING 2026-02-24 12:24:21,091 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 404 2002
+INFO 2026-02-24 12:24:26,081 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24420
+WARNING 2026-02-24 12:24:26,104 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 404 2002
+INFO 2026-02-24 12:24:26,875 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24420
+WARNING 2026-02-24 12:24:26,893 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 404 2002
+INFO 2026-02-24 12:25:08,229 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24420
+WARNING 2026-02-24 12:25:08,270 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 404 2002
+INFO 2026-02-24 12:25:08,848 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24420
+WARNING 2026-02-24 12:25:08,876 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 404 2002
+INFO 2026-02-24 12:25:09,885 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24502
+WARNING 2026-02-24 12:25:09,904 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 404 2002
+WARNING 2026-02-24 12:25:09,979 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 404 2002
+INFO 2026-02-24 12:25:10,545 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24502
+WARNING 2026-02-24 12:25:10,585 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 404 2002
+INFO 2026-02-24 12:25:10,997 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24502
+WARNING 2026-02-24 12:25:11,026 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 404 2002
+INFO 2026-02-24 12:25:11,679 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24502
+WARNING 2026-02-24 12:25:11,704 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 404 2002
+INFO 2026-02-24 12:25:12,068 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24502
+WARNING 2026-02-24 12:25:12,092 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 404 2002
+INFO 2026-02-24 12:25:12,207 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24502
+WARNING 2026-02-24 12:25:12,231 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 404 2002
+INFO 2026-02-24 12:25:14,319 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 3126
+WARNING 2026-02-24 12:25:14,338 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 404 2002
+INFO 2026-02-24 12:25:55,831 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 3126
+WARNING 2026-02-24 12:25:55,879 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 404 2002
+INFO 2026-02-24 12:26:33,559 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 3126
+INFO 2026-02-24 12:26:33,619 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-02-24 12:26:39,893 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 3126
+INFO 2026-02-24 12:26:40,259 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 3126
+INFO 2026-02-24 12:26:40,508 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 3126
+INFO 2026-02-24 12:26:40,633 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 3126
+INFO 2026-02-24 12:26:40,791 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 3126
+INFO 2026-02-24 12:26:40,992 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 3126
+INFO 2026-02-24 12:26:41,238 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 3126
+INFO 2026-02-24 12:26:42,232 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24502
+INFO 2026-02-24 12:26:46,048 django.server [rid= uid= ip=]   - "POST /logout/ HTTP/1.1" 302 0
+INFO 2026-02-24 12:26:46,071 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2698
+ERROR 2026-02-24 12:26:47,783 django.request [rid= uid= ip=]   - Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 197, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 10: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2026-02-24 12:26:47,785 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 500 187580
+ERROR 2026-02-24 12:26:50,323 django.request [rid= uid= ip=]   - Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 197, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 10: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2026-02-24 12:26:50,324 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 500 187845
+WARNING 2026-02-24 12:26:50,418 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 12922
+ERROR 2026-02-24 12:26:50,938 django.request [rid= uid= ip=]   - Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 197, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 10: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2026-02-24 12:26:50,939 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 500 187845
+WARNING 2026-02-24 12:26:51,042 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 12922
+ERROR 2026-02-24 12:26:51,273 django.request [rid= uid= ip=]   - Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 197, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 10: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2026-02-24 12:26:51,275 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 500 187845
+WARNING 2026-02-24 12:26:51,390 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 12922
+ERROR 2026-02-24 12:26:52,138 django.request [rid= uid= ip=]   - Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 197, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 10: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2026-02-24 12:26:52,139 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 500 187845
+WARNING 2026-02-24 12:26:52,244 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 12922
+ERROR 2026-02-24 12:26:52,458 django.request [rid= uid= ip=]   - Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 197, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 10: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2026-02-24 12:26:52,460 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 500 187845
+WARNING 2026-02-24 12:26:52,553 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 12922
+ERROR 2026-02-24 12:27:08,053 django.request [rid= uid= ip=]   - Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 197, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 10: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2026-02-24 12:27:08,054 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 500 187717
+ERROR 2026-02-24 12:27:08,709 django.request [rid= uid= ip=]   - Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 197, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 10: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2026-02-24 12:27:08,710 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 500 187717
+ERROR 2026-02-24 12:27:09,076 django.request [rid= uid= ip=]   - Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 197, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 10: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2026-02-24 12:27:09,078 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 500 187717
+ERROR 2026-02-24 12:27:09,344 django.request [rid= uid= ip=]   - Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 197, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 519, in parse
+    raise self.error(token, e)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 10: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2026-02-24 12:27:09,346 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 500 187717
+INFO 2026-02-24 12:27:18,046 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:27:18,064 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 304 0
+INFO 2026-02-24 12:27:43,149 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:28:22,891 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:28:22,932 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 304 0
+INFO 2026-02-24 12:28:23,650 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:28:23,880 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:28:24,138 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:28:24,438 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:28:24,834 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:28:24,866 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2888
+INFO 2026-02-24 12:28:24,867 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-02-24 12:28:24,868 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+INFO 2026-02-24 12:28:25,552 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-02-24 12:28:26,433 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:28:26,461 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2888
+INFO 2026-02-24 12:28:26,462 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+INFO 2026-02-24 12:28:26,463 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-02-24 12:28:26,744 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-02-24 12:28:27,370 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:28:27,401 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 299
+INFO 2026-02-24 12:28:27,401 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2888
+INFO 2026-02-24 12:28:27,402 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-02-24 12:28:27,665 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-02-24 12:28:39,631 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:28:39,654 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2888
+INFO 2026-02-24 12:28:40,117 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:28:40,265 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:28:41,355 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2698
+INFO 2026-02-24 12:28:41,381 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:28:43,208 django.server [rid= uid= ip=]   - "GET /qr-tools/ HTTP/1.1" 200 7433
+INFO 2026-02-24 12:28:43,235 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:28:43,860 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:28:43,897 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:28:48,545 django.server [rid= uid= ip=]   - "POST /login/ HTTP/1.1" 302 0
+INFO 2026-02-24 12:28:48,577 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24502
+INFO 2026-02-24 12:28:48,640 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:28:58,242 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24502
+INFO 2026-02-24 12:28:58,262 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2888
+INFO 2026-02-24 12:28:58,900 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24502
+INFO 2026-02-24 12:28:58,918 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:29:09,004 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24502
+INFO 2026-02-24 12:29:09,023 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2888
+INFO 2026-02-24 12:29:09,023 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 304 0
+INFO 2026-02-24 12:29:09,756 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24502
+INFO 2026-02-24 12:29:09,782 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:29:17,064 django.server [rid= uid= ip=]   - "POST /logout/ HTTP/1.1" 302 0
+INFO 2026-02-24 12:29:17,086 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2698
+INFO 2026-02-24 12:29:17,141 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:29:18,731 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2698
+INFO 2026-02-24 12:29:18,752 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:29:19,152 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2698
+INFO 2026-02-24 12:29:19,289 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:29:19,415 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2698
+INFO 2026-02-24 12:29:19,648 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2698
+INFO 2026-02-24 12:29:19,873 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2698
+INFO 2026-02-24 12:29:20,207 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2698
+INFO 2026-02-24 12:29:20,228 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:29:20,329 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2698
+INFO 2026-02-24 12:29:21,629 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2698
+INFO 2026-02-24 12:29:21,651 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:29:22,012 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2698
+INFO 2026-02-24 12:29:22,335 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2698
+INFO 2026-02-24 12:29:24,095 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:29:24,118 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:29:24,962 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:29:25,250 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:29:25,541 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:29:25,909 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:29:26,000 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:29:33,726 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:29:33,747 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2888
+INFO 2026-02-24 12:29:36,201 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:29:36,224 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:29:44,218 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:29:44,244 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2888
+INFO 2026-02-24 12:29:47,607 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3108
+INFO 2026-02-24 12:29:47,628 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:29:52,808 django.server [rid= uid= ip=]   - "POST /login/ HTTP/1.1" 302 0
+INFO 2026-02-24 12:29:52,838 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24502
+INFO 2026-02-24 12:29:52,899 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:29:52,902 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 304 0
+INFO 2026-02-24 12:30:04,703 django.server [rid= uid= ip=]   - "GET /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/ HTTP/1.1" 200 7692
+INFO 2026-02-24 12:30:04,727 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:30:04,734 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/4cf3708c-6dc8-46ad-a939-d205faf606dd.png HTTP/1.1" 200 943
+INFO 2026-02-24 12:30:04,735 django.server [rid= uid= ip=]   - "GET /media/templates/backgrounds/enhanced_image.png HTTP/1.1" 200 7367
+INFO 2026-02-24 12:30:16,460 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24502
+INFO 2026-02-24 12:30:16,479 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:30:16,904 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24502
+INFO 2026-02-24 12:30:17,412 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24502
+INFO 2026-02-24 12:30:17,836 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24502
+INFO 2026-02-24 12:30:23,473 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 3126
+INFO 2026-02-24 12:30:23,498 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:30:48,764 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 3088
+INFO 2026-02-24 12:30:48,786 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:30:48,786 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 304 0
+INFO 2026-02-24 12:30:49,490 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 3088
+INFO 2026-02-24 12:30:49,871 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 3088
+INFO 2026-02-24 12:30:53,860 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24464
+INFO 2026-02-24 12:31:00,729 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24464
+INFO 2026-02-24 12:31:00,749 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:31:00,991 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24464
+INFO 2026-02-24 12:31:03,643 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24464
+INFO 2026-02-24 12:31:36,148 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24464
+INFO 2026-02-24 12:31:36,189 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:31:41,599 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 22568
+INFO 2026-02-24 12:31:41,630 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 304 0
+INFO 2026-02-24 12:33:29,863 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24464
+INFO 2026-02-24 12:33:29,895 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:33:29,897 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 304 0
+INFO 2026-02-24 12:33:37,594 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 22568
+INFO 2026-02-24 12:33:40,687 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24464
+INFO 2026-02-24 12:33:43,731 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 24464
+INFO 2026-02-24 12:33:46,002 django.server [rid= uid= ip=]   - "GET /admin/logs/ HTTP/1.1" 200 27070
+INFO 2026-02-24 12:33:51,028 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=audit&lines=200 HTTP/1.1" 200 11135
+INFO 2026-02-24 12:33:51,604 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=security&lines=200 HTTP/1.1" 200 8931
+INFO 2026-02-24 12:33:51,628 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:33:55,730 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-02-24 12:33:56,070 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:34:05,561 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 28716
+INFO 2026-02-24 12:34:25,159 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 12976
+INFO 2026-02-24 12:34:25,179 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:35:11,159 django.server [rid= uid= ip=]   - "GET /admin/logs/ HTTP/1.1" 200 27589
+INFO 2026-02-24 12:35:11,179 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:35:11,180 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 304 0
+INFO 2026-02-24 12:35:14,715 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=audit&lines=200 HTTP/1.1" 200 11135
+INFO 2026-02-24 12:35:21,870 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=app&lines=200 HTTP/1.1" 200 27743
+INFO 2026-02-24 12:35:26,688 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=security&lines=200 HTTP/1.1" 200 8931
+INFO 2026-02-24 12:35:39,957 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-02-24 12:35:40,257 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:36:04,618 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:37:01,794 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-02-24 12:37:03,063 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 28716
+INFO 2026-02-24 12:37:03,084 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:37:03,085 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 304 0
+INFO 2026-02-24 12:37:23,327 django.server [rid= uid= ip=]   - "POST /admin/certificates/af595519-1237-4447-8d36-3038ae09856d/delete/ HTTP/1.1" 302 0
+INFO 2026-02-24 12:37:23,360 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 22481
+INFO 2026-02-24 12:37:34,871 django.server [rid= uid= ip=]   - "POST /admin/certificates/3e06bb60-4476-4d45-82fb-2f3bbc93e92d/delete/ HTTP/1.1" 302 0
+INFO 2026-02-24 12:37:34,901 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 18196
+INFO 2026-02-24 12:37:38,352 django.server [rid= uid= ip=]   - "POST /admin/certificates/307fdeaa-37ee-4924-87db-5ee156387916/delete/ HTTP/1.1" 302 0
+INFO 2026-02-24 12:37:38,381 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 13902
+INFO 2026-02-24 12:37:41,127 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 13605
+INFO 2026-02-24 12:37:41,885 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 13605
+INFO 2026-02-24 12:37:42,172 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 13605
+INFO 2026-02-24 12:37:42,556 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 13605
+INFO 2026-02-24 12:37:57,433 django.server [rid= uid= ip=]   - "POST /admin/certificates/4cf3708c-6dc8-46ad-a939-d205faf606dd/delete/ HTTP/1.1" 302 0
+INFO 2026-02-24 12:37:57,466 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 9677
+INFO 2026-02-24 12:37:57,524 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:38:03,505 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 9882
+INFO 2026-02-24 12:38:22,090 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 4076
+INFO 2026-02-24 12:38:34,366 django.server [rid= uid= ip=]   - "POST /admin/certificates/generate/ HTTP/1.1" 302 0
+INFO 2026-02-24 12:38:34,397 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14901
+INFO 2026-02-24 12:38:34,465 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 304 0
+INFO 2026-02-24 12:40:52,291 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+WARNING 2026-02-24 12:40:52,291 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 13668
+INFO 2026-02-24 12:41:06,587 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 4076
+WARNING 2026-02-24 12:41:06,633 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 13668
+INFO 2026-02-24 12:41:06,644 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 304 0
+INFO 2026-02-24 12:41:11,968 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14570
+WARNING 2026-02-24 12:41:12,024 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 13668
+INFO 2026-02-24 12:41:13,175 django.server [rid= uid= ip=]   - "GET /admin/certificates/bulk/ HTTP/1.1" 200 3472
+WARNING 2026-02-24 12:41:13,218 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 13668
+INFO 2026-02-24 12:41:16,580 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14570
+WARNING 2026-02-24 12:41:16,635 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 13668
+INFO 2026-02-24 12:41:17,889 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 13599
+WARNING 2026-02-24 12:41:17,949 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 13668
+INFO 2026-02-24 12:41:25,006 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14570
+WARNING 2026-02-24 12:41:25,075 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 13668
+INFO 2026-02-24 12:41:36,763 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 13599
+WARNING 2026-02-24 12:41:36,839 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 13668
+INFO 2026-02-24 12:42:05,386 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 13599
+INFO 2026-02-24 12:42:05,416 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2934
+INFO 2026-02-24 12:42:05,417 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-02-24 12:42:05,437 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 3639
+INFO 2026-02-24 12:42:06,169 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-02-24 12:42:19,295 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14570
+INFO 2026-02-24 12:42:19,318 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-02-24 12:42:19,318 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2934
+INFO 2026-02-24 12:42:19,324 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 3639
+INFO 2026-02-24 12:42:19,637 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-02-24 12:42:32,165 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+WARNING 2026-02-24 12:42:32,189 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 13668
+INFO 2026-02-24 12:42:44,156 django.server [rid= uid= ip=]   - "GET /admin/templates/create/ HTTP/1.1" 200 4235
+WARNING 2026-02-24 12:42:44,249 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 13668
+INFO 2026-02-24 12:42:44,249 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:42:44,286 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:42:45,827 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14570
+WARNING 2026-02-24 12:42:45,921 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 13668
+INFO 2026-02-24 12:42:46,816 django.server [rid= uid= ip=]   - "GET /admin/logs/ HTTP/1.1" 200 31329
+WARNING 2026-02-24 12:42:46,916 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 13668
+INFO 2026-02-24 12:42:51,599 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14570
+INFO 2026-02-24 12:42:51,688 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+WARNING 2026-02-24 12:42:51,688 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 13668
+INFO 2026-02-24 12:42:51,688 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:42:54,735 django.server [rid= uid= ip=]   - "GET /admin/logs/ HTTP/1.1" 200 31638
+INFO 2026-02-24 12:42:57,680 django.server [rid= uid= ip=]   - "GET /admin/logs/?page=2 HTTP/1.1" 200 22465
+INFO 2026-02-24 12:42:57,704 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:42:57,708 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:43:00,343 django.server [rid= uid= ip=]   - "GET /admin/logs/?page=3 HTTP/1.1" 200 22498
+INFO 2026-02-24 12:43:03,825 django.server [rid= uid= ip=]   - "GET /admin/logs/?page=4 HTTP/1.1" 200 22502
+INFO 2026-02-24 12:43:03,849 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:43:03,851 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:43:10,823 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14570
+INFO 2026-02-24 12:43:10,844 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:43:10,852 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:43:13,584 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 24185
+INFO 2026-02-24 12:43:16,845 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 24185
+INFO 2026-02-24 12:43:17,479 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 24185
+INFO 2026-02-24 12:43:17,530 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:43:17,532 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:43:20,289 django.server [rid= uid= ip=]   - "POST /admin/feature-flags/ HTTP/1.1" 302 0
+INFO 2026-02-24 12:43:20,313 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 24319
+INFO 2026-02-24 12:43:23,426 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 24020
+INFO 2026-02-24 12:43:24,067 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 24020
+INFO 2026-02-24 12:43:24,424 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 24020
+INFO 2026-02-24 12:43:36,163 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 24020
+INFO 2026-02-24 12:43:36,184 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:43:36,187 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:43:39,391 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14570
+INFO 2026-02-24 12:43:46,537 django.server [rid= uid= ip=]   - "GET /admin/templates/create/ HTTP/1.1" 200 4235
+INFO 2026-02-24 12:43:46,564 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-02-24 12:43:46,565 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-02-24 12:43:49,208 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 12976
+INFO 2026-02-24 12:43:54,085 django.server [rid= uid= ip=]   - "GET /admin/templates/?search=&active=&per_page=25&sort=created_at&dir=desc HTTP/1.1" 200 13156

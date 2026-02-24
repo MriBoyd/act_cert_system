@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% block title %}QR Scanner{% endblock %}
+
+{% block content %}
+<div class="row g-4 justify-content-center">
+    <div class="col-lg-8">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body p-4">
+                <h4 class="mb-2"><i class="bi bi-qr-code-scan me-1"></i>QR Scanner</h4>
+                <p class="text-muted">Scan a QR code with your camera. If it contains a verification link, it opens automatically.</p>
+                <div id="secureContextWarning" class="alert alert-warning d-none" role="alert">
+                    Camera scanning on mobile Chrome requires a secure origin (HTTPS) or localhost. Open this page via HTTPS, or use "Scan from Image" below.
+                </div>
+                <div class="mb-3">
+                    <label for="cameraSelect" class="form-label">Camera</label>
+                    <select id="cameraSelect" class="form-select">
+                        <option value="">Auto-select camera</option>
+                    </select>
+                </div>
+                <div id="reader" class="qr-reader-box mb-3"></div>
+                <div id="scanResult" class="small text-muted">Waiting for scan...</div>
+                <div class="mt-3 d-flex gap-2">
+                    <button id="startScanner" type="button" class="btn btn-primary btn-sm"><i class="bi bi-camera-video me-1"></i>Start Scanner</button>
+                    <button id="stopScanner" type="button" class="btn btn-outline-secondary btn-sm"><i class="bi bi-stop-circle me-1"></i>Stop Scanner</button>
+                </div>
+                <hr />
+                <div>
+                    <label for="scanImageInput" class="form-label">Scan from Image</label>
+                    <input id="scanImageInput" type="file" class="form-control" accept="image/*" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+<script>
+    const scannerElementId = 'reader';
+    const resultElement = document.getElementById('scanResult');
+    const cameraSelect = document.getElementById('cameraSelect');
+    const warningElement = document.getElementById('secureContextWarning');
+    const imageInput = document.getElementById('scanImageInput');
+    let html5QrCode = null;
+
+    function redirectIfVerificationLink(decodedText) {
+        const verifyPath = '/verify/';
+        if (decodedText.includes(verifyPath)) {
+            window.location.href = decodedText;
+        }
+    }
+
+    function onScanSuccess(decodedText) {
+        resultElement.textContent = 'Scanned: ' + decodedText;
+        redirectIfVerificationLink(decodedText);
+    }
+
+    async function loadCameras() {
+        try {
+            const cameras = await Html5Qrcode.getCameras();
+            cameras.forEach((camera) => {
+                const option = document.createElement('option');
+                option.value = camera.id;
+                option.textContent = camera.label || `Camera ${cameraSelect.options.length}`;
+                cameraSelect.appendChild(option);
+            });
+
+            const backCamera = cameras.find((camera) => /back|rear|environment/i.test(camera.label || ''));
+            if (backCamera) {
+                cameraSelect.value = backCamera.id;
+            }
+        } catch (error) {
+            resultElement.textContent = 'Unable to list cameras. Grant camera permission and retry.';
+        }
+    }
+
+    async function startScanner() {
+        if (!html5QrCode) {
+            html5QrCode = new Html5Qrcode(scannerElementId);
+        }
+
+        try {
+            const selectedCameraId = cameraSelect.value;
+            await html5QrCode.start(
+                selectedCameraId || { facingMode: { exact: 'environment' } },
+                { fps: 10, qrbox: { width: 250, height: 250 } },
+                onScanSuccess
+            );
+            resultElement.textContent = 'Scanner started.';
+        } catch (error) {
+            try {
+                await html5QrCode.start(
+                    cameraSelect.value || { facingMode: 'environment' },
+                    { fps: 10, qrbox: { width: 250, height: 250 } },
+                    onScanSuccess
+                );
+                resultElement.textContent = 'Scanner started.';
+            } catch (fallbackError) {
+                resultElement.textContent = 'Unable to start scanner: ' + fallbackError;
+            }
+        }
+    }
+
+    async function stopScanner() {
+        if (!html5QrCode) {
+            return;
+        }
+
+        try {
+            await html5QrCode.stop();
+            resultElement.textContent = 'Scanner stopped.';
+        } catch (error) {
+            resultElement.textContent = 'Unable to stop scanner: ' + error;
+        }
+    }
+
+    async function scanFromImage(event) {
+        const file = event.target.files && event.target.files[0];
+        if (!file) {
+            return;
+        }
+
+        if (!html5QrCode) {
+            html5QrCode = new Html5Qrcode(scannerElementId);
+        }
+
+        try {
+            const decodedText = await html5QrCode.scanFile(file, true);
+            resultElement.textContent = 'Scanned from image: ' + decodedText;
+            redirectIfVerificationLink(decodedText);
+        } catch (error) {
+            resultElement.textContent = 'Unable to scan image: ' + error;
+        }
+    }
+
+    if (!window.isSecureContext && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+        warningElement.classList.remove('d-none');
+    }
+
+    loadCameras();
+
+    document.getElementById('startScanner').addEventListener('click', startScanner);
+    document.getElementById('stopScanner').addEventListener('click', stopScanner);
+    imageInput.addEventListener('change', scanFromImage);
+</script>
+{% endblock %}

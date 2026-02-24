@@ -1,0 +1,8 @@
+INFO 2026-02-24 08:56:30,620 security [rid=212693693e974bb9a5776c3abab52d50 uid= ip=172.20.82.123] POST /django-admin/login/ - event=auth_login_success username=mriboy
+INFO 2026-02-24 08:59:02,976 security [rid=7784183eddb7475f9cb295b9217fc495 uid= ip=172.20.79.75] POST /login/ - event=auth_login_success username=mriboy
+INFO 2026-02-24 09:15:14,461 security [rid=99d04698a4d34f35b224a9b5c3e25d25 uid= ip=127.0.0.1] POST /login/ - event=auth_login_success username=mriboy
+INFO 2026-02-24 12:07:10,702 security [rid=4961cd0e217a47488f52a69120a8d6f6 uid= ip=127.0.0.1] POST /login/ - event=auth_login_success username=mriboy
+INFO 2026-02-24 12:26:46,045 security [rid=18e1b7865c6f4a37aff1b8852bdcd322 uid= ip=127.0.0.1] POST /logout/ - event=auth_logout username=mriboy
+INFO 2026-02-24 12:28:48,542 security [rid=516a1412a8b244b4be391d45546e5f76 uid= ip=127.0.0.1] POST /login/ - event=auth_login_success username=mriboy
+INFO 2026-02-24 12:29:17,062 security [rid=30706b93b0444ff28d977d99ea3bfc70 uid= ip=127.0.0.1] POST /logout/ - event=auth_logout username=mriboy
+INFO 2026-02-24 12:29:52,806 security [rid=5d810594ac794c67aceec9127ed3788c uid= ip=127.0.0.1] POST /login/ - event=auth_login_success username=mriboy
