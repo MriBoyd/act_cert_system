@@ -61,6 +61,9 @@ class Certificate(models.Model):
     png_file = models.FileField(upload_to="certificates/images/", blank=True)
     jpg_file = models.FileField(upload_to="certificates/images/", blank=True)
 
+    logo_image = models.ImageField(upload_to="certificates/overlays/", blank=True)
+    signature_image = models.ImageField(upload_to="certificates/overlays/", blank=True)
+
     issued_by = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.PROTECT,
@@ -152,3 +155,23 @@ class FeatureFlagOverride(models.Model):
 
     def __str__(self) -> str:
         return f"{self.name}={'on' if self.enabled else 'off'}"
+
+
+class CertificateOverlayImage(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    certificate = models.ForeignKey(
+        Certificate,
+        on_delete=models.CASCADE,
+        related_name="overlay_images",
+    )
+    name = models.CharField(max_length=64, blank=True)
+    image = models.ImageField(upload_to="certificates/overlays/")
+    order = models.PositiveSmallIntegerField(default=0, db_index=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["order", "created_at"]
+
+    def __str__(self) -> str:
+        return f"{self.certificate_id}:{self.name or self.image.name}"

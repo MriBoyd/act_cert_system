@@ -10,7 +10,21 @@
                 <p class="text-muted">Certificate ID: {{ certificate.id }}</p>
                 <form method="post">
                     {% csrf_token %}
-                    {{ form.as_p }}
+                    {% if form.non_field_errors %}
+                        <div class="text-danger mb-2">{{ form.non_field_errors }}</div>
+                    {% endif %}
+                    {% for field in form %}
+                        {% if field.is_hidden %}
+                            {{ field }}
+                        {% else %}
+                            <p>
+                                {{ field.label_tag }}{% if field.field.required %} <span class="text-danger">*</span>{% endif %}
+                                {{ field }}
+                                {% if field.help_text %}<small class="form-text text-muted">{{ field.help_text }}</small>{% endif %}
+                                {% for error in field.errors %}<div class="text-danger small">{{ error }}</div>{% endfor %}
+                            </p>
+                        {% endif %}
+                    {% endfor %}
                     <button class="btn btn-primary" type="submit"><i class="bi bi-check2-circle me-1"></i>Update Status</button>
                 </form>
             </div>

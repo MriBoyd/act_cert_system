@@ -592,8 +592,14 @@ def bulk_certificate_actions(request):
             "qr_code_image",
             "png_file",
             "jpg_file",
+            "logo_image",
+            "signature_image",
         )
     )
+    cert_overlay_files = {
+        c.id: [oi.image for oi in c.overlay_images.all()]
+        for c in Certificate.objects.filter(id__in=[c.id for c in certs]).prefetch_related("overlay_images")
+    }
     files_to_cleanup: list[tuple] = []
     deleted = 0
     with transaction.atomic():
@@ -604,6 +610,8 @@ def bulk_certificate_actions(request):
                     cert.qr_code_image,
                     getattr(cert, "png_file", None),
                     getattr(cert, "jpg_file", None),
+                    getattr(cert, "logo_image", None),
+                    getattr(cert, "signature_image", None),
                 )
             )
             cert.delete()
@@ -612,6 +620,9 @@ def bulk_certificate_actions(request):
         def _cleanup_all():
             for batch in files_to_cleanup:
                 _delete_storage_files(*batch)
+
+            for overlay_list in cert_overlay_files.values():
+                _delete_storage_files(*overlay_list)
 
         transaction.on_commit(_cleanup_all)
 
@@ -637,6 +648,9 @@ def delete_certificate(request, certificate_uuid):
     qr_file = cert.qr_code_image
     png_file = getattr(cert, "png_file", None)
     jpg_file = getattr(cert, "jpg_file", None)
+    logo_file = getattr(cert, "logo_image", None)
+    signature_file = getattr(cert, "signature_image", None)
+    overlay_files = [oi.image for oi in cert.overlay_images.all()]
 
     cert_serial = cert.serial_number
     cert_id = str(cert.id)
@@ -645,7 +659,8 @@ def delete_certificate(request, certificate_uuid):
         cert.delete()
 
         def _cleanup():
-            _delete_storage_files(pdf_file, qr_file, png_file, jpg_file)
+            _delete_storage_files(pdf_file, qr_file, png_file, jpg_file, logo_file, signature_file)
+            _delete_storage_files(*overlay_files)
 
         transaction.on_commit(_cleanup)
 
@@ -697,7 +712,7 @@ def delete_template(request, template_uuid):
 @require_feature("certificate_generation")
 def generate_certificate_view(request):
     if request.method == "POST":
-        form = CertificateGenerateForm(request.POST)
+        form = CertificateGenerateForm(request.POST, request.FILES)
         if form.is_valid():
             try:
                 certificate = create_certificate(
@@ -708,6 +723,9 @@ def generate_certificate_view(request):
                     course_name=form.cleaned_data["course_name"],
                     issue_date=form.cleaned_data["issue_date"],
                     serial_number=form.cleaned_data["serial_number"],
+                    logo_image=form.cleaned_data.get("logo_image"),
+                    signature_image=form.cleaned_data.get("signature_image"),
+                    extra_images=form.cleaned_data.get("extra_images") or [],
                 )
                 audit_logger.info(
                     "event=certificate_generated certificate_id=%s serial=%s template_id=%s",
@@ -857,7 +875,15 @@ def certificate_list(request):
 
     certificates = (
         Certificate.objects.select_related("template", "issued_by")
-        .defer("metadata", "pdf_file", "qr_code_image", "png_file", "jpg_file")
+        .defer(
+            "metadata",
+            "pdf_file",
+            "qr_code_image",
+            "png_file",
+            "jpg_file",
+            "logo_image",
+            "signature_image",
+        )
         .order_by(order_field, "-created_at")
     )
 

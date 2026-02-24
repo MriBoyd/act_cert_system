@@ -3,6 +3,7 @@ from django.db import IntegrityError, transaction
 from django.urls import reverse
 
 from apps.certificates.models import Certificate
+from apps.certificates.models import CertificateOverlayImage
 from apps.certificates.services.image_generator import generate_certificate_image
 from apps.certificates.services.pdf_generator import generate_certificate_pdf
 from apps.certificates.services.qr_service import generate_qr_image
@@ -13,7 +14,19 @@ class DuplicateCertificateError(Exception):
 
 
 @transaction.atomic
-def create_certificate(*, template, issued_by, recipient_name, recipient_email, course_name, issue_date, serial_number):
+def create_certificate(
+    *,
+    template,
+    issued_by,
+    recipient_name,
+    recipient_email,
+    course_name,
+    issue_date,
+    serial_number,
+    logo_image=None,
+    signature_image=None,
+    extra_images=None,
+):
     try:
         certificate = Certificate.objects.create(
             template=template,
@@ -36,6 +49,23 @@ def create_certificate(*, template, issued_by, recipient_name, recipient_email, 
     qr_image = generate_qr_image(verification_url=verification_url, cert_uuid=certificate.id)
     certificate.qr_code_image.save(qr_image.name, qr_image, save=False)
 
+    if logo_image:
+        certificate.logo_image.save(logo_image.name, logo_image, save=False)
+    if signature_image:
+        certificate.signature_image.save(signature_image.name, signature_image, save=False)
+
+    certificate.save(update_fields=["qr_code_image", "logo_image", "signature_image", "updated_at"])
+
+    if extra_images:
+        for index, f in enumerate(list(extra_images), start=1):
+            # Keep name short and stable; default to filename.
+            CertificateOverlayImage.objects.create(
+                certificate=certificate,
+                name=(getattr(f, "name", "") or "")[:64],
+                image=f,
+                order=index,
+            )
+
     pdf_file = generate_certificate_pdf(certificate)
     certificate.pdf_file.save(pdf_file.name, pdf_file, save=False)
 
@@ -45,5 +75,5 @@ def create_certificate(*, template, issued_by, recipient_name, recipient_email, 
     jpg_file = generate_certificate_image(certificate, fmt="JPEG")
     certificate.jpg_file.save(jpg_file.name, jpg_file, save=False)
 
-    certificate.save(update_fields=["qr_code_image", "pdf_file", "png_file", "jpg_file", "updated_at"])
+    certificate.save(update_fields=["pdf_file", "png_file", "jpg_file", "updated_at"])
     return certificate

@@ -6,6 +6,19 @@ from django import forms
 from .models import Certificate, CertificateTemplate
 
 
+class MultipleFileInput(forms.ClearableFileInput):
+    allow_multiple_selected = True
+
+
+class MultipleImageField(forms.ImageField):
+    def clean(self, data, initial=None):
+        if not data:
+            return []
+        if not isinstance(data, (list, tuple)):
+            data = [data]
+        return [super().clean(item, initial) for item in data]
+
+
 class CertificateTemplateForm(forms.ModelForm):
     class Meta:
         model = CertificateTemplate
@@ -31,6 +44,26 @@ class CertificateGenerateForm(forms.Form):
     course_name = forms.CharField(max_length=255, widget=forms.TextInput(attrs={"class": "form-control"}))
     issue_date = forms.DateField(widget=forms.DateInput(attrs={"class": "form-control", "type": "date"}))
     serial_number = forms.CharField(max_length=100, widget=forms.TextInput(attrs={"class": "form-control"}))
+
+    logo_image = forms.ImageField(required=False, widget=forms.ClearableFileInput(attrs={"class": "form-control"}))
+    signature_image = forms.ImageField(
+        required=False,
+        widget=forms.ClearableFileInput(attrs={"class": "form-control"}),
+    )
+
+    extra_images = MultipleImageField(
+        required=False,
+        widget=MultipleFileInput(attrs={"class": "form-control", "multiple": True}),
+        help_text="Optional: upload additional overlay images (multiple allowed).",
+    )
+
+    def clean_extra_images(self):
+        files = self.cleaned_data.get("extra_images") or []
+        for f in files:
+            content_type = getattr(f, "content_type", "") or ""
+            if content_type and not content_type.startswith("image/"):
+                raise forms.ValidationError("All extra uploads must be images.")
+        return files
 
 
 class BulkCertificateUploadForm(forms.Form):

@@ -10,6 +10,7 @@ from django.urls import reverse
 from apps.certificates.models import Certificate, VerificationLog
 from apps.certificates.services.certificate_service import create_certificate
 from apps.certificates.tests.utils import make_admin_user, make_template
+from apps.certificates.tests.utils import make_image
 
 
 class AdminCertificateViewsTests(TestCase):
@@ -19,6 +20,9 @@ class AdminCertificateViewsTests(TestCase):
         self.client.login(username=self.admin.username, password="pass12345")
 
     def test_generate_certificate_view_creates_certificate(self):
+        logo = make_image("logo.png")
+        extra_1 = make_image("extra-1.png")
+        extra_2 = make_image("extra-2.png")
         resp = self.client.post(
             reverse("admin-generate-certificate"),
             data={
@@ -28,6 +32,8 @@ class AdminCertificateViewsTests(TestCase):
                 "course_name": "Django 101",
                 "issue_date": "2025-01-01",
                 "serial_number": "GEN-001",
+                "logo_image": logo,
+                "extra_images": [extra_1, extra_2],
             },
         )
         self.assertEqual(resp.status_code, 302)
@@ -37,6 +43,8 @@ class AdminCertificateViewsTests(TestCase):
         cert = Certificate.objects.get(serial_number="GEN-001")
         self.assertTrue(bool(cert.pdf_file))
         self.assertTrue(bool(cert.qr_code_image))
+        self.assertTrue(bool(cert.logo_image))
+        self.assertEqual(cert.overlay_images.count(), 2)
 
     def test_bulk_generate_creates_multiple_certificates(self):
         csv_content = (

@@ -79,6 +79,7 @@ def generate_certificate_image(certificate, *, fmt: str = "PNG", dpi: int = 300)
         return _field_value(certificate, field_name)
 
     qr_drawn = False
+    overlays_drawn = {"logo_image": False, "signature_image": False}
     for field in certificate.template.dynamic_fields:
         name = field.get("name")
         if not name:
@@ -106,6 +107,71 @@ def generate_certificate_image(certificate, *, fmt: str = "PNG", dpi: int = 300)
             qr_resized = qr_image.resize((size_px, size_px))
             background.paste(qr_resized, (x_px, y_px), qr_resized)
             qr_drawn = True
+            continue
+
+        if name in {"logo", "logo_image", "signature", "signature_image"} or field.get("type") == "image":
+            if name in {"logo", "logo_image"}:
+                overlay_field = getattr(certificate, "logo_image", None)
+                overlay_key = "logo_image"
+                default_w_pt = 120
+                default_h_pt = 120
+                default_x_pt = 36
+                default_y_pt = page_h_pt - default_h_pt - 36
+            elif name in {"signature", "signature_image"}:
+                overlay_field = getattr(certificate, "signature_image", None)
+                overlay_key = "signature_image"
+                default_w_pt = 160
+                default_h_pt = 60
+                default_x_pt = 36
+                default_y_pt = 36
+            else:
+                overlay_field = None
+                overlay_key = None
+                default_w_pt = 120
+                default_h_pt = 120
+                default_x_pt = 36
+                default_y_pt = page_h_pt - default_h_pt - 36
+
+            overlay_img = None
+            overlay_path = None
+            if overlay_field and getattr(overlay_field, "name", ""):
+                try:
+                    overlay_path = overlay_field.path
+                except ValueError:
+                    overlay_path = None
+
+            if overlay_path:
+                p = Path(overlay_path)
+                if p.exists():
+                    try:
+                        overlay_img = Image.open(p).convert("RGBA")
+                    except Exception:  # noqa: BLE001
+                        overlay_img = None
+
+            if overlay_img is None:
+                continue
+
+            w_pt = float(field.get("width", field.get("w", default_w_pt)))
+            h_pt = float(field.get("height", field.get("h", default_h_pt)))
+            x_pt = float(field.get("x", default_x_pt))
+            y_pt = float(field.get("y", default_y_pt))
+
+            x_px, y_px_from_bottom, sx, sy = _pdf_points_to_pixels(
+                x_pt=x_pt,
+                y_pt=y_pt,
+                page_w_pt=page_w_pt,
+                page_h_pt=page_h_pt,
+                img_w_px=img_w_px,
+                img_h_px=img_h_px,
+            )
+            w_px = max(1, int(round(w_pt * sx)))
+            h_px = max(1, int(round(h_pt * sy)))
+            y_px = int(round(img_h_px - y_px_from_bottom - h_px))
+
+            overlay_resized = overlay_img.resize((w_px, h_px))
+            background.paste(overlay_resized, (x_px, y_px), overlay_resized)
+            if overlay_key:
+                overlays_drawn[overlay_key] = True
             continue
 
         x_pt = float(field.get("x", 100))
@@ -151,6 +217,107 @@ def generate_certificate_image(certificate, *, fmt: str = "PNG", dpi: int = 300)
         y_px = int(round(img_h_px - y_px_from_bottom - size_px))
         qr_resized = qr_image.resize((size_px, size_px))
         background.paste(qr_resized, (x_px, y_px), qr_resized)
+
+    # Default overlays if not drawn via dynamic_fields
+    def _try_default_overlay(field_name: str, *, x_pt: float, y_pt: float, w_pt: float, h_pt: float):
+        overlay_field = getattr(certificate, field_name, None)
+        if not overlay_field or not getattr(overlay_field, "name", ""):
+            return
+        try:
+            overlay_path = overlay_field.path
+        except ValueError:
+            return
+
+        p = Path(overlay_path)
+        if not p.exists():
+            return
+        try:
+            overlay_img = Image.open(p).convert("RGBA")
+        except Exception:  # noqa: BLE001
+            return
+
+        x_px, y_px_from_bottom, sx, sy = _pdf_points_to_pixels(
+            x_pt=x_pt,
+            y_pt=y_pt,
+            page_w_pt=page_w_pt,
+            page_h_pt=page_h_pt,
+            img_w_px=img_w_px,
+            img_h_px=img_h_px,
+        )
+        w_px = max(1, int(round(w_pt * sx)))
+        h_px = max(1, int(round(h_pt * sy)))
+        y_px = int(round(img_h_px - y_px_from_bottom - h_px))
+        overlay_resized = overlay_img.resize((w_px, h_px))
+        background.paste(overlay_resized, (x_px, y_px), overlay_resized)
+
+    if not overlays_drawn["logo_image"]:
+        _try_default_overlay(
+            "logo_image",
+            x_pt=36,
+            y_pt=page_h_pt - 120 - 36,
+            w_pt=120,
+            h_pt=120,
+        )
+
+    if not overlays_drawn["signature_image"]:
+        _try_default_overlay(
+            "signature_image",
+            x_pt=36,
+            y_pt=36,
+            w_pt=160,
+            h_pt=60,
+        )
+
+    # Dynamic extra overlays (default placement: stacked at top-right)
+    try:
+        extra_overlays = list(getattr(certificate, "overlay_images", []).all())
+    except Exception:  # noqa: BLE001
+        extra_overlays = []
+
+    if extra_overlays:
+        # Default sizes in PDF points
+        w_pt = 80
+        h_pt = 80
+        gap_pt = 10
+        margin_pt = 36
+
+        x_pt = page_w_pt - margin_pt - w_pt
+        y_pt = page_h_pt - margin_pt - h_pt
+
+        for overlay in extra_overlays:
+            image_field = getattr(overlay, "image", None)
+            if not image_field or not getattr(image_field, "name", ""):
+                continue
+            try:
+                overlay_path = image_field.path
+            except ValueError:
+                continue
+            p = Path(overlay_path)
+            if not p.exists():
+                continue
+            try:
+                overlay_img = Image.open(p).convert("RGBA")
+            except Exception:  # noqa: BLE001
+                continue
+
+            x_px, y_px_from_bottom, sx, sy = _pdf_points_to_pixels(
+                x_pt=x_pt,
+                y_pt=y_pt,
+                page_w_pt=page_w_pt,
+                page_h_pt=page_h_pt,
+                img_w_px=img_w_px,
+                img_h_px=img_h_px,
+            )
+            w_px = max(1, int(round(w_pt * sx)))
+            h_px = max(1, int(round(h_pt * sy)))
+            y_px = int(round(img_h_px - y_px_from_bottom - h_px))
+
+            overlay_resized = overlay_img.resize((w_px, h_px))
+            background.paste(overlay_resized, (x_px, y_px), overlay_resized)
+
+            y_pt -= (h_pt + gap_pt)
+            if y_pt < margin_pt:
+                break
 
     buf = io.BytesIO()
     fmt_norm = fmt.upper()
