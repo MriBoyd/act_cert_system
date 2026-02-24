@@ -6,7 +6,7 @@ from django.test import TestCase, override_settings
 from django.urls import reverse
 
 from apps.certificates.models import Certificate
-from apps.certificates.tests.utils import make_admin_user, make_template
+from apps.certificates.tests.utils import make_admin_user, make_image, make_template
 from apps.users.models import ApiKey
 
 
@@ -200,6 +200,38 @@ class IntegrationApiTests(TestCase):
             **self._auth_headers(),
         )
         self.assertEqual(delete.status_code, 204)
+
+    def test_create_certificate_with_overlay_images_multipart(self):
+        resp = self.client.post(
+            reverse("api-integration-certificate-create"),
+            data={
+                "template_id": str(self.template.id),
+                "recipient_name": "John",
+                "recipient_email": "john@example.com",
+                "course_name": "Course",
+                "issue_date": "2025-01-01",
+                "serial_number": "INT-IMG-001",
+                "logo_image": make_image("logo.png"),
+                "signature_image": make_image("sig.png"),
+                "extra_images": [make_image("e1.png"), make_image("e2.png")],
+            },
+            **self._auth_headers(),
+        )
+        self.assertEqual(resp.status_code, 201)
+        payload = resp.json()
+        cert_id = payload["certificate_id"]
+
+        cert = Certificate.objects.get(id=cert_id)
+        self.assertTrue(bool(cert.logo_image))
+        self.assertTrue(bool(cert.signature_image))
+        self.assertEqual(cert.overlay_images.count(), 2)
+
+        # Response includes overlay URLs and defaults
+        self.assertIn("logo_image_url", payload)
+        self.assertIn("signature_image_url", payload)
+        self.assertIn("extra_overlays", payload)
+        self.assertEqual(len(payload["extra_overlays"]), 2)
+        self.assertIn("overlay_defaults", payload)
 
     def test_template_create_update_delete(self):
         from apps.certificates.tests.utils import make_image

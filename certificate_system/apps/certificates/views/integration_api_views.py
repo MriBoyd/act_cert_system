@@ -120,6 +120,7 @@ class IntegrationCertificateCreateAPIView(APIView):
     authentication_classes = [ApiKeyAuthentication]
     permission_classes = [ApiKeyAuthenticated, HasApiKeyScope]
     required_scopes = ["certificates:read"]
+    parser_classes = [JSONParser, FormParser, MultiPartParser]
 
     def get(self, request):
         guarded = _feature_guard()
@@ -151,7 +152,7 @@ class IntegrationCertificateCreateAPIView(APIView):
         limit = max(1, min(limit, 500))
         qs = qs[:limit]
 
-        return Response(IntegrationCertificateSerializer(qs, many=True).data)
+        return Response(IntegrationCertificateSerializer(qs, many=True, context={"request": request}).data)
 
     def post(self, request):
         guarded = _feature_guard()
@@ -161,7 +162,21 @@ class IntegrationCertificateCreateAPIView(APIView):
         if not request.auth.has_scope("certificates:write"):
             return Response({"detail": "Missing scope: certificates:write"}, status=status.HTTP_403_FORBIDDEN)
 
-        serializer = IntegrationCertificateCreateSerializer(data=request.data, context={})
+        data = request.data
+        try:
+            data = request.data.copy()
+        except Exception:  # noqa: BLE001
+            data = request.data
+
+        # Ensure repeated multipart keys (extra_images) arrive as a real list for DRF validation.
+        try:
+            extra_files = request.FILES.getlist("extra_images")
+        except Exception:  # noqa: BLE001
+            extra_files = []
+        if hasattr(data, "setlist"):
+            data.setlist("extra_images", extra_files)
+
+        serializer = IntegrationCertificateCreateSerializer(data=data, context={})
         serializer.is_valid(raise_exception=True)
         template = serializer.context["template"]
 
@@ -174,6 +189,9 @@ class IntegrationCertificateCreateAPIView(APIView):
                 course_name=serializer.validated_data["course_name"],
                 issue_date=serializer.validated_data["issue_date"],
                 serial_number=serializer.validated_data["serial_number"],
+                logo_image=serializer.validated_data.get("logo_image"),
+                signature_image=serializer.validated_data.get("signature_image"),
+                extra_images=serializer.validated_data.get("extra_images") or [],
             )
         except DuplicateCertificateError as exc:
             return Response({"detail": str(exc)}, status=status.HTTP_409_CONFLICT)
@@ -182,7 +200,7 @@ class IntegrationCertificateCreateAPIView(APIView):
         base_url = getattr(request, "build_absolute_uri", None)
         verification_url = request.build_absolute_uri(verify_path) if base_url else verify_path
 
-        payload = IntegrationCertificateSerializer(cert).data
+        payload = IntegrationCertificateSerializer(cert, context={"request": request}).data
         payload["verification_url"] = verification_url
         payload["pdf_download_url"] = request.build_absolute_uri(
             reverse("api-integration-certificate-pdf", kwargs={"certificate_uuid": cert.id})
@@ -302,7 +320,7 @@ class IntegrationCertificateBulkCreateAPIView(APIView):
             verify_path = reverse("public-verify-detail", kwargs={"certificate_uuid": cert.id})
             verification_url = request.build_absolute_uri(verify_path)
 
-            payload = IntegrationCertificateSerializer(cert).data
+            payload = IntegrationCertificateSerializer(cert, context={"request": request}).data
             payload["verification_url"] = verification_url
             payload["pdf_download_url"] = request.build_absolute_uri(
                 reverse("api-integration-certificate-pdf", kwargs={"certificate_uuid": cert.id})
@@ -335,7 +353,12 @@ class IntegrationCertificateDetailAPIView(APIView):
     required_scopes = ["certificates:read"]
 
     def get_object(self, certificate_uuid):
-        cert = Certificate.objects.select_related("template").filter(id=certificate_uuid).first()
+        cert = (
+            Certificate.objects.select_related("template")
+            .prefetch_related("overlay_images")
+            .filter(id=certificate_uuid)
+            .first()
+        )
         if not cert:
             raise Http404("Certificate not found.")
         return cert
@@ -346,7 +369,7 @@ class IntegrationCertificateDetailAPIView(APIView):
             return guarded
 
         cert = self.get_object(certificate_uuid)
-        return Response(IntegrationCertificateSerializer(cert).data)
+        return Response(IntegrationCertificateSerializer(cert, context={"request": request}).data)
 
     def patch(self, request, certificate_uuid):
         guarded = _feature_guard()
@@ -408,7 +431,7 @@ class IntegrationCertificateDetailAPIView(APIView):
         cert.jpg_file.save(jpg_file.name, jpg_file, save=False)
         cert.save(update_fields=["qr_code_image", "pdf_file", "png_file", "jpg_file", "updated_at"])
 
-        return Response(IntegrationCertificateSerializer(cert).data)
+        return Response(IntegrationCertificateSerializer(cert, context={"request": request}).data)
 
     def delete(self, request, certificate_uuid):
         guarded = _feature_guard()
@@ -455,7 +478,7 @@ class IntegrationCertificateStatusAPIView(APIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
-        return Response(IntegrationCertificateSerializer(cert).data)
+        return Response(IntegrationCertificateSerializer(cert, context={"request": request}).data)
 
 
 class IntegrationCertificatePdfDownloadAPIView(APIView):

@@ -53,6 +53,22 @@ class IntegrationCertificateCreateSerializer(serializers.Serializer):
     issue_date = serializers.DateField()
     serial_number = serializers.CharField(max_length=100)
     metadata = serializers.JSONField(required=False)
+    logo_image = serializers.ImageField(required=False, allow_null=True)
+    signature_image = serializers.ImageField(required=False, allow_null=True)
+    extra_images = serializers.ListField(
+        child=serializers.ImageField(),
+        required=False,
+        allow_empty=True,
+    )
+
+    def validate_metadata(self, value):
+        # Multipart form-data may provide JSON as a string.
+        if isinstance(value, str):
+            try:
+                return json.loads(value)
+            except json.JSONDecodeError as exc:
+                raise serializers.ValidationError("metadata must be valid JSON.") from exc
+        return value
 
     def validate_template_id(self, template_id):
         try:
@@ -82,6 +98,66 @@ class IntegrationCertificateSerializer(serializers.ModelSerializer):
     template_name = serializers.CharField(source="template.name", read_only=True)
     issuer_name = serializers.CharField(source="template.issuer_name", read_only=True)
 
+    logo_image_url = serializers.SerializerMethodField()
+    signature_image_url = serializers.SerializerMethodField()
+    extra_overlays = serializers.SerializerMethodField()
+    overlay_defaults = serializers.SerializerMethodField()
+
+    def _abs_url(self, maybe_relative_url: str | None) -> str | None:
+        if not maybe_relative_url:
+            return None
+        request = self.context.get("request")
+        if request is None:
+            return maybe_relative_url
+        try:
+            return request.build_absolute_uri(maybe_relative_url)
+        except Exception:  # noqa: BLE001
+            return maybe_relative_url
+
+    def get_logo_image_url(self, obj):
+        field = getattr(obj, "logo_image", None)
+        if not field or not getattr(field, "name", ""):
+            return None
+        return self._abs_url(getattr(field, "url", None))
+
+    def get_signature_image_url(self, obj):
+        field = getattr(obj, "signature_image", None)
+        if not field or not getattr(field, "name", ""):
+            return None
+        return self._abs_url(getattr(field, "url", None))
+
+    def get_extra_overlays(self, obj):
+        overlays = []
+        try:
+            qs = obj.overlay_images.all()
+        except Exception:  # noqa: BLE001
+            qs = []
+        for overlay in qs:
+            image_field = getattr(overlay, "image", None)
+            overlays.append(
+                {
+                    "id": str(getattr(overlay, "id", "")),
+                    "order": getattr(overlay, "order", 0),
+                    "name": getattr(overlay, "name", ""),
+                    "image_url": self._abs_url(getattr(image_field, "url", None)) if image_field else None,
+                }
+            )
+        return overlays
+
+    def get_overlay_defaults(self, obj):
+        # Mirrors current generator defaults.
+        return {
+            "logo_image": {"position": "top-left", "width": 120, "height": 120},
+            "signature_image": {"position": "bottom-left", "width": 160, "height": 60},
+            "extra_images": {
+                "position": "top-right",
+                "width": 80,
+                "height": 80,
+                "stack": "down",
+                "gap": 10,
+            },
+        }
+
     class Meta:
         model = Certificate
         fields = [
@@ -98,6 +174,10 @@ class IntegrationCertificateSerializer(serializers.ModelSerializer):
             "is_enabled",
             "created_at",
             "updated_at",
+            "logo_image_url",
+            "signature_image_url",
+            "extra_overlays",
+            "overlay_defaults",
         ]
 
 
