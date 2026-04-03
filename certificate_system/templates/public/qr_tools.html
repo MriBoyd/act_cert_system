@@ -1,145 +1,264 @@
 {% extends 'base.html' %}
-{% block title %}QR Scanner{% endblock %}
+{% block title %}Universal QR Scanner{% endblock %}
 
 {% block content %}
-<div class="row g-4 justify-content-center">
-    <div class="col-lg-8">
-        <div class="card border-0 shadow-sm h-100">
-            <div class="card-body p-4">
-                <h4 class="mb-2"><i class="bi bi-qr-code-scan me-1"></i>QR Scanner</h4>
-                <p class="text-muted">Scan a QR code with your camera. If it contains a verification link, it opens automatically.</p>
-                <div id="secureContextWarning" class="alert alert-warning d-none" role="alert">
-                    Camera scanning on mobile Chrome requires a secure origin (HTTPS) or localhost. Open this page via HTTPS, or use "Scan from Image" below.
+<div class="dashboard-container py-5">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 text-center animate-fade-in">
+            <!-- Header Section -->
+            <div class="mb-5">
+                <div class="d-inline-flex align-items-center justify-content-center bg-soft-primary rounded-circle mb-3" style="width: 80px; height: 80px;">
+                    <i class="bi bi-qr-code-scan display-4 text-primary"></i>
                 </div>
-                <div class="mb-3">
-                    <label for="cameraSelect" class="form-label">Camera</label>
-                    <select id="cameraSelect" class="form-select">
-                        <option value="">Auto-select camera</option>
-                    </select>
+                <h1 class="fw-bold text-dark">Mobile Validator</h1>
+                <p class="text-muted mx-auto" style="max-width: 450px;">
+                    Instantly verify credentials by scanning the secure QR code printed on the official certificate.
+                </p>
+            </div>
+
+            <!-- Scanner Main Card -->
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden mb-4">
+                <div class="card-body p-0 position-relative">
+                    <!-- Scanner Viewport -->
+                    <div id="reader-container" class="bg-dark position-relative overflow-hidden" style="min-height: 380px;">
+                        <div id="reader" style="width: 100%;"></div>
+                        
+                        <!-- Overlay/Guide -->
+                        <div class="scanner-overlay d-flex align-items-center justify-content-center">
+                            <div class="scanner-guide">
+                                <div class="corner top-left"></div>
+                                <div class="corner top-right"></div>
+                                <div class="corner bottom-left"></div>
+                                <div class="corner bottom-right"></div>
+                                <div class="scanner-line"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Status Pager -->
+                        <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-gradient-dark text-white text-center small z-index-10">
+                            <div id="scanStatus" class="opacity-75">
+                                <i class="bi bi-camera-fill me-2"></i>Waiting for camera initialization...
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div id="reader" class="qr-reader-box mb-3"></div>
-                <div id="scanResult" class="small text-muted">Waiting for scan...</div>
-                <div class="mt-3 d-flex gap-2">
-                    <button id="startScanner" type="button" class="btn btn-primary btn-sm"><i class="bi bi-camera-video me-1"></i>Start Scanner</button>
-                    <button id="stopScanner" type="button" class="btn btn-outline-secondary btn-sm"><i class="bi bi-stop-circle me-1"></i>Stop Scanner</button>
+                
+                <!-- Controls -->
+                <div class="card-footer bg-white border-0 p-4">
+                    <div id="secureContextWarning" class="alert bg-soft-warning text-warning border-0 small d-none mb-3 text-start">
+                        <i class="bi bi-shield-exclamation me-2"></i> Camera access requires a secure (HTTPS) connection.
+                    </div>
+
+                    <div class="row g-3 align-items-center mb-4">
+                        <div class="col-sm-8">
+                            <select id="cameraSelect" class="form-select border-0 bg-light rounded-3 py-2">
+                                <option value="">Auto-select Camera</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4 d-grid">
+                            <button id="startScanner" class="btn btn-primary rounded-3 py-2 fw-bold">
+                                <i class="bi bi-play-fill me-1"></i>Start
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-between pt-3 border-top">
+                        <label for="scanImageInput" class="btn btn-outline-dark btn-sm rounded-pill px-3 fw-bold">
+                            <i class="bi bi-image me-2"></i>Upload Image
+                        </label>
+                        <input id="scanImageInput" type="file" class="d-none" accept="image/*" />
+                        
+                        <button id="stopScanner" class="btn btn-link text-danger text-decoration-none btn-sm fw-bold">
+                            <i class="bi bi-stop-circle me-1"></i>Stop Camera
+                        </button>
+                    </div>
                 </div>
-                <hr />
-                <div>
-                    <label for="scanImageInput" class="form-label">Scan from Image</label>
-                    <input id="scanImageInput" type="file" class="form-control" accept="image/*" />
+            </div>
+
+            <!-- Hint Section -->
+            <div class="card border-0 bg-soft-primary rounded-4 border-opacity-10 border-primary">
+                <div class="card-body p-3">
+                    <p class="small mb-0 text-primary">
+                        <i class="bi bi-info-circle-fill me-1"></i> 
+                        Point your camera at the certificate QR code. The system will automatically decode and redirect to the verification registry.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<style>
+#reader video {
+    object-fit: cover !important;
+}
+
+#reader-container {
+    background: #000;
+}
+
+.bg-gradient-dark {
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+}
+
+.scanner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.scanner-guide {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.corner {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border: 4px solid #3b82f6;
+}
+
+.top-left { top: -2px; left: -2px; border-right: 0; border-bottom: 0; border-radius: 8px 0 0 0; }
+.top-right { top: -2px; right: -2px; border-left: 0; border-bottom: 0; border-radius: 0 8px 0 0; }
+.bottom-left { bottom: -2px; left: -2px; border-right: 0; border-top: 0; border-radius: 0 0 0 8px; }
+.bottom-right { bottom: -2px; right: -2px; border-left: 0; border-top: 0; border-radius: 0 0 8px 0; }
+
+.scanner-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+    animation: scanAnimation 2s linear infinite;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+@keyframes scanAnimation {
+    0% { top: 0; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+.z-index-10 { z-index: 10; }
+
+.animate-fade-in {
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
 <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 <script>
-    const scannerElementId = 'reader';
-    const resultElement = document.getElementById('scanResult');
+document.addEventListener('DOMContentLoaded', function() {
+    const readerId = 'reader';
+    const scanStatus = document.getElementById('scanStatus');
     const cameraSelect = document.getElementById('cameraSelect');
-    const warningElement = document.getElementById('secureContextWarning');
+    const startBtn = document.getElementById('startScanner');
+    const stopBtn = document.getElementById('stopScanner');
     const imageInput = document.getElementById('scanImageInput');
+    const warning = document.getElementById('secureContextWarning');
+    
     let html5QrCode = null;
 
-    function redirectIfVerificationLink(decodedText) {
-        const verifyPath = '/verify/';
-        if (decodedText.includes(verifyPath)) {
-            window.location.href = decodedText;
-        }
+    if (!window.isSecureContext) {
+        warning.classList.remove('d-none');
     }
 
     function onScanSuccess(decodedText) {
-        resultElement.textContent = 'Scanned: ' + decodedText;
-        redirectIfVerificationLink(decodedText);
-    }
-
-    async function loadCameras() {
-        try {
-            const cameras = await Html5Qrcode.getCameras();
-            cameras.forEach((camera) => {
-                const option = document.createElement('option');
-                option.value = camera.id;
-                option.textContent = camera.label || `Camera ${cameraSelect.options.length}`;
-                cameraSelect.appendChild(option);
-            });
-
-            const backCamera = cameras.find((camera) => /back|rear|environment/i.test(camera.label || ''));
-            if (backCamera) {
-                cameraSelect.value = backCamera.id;
+        scanStatus.innerHTML = '<span class="text-success fw-bold"><i class="bi bi-check-circle-fill me-2"></i>Code Detected! Redirecting...</span>';
+        
+        // Handle redirect if verification link
+        const verifyPath = '/verify/';
+        if (decodedText.includes(verifyPath)) {
+            window.location.href = decodedText;
+        } else {
+            // If it's just the plain UUID, try to redirect
+            if (decodedText.length > 30) {
+                 window.location.href = verifyPath + '?certificate_id=' + encodeURIComponent(decodedText);
             }
-        } catch (error) {
-            resultElement.textContent = 'Unable to list cameras. Grant camera permission and retry.';
         }
     }
 
-    async function startScanner() {
-        if (!html5QrCode) {
-            html5QrCode = new Html5Qrcode(scannerElementId);
+    async function initializeCameras() {
+        try {
+            const devices = await Html5Qrcode.getCameras();
+            if (devices && devices.length) {
+                devices.forEach(device => {
+                    const option = document.createElement('option');
+                    option.value = device.id;
+                    option.text = device.label || `Camera ${cameraSelect.options.length}`;
+                    cameraSelect.appendChild(option);
+                });
+                
+                // Try to select environment/back camera by default
+                const backCam = devices.find(d => /back|rear|environment/i.test(d.label));
+                if (backCam) cameraSelect.value = backCam.id;
+            }
+            scanStatus.innerHTML = '<i class="bi bi-camera-fill me-2"></i>Camera ready. Click Start to begin.';
+        } catch (err) {
+            scanStatus.innerHTML = '<span class="text-danger"><i class="bi bi-exclamation-triangle me-2"></i>No cameras found or permission denied.</span>';
         }
+    }
+
+    startBtn.addEventListener('click', async () => {
+        if (!html5QrCode) html5QrCode = new Html5Qrcode(readerId);
+        
+        const cameraId = cameraSelect.value;
+        const config = {
+            fps: 15,
+            qrbox: { width: 250, height: 250 },
+            aspectRatio: 1.0
+        };
 
         try {
-            const selectedCameraId = cameraSelect.value;
+            scanStatus.innerHTML = '<div class="spinner-border spinner-border-sm me-2"></div>Accessing camera...';
             await html5QrCode.start(
-                selectedCameraId || { facingMode: { exact: 'environment' } },
-                { fps: 10, qrbox: { width: 250, height: 250 } },
+                cameraId || { facingMode: "environment" },
+                config,
                 onScanSuccess
             );
-            resultElement.textContent = 'Scanner started.';
-        } catch (error) {
-            try {
-                await html5QrCode.start(
-                    cameraSelect.value || { facingMode: 'environment' },
-                    { fps: 10, qrbox: { width: 250, height: 250 } },
-                    onScanSuccess
-                );
-                resultElement.textContent = 'Scanner started.';
-            } catch (fallbackError) {
-                resultElement.textContent = 'Unable to start scanner: ' + fallbackError;
-            }
+            scanStatus.innerHTML = '<span class="text-success"><i class="bi bi-record-circle-fill me-2 animate-pulse"></i>Scanning in progress...</span>';
+        } catch (err) {
+            scanStatus.innerHTML = '<span class="text-danger"><i class="bi bi-x-circle-fill me-2"></i>Error: ' + err + '</span>';
         }
-    }
+    });
 
-    async function stopScanner() {
-        if (!html5QrCode) {
-            return;
-        }
-
-        try {
+    stopBtn.addEventListener('click', async () => {
+        if (html5QrCode && html5QrCode.isScanning) {
             await html5QrCode.stop();
-            resultElement.textContent = 'Scanner stopped.';
-        } catch (error) {
-            resultElement.textContent = 'Unable to stop scanner: ' + error;
+            scanStatus.innerHTML = '<i class="bi bi-camera-off me-2"></i>Scanner stopped.';
         }
-    }
+    });
 
-    async function scanFromImage(event) {
-        const file = event.target.files && event.target.files[0];
-        if (!file) {
-            return;
-        }
+    imageInput.addEventListener('change', e => {
+        if (e.target.files.length === 0) return;
+        
+        if (!html5QrCode) html5QrCode = new Html5Qrcode(readerId);
+        
+        const imageFile = e.target.files[0];
+        scanStatus.innerHTML = '<div class="spinner-border spinner-border-sm me-2"></div>Decoding image...';
+        
+        html5QrCode.scanFile(imageFile, true)
+            .then(onScanSuccess)
+            .catch(err => {
+                scanStatus.innerHTML = '<span class="text-danger"><i class="bi bi-x-circle-fill me-2"></i>No valid QR found in image.</span>';
+            });
+    });
 
-        if (!html5QrCode) {
-            html5QrCode = new Html5Qrcode(scannerElementId);
-        }
-
-        try {
-            const decodedText = await html5QrCode.scanFile(file, true);
-            resultElement.textContent = 'Scanned from image: ' + decodedText;
-            redirectIfVerificationLink(decodedText);
-        } catch (error) {
-            resultElement.textContent = 'Unable to scan image: ' + error;
-        }
-    }
-
-    if (!window.isSecureContext && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
-        warningElement.classList.remove('d-none');
-    }
-
-    loadCameras();
-
-    document.getElementById('startScanner').addEventListener('click', startScanner);
-    document.getElementById('stopScanner').addEventListener('click', stopScanner);
-    imageInput.addEventListener('change', scanFromImage);
+    initializeCameras();
+});
 </script>
 {% endblock %}

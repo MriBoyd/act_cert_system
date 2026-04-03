@@ -1,65 +1,159 @@
 {% extends 'base.html' %}
-{% block title %}Certificate Verification{% endblock %}
+{% block title %}Verify Authenticity{% endblock %}
 
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-lg-8">
-        <div class="card border-0 shadow-sm">
-            <div class="card-body p-4">
-                <h2 class="mb-2"><i class="bi bi-search me-1"></i>Verify Certificate</h2>
-                <p class="text-muted">Enter the Certificate UUID to verify authenticity.</p>
+<div class="dashboard-container py-5">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8">
+            <!-- Header Section -->
+            <div class="text-center mb-5 animate-fade-in">
+                <div class="d-inline-flex align-items-center justify-content-center bg-soft-primary rounded-circle mb-3" style="width: 80px; height: 80px;">
+                    <i class="bi bi-shield-check display-4 text-primary"></i>
+                </div>
+                <h1 class="fw-bold text-dark">Credential Verification</h1>
+                <p class="text-muted mx-auto" style="max-width: 450px;">
+                    Validate the integrity and authenticity of professional certificates issued through the ACT ecosystem.
+                </p>
+            </div>
 
-                <form method="post" class="mb-4">
-                    {% csrf_token %}
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="certificate_id" placeholder="e.g. 1a2b3c4d-..." required />
-                        <button class="btn btn-primary" type="submit"><i class="bi bi-shield-check me-1"></i>Verify</button>
-                    </div>
-                </form>
-
+            <!-- Verification Card -->
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden mb-4">
+                <div class="card-body p-4 p-md-5">
+                    <form method="post" class="mb-2">
+                        {% csrf_token %}
+                        <label class="form-label small fw-bold text-uppercase opacity-50 mb-3">Certificate Serial or UUID</label>
+                        <div class="input-group input-group-lg shadow-sm rounded-3 overflow-hidden border">
+                            <span class="input-group-text bg-white border-0 ps-4"><i class="bi bi-hash text-muted"></i></span>
+                            <input type="text" class="form-control border-0 px-3" name="certificate_id" placeholder="Enter ID (e.g. 1a2b3c...)" required />
+                            <button class="btn btn-primary px-4 border-0 fw-bold" type="submit">
+                                <span class="d-none d-sm-inline">Verify Identity</span>
+                                <i class="bi bi-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                        <div class="form-text mt-3 text-center small">
+                            <i class="bi bi-info-circle me-1"></i> You can find the unique ID at the bottom of the issued document.
+                        </div>
+                    </form>
+                </div>
+                
                 {% if error %}
-                    <div class="alert alert-danger">{{ error }}</div>
-                {% endif %}
-
-                {% if result and result.certificate %}
-                    <hr />
-                    <h5><i class="bi bi-patch-check me-1"></i>Verification Result</h5>
-                    <div class="verify-summary-card p-3 mb-3">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item px-0"><strong>Name:</strong> {{ result.certificate.recipient_name }}</li>
-                            <li class="list-group-item px-0"><strong>Course:</strong> {{ result.certificate.course_name }}</li>
-                            <li class="list-group-item px-0"><strong>Issuer:</strong> {{ result.certificate.template.issuer_name }}</li>
-                            <li class="list-group-item px-0"><strong>Issue Date:</strong> {{ result.certificate.issue_date }}</li>
-                            <li class="list-group-item px-0"><strong>Status:</strong>
-                                {% if result.is_valid %}
-                                    {% if show_animation %}
-                                        <span class="valid-badge-animated"><i class="bi bi-check-circle-fill"></i>Valid</span>
-                                        <span class="valid-stamp ms-2"><i class="bi bi-patch-check-fill"></i>Verified</span>
-                                    {% else %}
-                                        <span class="badge bg-success">Valid</span>
-                                    {% endif %}
-                                {% else %}
-                                    <span class="badge bg-danger">Revoked / Disabled</span>
-                                {% endif %}
-                            </li>
-                        </ul>
+                <div class="card-footer bg-danger-soft border-0 p-4 text-center">
+                    <div class="d-flex align-items-center justify-content-center text-danger fw-bold">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i> {{ error }}
                     </div>
-
-                    <div class="mt-3">
-                        <h6 class="mb-2"><i class="bi bi-image me-1"></i>Certificate Preview</h6>
-                        {% if result.certificate.pdf_file %}
-                            <object data="{{ result.certificate.pdf_file.url }}" type="application/pdf" class="certificate-preview" height="460">
-                                <a href="{{ result.certificate.pdf_file.url }}" class="btn btn-outline-primary btn-sm mt-2">
-                                    <i class="bi bi-file-earmark-pdf me-1"></i>Open Certificate PDF
-                                </a>
-                            </object>
-                        {% elif result.certificate.template.background_image %}
-                            <img src="{{ result.certificate.template.background_image.url }}" alt="Certificate image" class="certificate-preview" />
-                        {% endif %}
-                    </div>
+                </div>
                 {% endif %}
             </div>
+
+            <!-- Results Section -->
+            {% if result and result.certificate %}
+            <div class="animate-fade-in">
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4">
+                    <div class="card-header bg-white border-0 py-4 px-4 d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0 fw-bold">Verification Result</h5>
+                        {% if result.is_valid %}
+                            <span class="badge rounded-pill bg-success-soft text-success px-3 py-2 border border-success border-opacity-25">
+                                <i class="bi bi-check-circle-fill me-1"></i> AUTHENTIC
+                            </span>
+                        {% else %}
+                            <span class="badge rounded-pill bg-danger-soft text-danger px-3 py-2 border border-danger border-opacity-25">
+                                <i class="bi bi-x-circle-fill me-1"></i> INVALID / REVOKED
+                            </span>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="card-body p-4 bg-light bg-opacity-50">
+                        <div class="row g-4">
+                            <div class="col-sm-6">
+                                <label class="small text-muted text-uppercase fw-bold opacity-50 d-block mb-1">Recipient Name</label>
+                                <div class="h6 fw-bold text-dark mb-0">{{ result.certificate.recipient_name }}</div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="small text-muted text-uppercase fw-bold opacity-50 d-block mb-1">Course / Program</label>
+                                <div class="h6 fw-bold text-dark mb-0">{{ result.certificate.course_name }}</div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="small text-muted text-uppercase fw-bold opacity-50 d-block mb-1">Issuing Authority</label>
+                                <div class="h6 fw-bold text-dark mb-0">{{ result.certificate.template.issuer_name }}</div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="small text-muted text-uppercase fw-bold opacity-50 d-block mb-1">Date of Issuance</label>
+                                <div class="h6 fw-bold text-dark mb-0">{{ result.certificate.issue_date|date:"F d, Y" }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview Area -->
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="card-header bg-white border-0 py-3 px-4">
+                        <h6 class="mb-0 fw-bold"><i class="bi bi-file-earmark-medical me-2 text-primary"></i>Document Preview</h6>
+                    </div>
+                    <div class="card-body p-0 bg-dark position-relative" style="min-height: 400px;">
+                        {% if result.certificate.pdf_file %}
+                            <object data="{{ result.certificate.pdf_file.url }}" type="application/pdf" class="w-100" style="min-height: 500px; border: none;">
+                                <div class="h-100 d-flex flex-column align-items-center justify-content-center p-5 text-white text-center">
+                                    <i class="bi bi-file-earmark-pdf display-1 opacity-25 mb-4"></i>
+                                    <h5>PDF Rendering not supported</h5>
+                                    <p class="small text-white-50">Please download the file to view the full certificate.</p>
+                                    <a href="{{ result.certificate.pdf_file.url }}" class="btn btn-primary rounded-pill px-4 mt-3 shadow-lg">
+                                        <i class="bi bi-download me-2"></i>Download Certified PDF
+                                    </a>
+                                </div>
+                            </object>
+                        {% elif result.certificate.template.background_image %}
+                             <div class="p-3">
+                                <img src="{{ result.certificate.template.background_image.url }}" alt="Certificate preview" class="img-fluid rounded shadow-lg mx-auto d-block" />
+                             </div>
+                        {% endif %}
+                        
+                        {% if result.is_valid %}
+                        <div class="position-absolute bottom-0 end-0 p-4">
+                             <div class="valid-stamp-overlay">
+                                 <i class="bi bi-patch-check-fill text-success fs-1"></i>
+                                 <div class="text-white small fw-bold mt-1 text-center shadow-sm">VERIFIED</div>
+                             </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% if result.certificate.pdf_file %}
+                    <div class="card-footer bg-white border-0 p-3 text-center">
+                         <a href="{{ result.certificate.pdf_file.url }}" class="btn btn-outline-dark btn-sm rounded-pill px-4">
+                             <i class="bi bi-file-pdf me-2"></i>Professional Download (PDF)
+                         </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>
+
+<style>
+.bg-danger-soft { background-color: rgba(239, 68, 68, 0.08); }
+.bg-success-soft { background-color: rgba(16, 185, 129, 0.08); }
+
+.valid-stamp-overlay {
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px);
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.input-group:focus-within {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15) !important;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
 {% endblock %}
