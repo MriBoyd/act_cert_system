@@ -3,6 +3,27 @@
 
 {% block content %}
 <div class="dashboard-container py-4">
+    <!-- Success/Error Messaging -->
+    {% if messages %}
+    <div class="animate-fade-in mb-4">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags|default:'info' }} border-0 shadow-sm rounded-4 d-flex align-items-center p-3 mb-2" role="alert">
+                <div class="bg-{{ message.tags|default:'info' }} text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 32px; height: 32px; flex-shrink: 0;">
+                    {% if message.tags == 'success' %}
+                        <i class="bi bi-check-lg"></i>
+                    {% elif message.tags == 'error' %}
+                        <i class="bi bi-x-lg"></i>
+                    {% else %}
+                        <i class="bi bi-info-lg"></i>
+                    {% endif %}
+                </div>
+                <div class="fw-bold">{{ message }}</div>
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
     <div class="mb-4 d-flex justify-content-between align-items-end animate-fade-in">
         <div>
             <nav aria-label="breadcrumb">
@@ -34,7 +55,7 @@
                         {% csrf_token %}
                         
                         {% if form.non_field_errors %}
-                            <div class="alert alert-danger rounded-3 p-3 mb-4 border-0">
+                            <div class="alert alert-danger rounded-4 p-3 mb-4 border-0">
                                 <i class="bi bi-exclamation-triangle-fill me-2"></i>
                                 {{ form.non_field_errors|first }}
                             </div>
@@ -55,8 +76,14 @@
                                             <span class="input-group-text bg-light border-0 px-3"><i class="bi bi-journal-check text-muted"></i></span>
                                         {% elif field.name == 'template' %}
                                             <span class="input-group-text bg-light border-0 px-3"><i class="bi bi-palette text-muted"></i></span>
-                                        {% elif field.name == 'issued_at' %}
+                                        {% elif field.name == 'issue_date' %}
                                             <span class="input-group-text bg-light border-0 px-3"><i class="bi bi-calendar3 text-muted"></i></span>
+                                        {% elif field.name == 'serial_number' %}
+                                            <span class="input-group-text bg-light border-0 px-3"><i class="bi bi-hash text-muted"></i></span>
+                                        {% elif field.name == 'recipient_email' %}
+                                            <span class="input-group-text bg-light border-0 px-3"><i class="bi bi-envelope text-muted"></i></span>
+                                        {% elif field.name == 'logo_image' or field.name == 'signature_image' or field.name == 'extra_images' %}
+                                            <span class="input-group-text bg-light border-0 px-3"><i class="bi bi-upload text-muted"></i></span>
                                         {% endif %}
                                         
                                         {{ field }}
@@ -110,7 +137,7 @@
                                 <i class="bi bi-lightning-charge fs-1 text-primary opacity-25 mb-4 animate-pulse"></i>
                                 <h4 class="fw-light text-white opacity-25 mb-1" id="preview-name">Recipient Name</h4>
                                 <div class="bg-white opacity-10 my-3" style="width: 150px; height: 1px;"></div>
-                                <p class="small text-white opacity-25 mb-0" id="preview-course">Course Curriculum</p>
+                                <p class="small text-white opacity-25 mb-0" id="preview-course">Course/Program Name</p>
                                 
                                 <!-- Watermark overlay -->
                                 <div class="position-absolute bottom-0 end-0 p-3 opacity-10">
@@ -200,12 +227,22 @@ document.addEventListener('DOMContentLoaded', function () {
             previewName.textContent = e.target.value || 'Recipient Name';
             previewName.style.opacity = e.target.value ? '0.9' : '0.25';
         });
+        // Initial state
+        if (nameInput.value) {
+            previewName.textContent = nameInput.value;
+            previewName.style.opacity = '0.9';
+        }
     }
     if (courseInput) {
         courseInput.addEventListener('input', (e) => {
-            previewCourse.textContent = e.target.value || 'Course Curriculum';
+            previewCourse.textContent = e.target.value || 'Course/Program Name';
             previewCourse.style.opacity = e.target.value ? '0.7' : '0.25';
         });
+        // Initial state
+        if (courseInput.value) {
+            previewCourse.textContent = courseInput.value;
+            previewCourse.style.opacity = '0.7';
+        }
     }
 
     // Submit animation
@@ -216,6 +253,13 @@ document.addEventListener('DOMContentLoaded', function () {
             submitBtn.querySelector('.spinner-border').classList.remove('d-none');
             submitBtn.querySelector('.bi').classList.add('d-none');
             submitBtn.querySelector('.btn-text').textContent = 'Generating...';
+        }
+    });
+
+    // Ensure all Django fields have proper classes
+    form.querySelectorAll('input, select').forEach(el => {
+        if (!el.classList.contains('form-control') && !el.classList.contains('form-select')) {
+            el.classList.add(el.tagName === 'SELECT' ? 'form-select' : 'form-control');
         }
     });
 });
