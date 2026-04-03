@@ -283,3 +283,64 @@ h6 i {
         min-height: 340px;
     }
 }
+
+/* Universal Table & Badge Styles */
+.table-modern thead th {
+    background: #f8fafc;
+    color: #64748b;
+    text-uppercase: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border-top: none;
+    padding: 1rem 1.5rem;
+}
+
+.table-modern tbody td {
+    padding: 1.25rem 1.5rem;
+    color: #334155;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.table-modern tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+.badge-soft-primary { background: rgba(37, 99, 235, 0.1); color: #2563eb; }
+.badge-soft-success { background: rgba(22, 163, 74, 0.1); color: #16a34a; }
+.badge-soft-warning { background: rgba(217, 119, 6, 0.1); color: #d97706; }
+.badge-soft-danger { background: rgba(220, 38, 38, 0.1); color: #dc2626; }
+
+.form-select, .form-control {
+    border-color: #e2e8f0;
+    padding: 0.6rem 0.8rem;
+    transition: all 0.2s ease;
+}
+
+.form-select:focus, .form-control:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.rounded-4 { border-radius: 1rem !important; }
+.rounded-3 { border-radius: 0.75rem !important; }
+
+/* Breadcrumb Styling */
+.breadcrumb-item a {
+    color: #64748b;
+    font-weight: 500;
+}
+.breadcrumb-item.active {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+/* Page Transitions */
+.dashboard-container {
+    animation: fadeInPage 0.5s ease-out;
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

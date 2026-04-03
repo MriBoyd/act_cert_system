@@ -1,96 +1,258 @@
 {% extends 'base.html' %}
-{% block title %}Bulk Certificate Upload{% endblock %}
+{% block title %}Bulk Issuance{% endblock %}
 
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-lg-8">
-        <div class="card border-0 shadow-sm">
-            <div class="card-body p-4">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h4 class="mb-0"><i class="bi bi-upload me-1"></i>Bulk Generate Certificates</h4>
-                    <a href="{% url 'admin-dashboard' %}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-arrow-left me-1"></i>Back</a>
+<div class="dashboard-container">
+    <div class="mb-4 d-flex justify-content-between align-items-end">
+        <div>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb mb-2">
+                <li class="breadcrumb-item"><a href="{% url 'admin-dashboard' %}" class="text-decoration-none">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Bulk Issuance</li>
+              </ol>
+            </nav>
+            <h2 class="fw-bold mb-0">Bulk Credential Issuance</h2>
+            <p class="text-muted mb-0">Upload a dataset to generate multiple professional certificates at once.</p>
+        </div>
+        <div>
+            <a href="{% url 'admin-dashboard' %}" class="btn btn-outline-light text-dark border shadow-sm">
+                <i class="bi bi-x-lg me-2"></i>Cancel
+            </a>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <!-- Main Upload Area -->
+        <div class="col-12 col-lg-8">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4">
+                <div class="card-header bg-white border-0 py-3">
+                    <h5 class="mb-0 fw-bold text-primary"><i class="bi bi-cloud-arrow-up-fill me-2"></i>Upload Dataset</h5>
                 </div>
+                <div class="card-body p-4 pt-0">
+                    <form id="bulkUploadForm" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                        {% csrf_token %}
+                        
+                        {% if form.non_field_errors %}
+                            <div class="alert alert-danger rounded-3 p-3 mb-4 border-0">
+                                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                                {{ form.non_field_errors|first }}
+                            </div>
+                        {% endif %}
 
-                <div class="alert alert-info" role="alert">
-                    <h6 class="alert-heading">CSV File Requirements</h6>
-                    <p class="mb-1">Upload a CSV file with a header row matching these columns exactly. The file should be UTF-8 encoded.</p>
-                    <hr>
-                    <p class="mb-0 small font-monospace">
-                        recipient_name, recipient_email, course_name, issue_date, serial_number
-                    </p>
-                </div>
-
-                <form id="bulkUploadForm" method="post" enctype="multipart/form-data" novalidate>
-                    {% csrf_token %}
-                    {% if form.non_field_errors %}
-                        <div class="alert alert-danger p-2">{{ form.non_field_errors }}</div>
-                    {% endif %}
-
-                    {% for field in form %}
-                        <div class="mb-3">
-                            {% if field.is_hidden %}
-                                {{ field }}
-                            {% else %}
-                                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}{% if field.field.required %} <span class="text-danger">*</span>{% endif %}</label>
-                                {{ field }}
-                                {% if field.help_text %}<div class="form-text text-muted small mt-1">{{ field.help_text|safe }}</div>{% endif %}
-                                {% for error in field.errors %}<div class="invalid-feedback d-block">{{ error }}</div>{% endfor %}
+                        <div class="mb-4">
+                            <label for="{{ form.template.id_for_label }}" class="form-label fw-bold small text-uppercase text-secondary mb-2">
+                                Design Template <span class="text-danger">*</span>
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="bi bi-palette"></i></span>
+                                {{ form.template }}
+                            </div>
+                            {% if form.template.help_text %}
+                                <div class="form-text mt-2 small opacity-75">{{ form.template.help_text|safe }}</div>
                             {% endif %}
                         </div>
-                    {% endfor %}
 
-                    <div class="d-flex gap-2 mt-4">
-                        <button id="submitBtn" class="btn btn-primary" type="submit">
-                            <span class="spinner-border spinner-border-sm d-none me-1" role="status" aria-hidden="true"></span>
-                            <i class="bi bi-cloud-arrow-up me-1"></i>
-                            <span class="btn-text">Upload and Generate</span>
-                        </button>
-                        <a href="{% url 'admin-bulk-generate' %}" class="btn btn-outline-secondary"><i class="bi bi-arrow-counterclockwise me-1"></i>Reset</a>
+                        <div class="mb-5">
+                            <label for="{{ form.csv_file.id_for_label }}" class="form-label fw-bold small text-uppercase text-secondary mb-2">
+                                CSV Record File <span class="text-danger">*</span>
+                            </label>
+                            <div class="upload-drop-zone p-5 text-center border-2 border-dashed rounded-4 bg-light position-relative" id="dropZone">
+                                <i class="bi bi-filetype-csv display-4 text-primary opacity-50 mb-3 d-block"></i>
+                                <div class="upload-instructions">
+                                    <h6 class="fw-bold mb-1">Click to select or drag & drop</h6>
+                                    <p class="text-muted small mb-3">Maximum file size: 10MB</p>
+                                    <button type="button" class="btn btn-sm btn-primary px-4 py-2 rounded-pill" onclick="document.getElementById('{{ form.csv_file.id_for_label }}').click()">
+                                        Choose File
+                                    </button>
+                                </div>
+                                <div class="file-info d-none">
+                                    <h6 class="fw-bold text-success mb-1 selected-file-name">filename.csv</h6>
+                                    <p class="text-muted small mb-0 selected-file-size">0 KB</p>
+                                    <button type="button" class="btn btn-sm btn-link text-decoration-none mt-2 text-danger" onclick="resetFilePicker()">
+                                        Change File
+                                    </button>
+                                </div>
+                                <div class="d-none">
+                                    {{ form.csv_file }}
+                                </div>
+                            </div>
+                            {% for error in form.csv_file.errors %}
+                                <div class="invalid-feedback d-block mt-2">
+                                    <i class="bi bi-info-circle me-1"></i>{{ error }}
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="d-grid">
+                            <button id="submitBtn" class="btn btn-primary btn-lg rounded-3 shadow-sm py-3 fw-bold" type="submit">
+                                <div class="btn-content d-flex align-items-center justify-content-center">
+                                    <span class="spinner-border spinner-border-sm d-none me-3" role="status" aria-hidden="true"></span>
+                                    <i class="bi bi-lightning-charge-fill me-2 fs-5"></i>
+                                    <span class="btn-text">Execute Bulk Issuance</span>
+                                </div>
+                            </button>
+                            <p class="text-center small text-muted mt-3 mb-0">
+                                <i class="bi bi-shield-check me-1"></i> Submitting will process each row as a unique cryptographically signed credential.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar / Guidelines -->
+        <div class="col-12 col-lg-4">
+            <div class="card border-0 shadow-sm bg-white rounded-4 mb-4">
+                <div class="card-body p-4">
+                    <h6 class="fw-bold mb-4 text-uppercase small letter-spacing-05">CSV Data Schema</h6>
+                    <div class="p-3 bg-light rounded-3 font-monospace small mb-4 border border-info border-opacity-10 text-primary">
+                        recipient_name,<br>
+                        recipient_email,<br>
+                        course_name,<br>
+                        issue_date,<br>
+                        serial_number
                     </div>
-                </form>
+                    
+                    <ul class="list-unstyled small mb-0">
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="bi bi-info-circle-fill me-2 text-info fs-6"></i>
+                            <span>Ensure the CSV contains a <strong>Header Row</strong> as shown above.</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="bi bi-info-circle-fill me-2 text-info fs-6"></i>
+                            <span>Dates should follow the <strong>YYYY-MM-DD</strong> format.</span>
+                        </li>
+                        <li class="d-flex align-items-start">
+                            <i class="bi bi-info-circle-fill me-2 text-info fs-6"></i>
+                            <span>Rows with missing names or emails will be skipped.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card border-0 bg-dark text-white rounded-4 shadow-sm overflow-hidden">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="stat-icon bg-primary bg-opacity-25 text-white me-3" style="width:40px; height:40px; border-radius: 10px;">
+                            <i class="bi bi-file-earmark-ruled fs-5"></i>
+                        </div>
+                        <h6 class="fw-bold mb-0">Validation Rules</h6>
+                    </div>
+                    <p class="small opacity-75 mb-0">The system checks for duplicate serial numbers across the entire platform during import to maintain document integrity.</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
-{% endblock %}
 
-{% block extra_js %}
+<style>
+.upload-drop-zone {
+    transition: all 0.2s ease-in-out;
+    border: 2px dashed #cbd5e1 !important;
+}
+.upload-drop-zone.dragover {
+    background-color: #f1f5f9 !important;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+.letter-spacing-05 { letter-spacing: 0.05em; }
+.form-select, .form-control {
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+.form-select:focus, .form-control:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+.input-group-text {
+    border-radius: 10px 0 0 10px;
+    border: 1px solid #e2e8f0;
+    border-right: none;
+}
+.input-group .form-select {
+    border-radius: 0 10px 10px 0;
+}
+.btn-primary {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    border: none;
+}
+.btn-primary:hover {
+    background: linear-gradient(135deg, #1e40af, #1e3a8a);
+    transform: translateY(-1px);
+}
+</style>
+
 <script>
+const fileInput = document.getElementById('{{ form.csv_file.id_for_label }}');
+const dropZone = document.getElementById('dropZone');
+const instructions = dropZone.querySelector('.upload-instructions');
+const fileInfo = dropZone.querySelector('.file-info');
+const fileNameDisplay = dropZone.querySelector('.selected-file-name');
+const fileSizeDisplay = dropZone.querySelector('.selected-file-size');
+
+function updateFileInfo(file) {
+    if (file) {
+        fileNameDisplay.textContent = file.name;
+        fileSizeDisplay.textContent = (file.size / 1024).toFixed(1) + ' KB';
+        instructions.classList.add('d-none');
+        fileInfo.classList.remove('d-none');
+        dropZone.classList.remove('p-5');
+        dropZone.classList.add('p-4');
+    }
+}
+
+function resetFilePicker() {
+    fileInput.value = '';
+    instructions.classList.remove('d-none');
+    fileInfo.classList.add('d-none');
+    dropZone.classList.add('p-5');
+    dropZone.classList.remove('p-4');
+}
+
+fileInput.addEventListener('change', (e) => {
+    updateFileInfo(e.target.files[0]);
+});
+
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    dropZone.addEventListener(eventName, e => {
+        e.preventDefault();
+        e.stopPropagation();
+    });
+});
+
+dropZone.addEventListener('dragover', () => dropZone.classList.add('dragover'));
+dropZone.addEventListener('dragleave', () => dropZone.classList.add('dragover'));
+dropZone.addEventListener('drop', (e) => {
+    dropZone.classList.remove('dragover');
+    const files = e.dataTransfer.files;
+    if (files.length) {
+        fileInput.files = files;
+        updateFileInfo(files[0]);
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('bulkUploadForm');
-    if (!form) return;
-
     const submitBtn = document.getElementById('submitBtn');
     const btnSpinner = submitBtn.querySelector('.spinner-border');
     const btnIcon = submitBtn.querySelector('.bi');
     const btnText = submitBtn.querySelector('.btn-text');
-    const fileInput = form.querySelector('input[type="file"]');
 
-    // Hint to the browser to only allow CSV files.
-    if (fileInput) {
-        fileInput.setAttribute('accept', '.csv,text/csv');
-    }
+    // Add necessary classes for Django select
+    const select = form.querySelector('select');
+    if (select) select.classList.add('form-select');
 
     form.addEventListener('submit', function (e) {
-        // Basic client-side validation for file presence and type.
-        if (fileInput && fileInput.files.length > 0) {
-            const fileName = fileInput.files[0].name;
-            if (!fileName.toLowerCase().endsWith('.csv')) {
-                e.preventDefault();
-                alert('Please select a valid .csv file.');
-                return;
-            }
-        } else if (fileInput) {
+        if (!fileInput.files.length) {
             e.preventDefault();
-            alert('Please select a file to upload.');
+            alert('Please select a CSV file first.');
             return;
         }
-
-        // Show loading state on submit.
         submitBtn.disabled = true;
         btnSpinner.classList.remove('d-none');
         btnIcon.classList.add('d-none');
-        btnText.textContent = 'Processing...';
+        btnText.textContent = 'Processing Bulk Data...';
     });
 });
 </script>

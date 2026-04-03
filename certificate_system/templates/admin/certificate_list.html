@@ -1,283 +1,332 @@
 {% extends 'base.html' %}
-{% block title %}Manage Certificates{% endblock %}
+{% block title %}Certificate Repository{% endblock %}
 
 {% block content %}
-<div class="d-flex justify-content-between align-items-center mb-4">
-    <div>
-        <h2 class="mb-1"><i class="bi bi-kanban me-1"></i>Certificate Management</h2>
-        <p class="text-muted mb-0">Search, review status, and download PDF/PNG/JPG/QR for issued certificates.</p>
-    </div>
-    <div class="d-flex gap-2 flex-wrap toolbar-actions">
-        <a href="{% url 'admin-dashboard' %}" class="btn btn-outline-secondary"><i class="bi bi-arrow-left me-1"></i>Back to Dashboard</a>
-        {% if feature_flags.template_management %}
-            <a href="{% url 'admin-template-list' %}" class="btn btn-outline-dark"><i class="bi bi-layout-text-window-reverse me-1"></i>Templates</a>
-        {% endif %}
-    </div>
-</div>
-
-<div class="card border-0 shadow-sm mb-3">
-    <div class="card-body">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h6 class="mb-0"><i class="bi bi-funnel me-1"></i>Filters</h6>
-            <button
-                class="btn btn-sm btn-outline-secondary"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#certificateFilters"
-                aria-expanded="{% if search or status_filter or enabled_filter or template_filter or issuer_filter or date_from or date_to or per_page != 25 %}true{% else %}false{% endif %}"
-                aria-controls="certificateFilters"
-            >
-                <i class="bi bi-chevron-expand me-1"></i>Toggle Filters
+<div class="dashboard-container">
+    <div class="mb-4 d-flex justify-content-between align-items-end">
+        <div>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb mb-2">
+                <li class="breadcrumb-item"><a href="{% url 'admin-dashboard' %}" class="text-decoration-none">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Management</li>
+              </ol>
+            </nav>
+            <h2 class="fw-bold mb-0">Certificate Registry</h2>
+            <p class="text-muted mb-0">Monitor, audit, and manage the lifecycle of issued credentials.</p>
+        </div>
+        <div class="d-flex gap-2">
+            {% if feature_flags.certificate_generation %}
+                <a href="{% url 'admin-generate-certificate' %}" class="btn btn-primary shadow-sm px-4">
+                    <i class="bi bi-plus-lg me-2"></i>Issue New
+                </a>
+            {% endif %}
+            <button class="btn btn-outline-light text-dark border shadow-sm" type="button" data-bs-toggle="collapse" data-bs-target="#filterSection">
+                <i class="bi bi-filter me-2"></i>Filters
             </button>
         </div>
+    </div>
 
-        <div id="certificateFilters" class="collapse {% if search or status_filter or enabled_filter or template_filter or issuer_filter or date_from or date_to or per_page != 25 %}show{% endif %}">
-        <form method="get" class="row g-2 align-items-end">
-            <div class="col-md-4">
-                <label class="form-label">Search</label>
-                <input type="text" class="form-control" name="search" value="{{ search }}" placeholder="Recipient, serial, or course" />
+    <!-- Filters -->
+    <div class="collapse {% if search or status_filter or enabled_filter or template_filter %}show{% endif %} mb-4" id="filterSection">
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-body p-4">
+                <form method="get" class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label small fw-bold text-uppercase opacity-50">Search Records</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
+                            <input type="text" class="form-control border-start-0" name="search" value="{{ search }}" placeholder="Recipient or Serial ID..." />
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label small fw-bold text-uppercase opacity-50">Status</label>
+                        {{ form.status }}
+                        <select name="status" class="form-select rounded-3">
+                            <option value="">All Statuses</option>
+                            {% for value, label in status_choices %}
+                                <option value="{{ value }}" {% if status_filter == value %}selected{% endif %}>{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label small fw-bold text-uppercase opacity-50">State</label>
+                        <select name="enabled" class="form-select rounded-3">
+                            <option value="">All States</option>
+                            <option value="true" {% if enabled_filter == 'true' %}selected{% endif %}>Enabled Only</option>
+                            <option value="false" {% if enabled_filter == 'false' %}selected{% endif %}>Disabled Only</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label small fw-bold text-uppercase opacity-50">Per Page</label>
+                        <select name="per_page" class="form-select rounded-3">
+                            <option value="10" {% if per_page == 10 %}selected{% endif %}>10</option>
+                            <option value="25" {% if per_page == 25 %}selected{% endif %}>25</option>
+                            <option value="50" {% if per_page == 50 %}selected{% endif %}>50</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end gap-2">
+                        <button class="btn btn-dark w-100 rounded-3 py-2" type="submit">Apply</button>
+                        <a href="{% url 'admin-certificate-list' %}" class="btn btn-outline-secondary rounded-3 py-2" title="Reset"><i class="bi bi-arrow-counterclockwise"></i></a>
+                    </div>
+                </form>
             </div>
-            <div class="col-md-2">
-                <label class="form-label">Status</label>
-                <select name="status" class="form-select">
-                    <option value="">All</option>
-                    {% for value, label in status_choices %}
-                        <option value="{{ value }}" {% if status_filter == value %}selected{% endif %}>{{ label }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="col-md-2">
-                <label class="form-label">Enabled</label>
-                <select name="enabled" class="form-select">
-                    <option value="">All</option>
-                    <option value="true" {% if enabled_filter == 'true' %}selected{% endif %}>Enabled</option>
-                    <option value="false" {% if enabled_filter == 'false' %}selected{% endif %}>Disabled</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <label class="form-label">Template</label>
-                <select name="template" class="form-select">
-                    <option value="">All</option>
-                    {% for template in templates %}
-                        <option value="{{ template.id }}" {% if template_filter == template.id|stringformat:'s' %}selected{% endif %}>{{ template.name }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="col-md-2">
-                <label class="form-label">Issuer</label>
-                <select name="issuer" class="form-select">
-                    <option value="">All</option>
-                    {% for issuer in issuers %}
-                        <option value="{{ issuer.issued_by_id }}" {% if issuer_filter == issuer.issued_by_id|stringformat:'s' %}selected{% endif %}>{{ issuer.issued_by__username }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="col-md-2">
-                <label class="form-label">Issue Date From</label>
-                <input type="date" class="form-control" name="date_from" value="{{ date_from }}" />
-            </div>
-            <div class="col-md-2">
-                <label class="form-label">Issue Date To</label>
-                <input type="date" class="form-control" name="date_to" value="{{ date_to }}" />
-            </div>
-            <div class="col-md-2">
-                <label class="form-label">Per Page</label>
-                <select name="per_page" class="form-select">
-                    <option value="10" {% if per_page == 10 %}selected{% endif %}>10</option>
-                    <option value="25" {% if per_page == 25 %}selected{% endif %}>25</option>
-                    <option value="50" {% if per_page == 50 %}selected{% endif %}>50</option>
-                    <option value="100" {% if per_page == 100 %}selected{% endif %}>100</option>
-                </select>
-            </div>
-            <input type="hidden" name="sort" value="{{ sort_by }}" />
-            <input type="hidden" name="dir" value="{{ sort_dir }}" />
-            <div class="col-md-4 d-flex gap-2 flex-wrap action-group">
-                <button class="btn btn-primary" type="submit"><i class="bi bi-check2-circle me-1"></i>Apply</button>
-                <a class="btn btn-outline-secondary" href="{% url 'admin-certificate-list' %}"><i class="bi bi-arrow-counterclockwise me-1"></i>Reset</a>
-            </div>
-        </form>
         </div>
     </div>
-</div>
 
-<div class="card border-0 shadow-sm">
-    <div class="card-body">
-        {% if feature_flags.certificate_management %}
-            <form
-                id="bulkCertificateForm"
-                method="post"
-                action="{% url 'admin-certificate-bulk-actions' %}"
-                class="d-flex gap-2 flex-wrap align-items-center mb-3"
-            >
-                {% csrf_token %}
-                <input type="hidden" name="next" value="{{ request.get_full_path }}" />
-                <select name="action" class="form-select form-select-sm w-auto" required>
-                    <option value="" selected disabled>Bulk actions...</option>
-                    <option value="enable">Enable (VALID only)</option>
-                    <option value="disable">Disable</option>
-                    <option value="mark_valid">Mark status: VALID</option>
-                    <option value="mark_revoked">Mark status: REVOKED</option>
-                    <option value="mark_disabled">Mark status: DISABLED</option>
-                    <option value="delete">Delete (and remove files)</option>
-                </select>
-                <button type="submit" class="btn btn-sm btn-outline-primary">
-                    <i class="bi bi-lightning-charge me-1"></i>Apply to selected
-                </button>
-                <small class="text-muted">Select rows using the checkboxes.</small>
-            </form>
-        {% endif %}
-
+    <!-- Bulk Actions & Table -->
+    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+        <div class="card-header bg-white border-0 py-3 d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <h5 class="mb-0 fw-bold me-3">All Records</h5>
+                <span class="badge bg-soft-primary rounded-pill">{{ page_obj.paginator.count }} Total</span>
+            </div>
+            
+            {% if feature_flags.certificate_management %}
+            <div id="bulkActions" class="d-none animate-fade-in">
+                <form method="post" action="{% url 'admin-certificate-bulk-actions' %}" class="d-flex gap-2">
+                    {% csrf_token %}
+                    <select name="action" class="form-select form-select-sm w-auto rounded-3" required>
+                        <option value="" selected disabled>Bulk Action...</option>
+                        <option value="enable">Activate</option>
+                        <option value="disable">Deactivate</option>
+                        <option value="mark_revoked">Revoke</option>
+                        <option value="delete">Delete Permanently</option>
+                    </select>
+                    <button type="submit" class="btn btn-sm btn-primary px-3 rounded-3" onclick="return confirm('Apply this action to all selected records?')">Execute</button>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+        
         <div class="table-responsive">
-            <table class="table table-hover align-middle">
-                <thead>
+            <table class="table table-modern align-middle mb-0">
+                <thead class="bg-light">
                     <tr>
-                        <th class="text-center" style="width: 2.5rem;">
-                            <input
-                                class="form-check-input"
-                                type="checkbox"
-                                data-bulk-select-all="certificates"
-                                aria-label="Select all certificates"
-                            />
+                        <th class="ps-4" style="width: 40px;">
+                            <input class="form-check-input" type="checkbox" id="selectAll">
                         </th>
-                        <th>
-                            <a class="text-decoration-none" href="?{{ sort_querystring }}{% if sort_querystring %}&{% endif %}sort=recipient_name&dir={% if sort_by == 'recipient_name' and sort_dir == 'asc' %}desc{% else %}asc{% endif %}">Recipient</a>
-                        </th>
-                        <th>
-                            <a class="text-decoration-none" href="?{{ sort_querystring }}{% if sort_querystring %}&{% endif %}sort=course_name&dir={% if sort_by == 'course_name' and sort_dir == 'asc' %}desc{% else %}asc{% endif %}">Course</a>
-                        </th>
-                        <th>
-                            <a class="text-decoration-none" href="?{{ sort_querystring }}{% if sort_querystring %}&{% endif %}sort=serial_number&dir={% if sort_by == 'serial_number' and sort_dir == 'asc' %}desc{% else %}asc{% endif %}">Serial</a>
-                        </th>
-                        <th>Issued By</th>
-                        <th>
-                            <a class="text-decoration-none" href="?{{ sort_querystring }}{% if sort_querystring %}&{% endif %}sort=issue_date&dir={% if sort_by == 'issue_date' and sort_dir == 'asc' %}desc{% else %}asc{% endif %}">Date</a>
-                        </th>
-                        <th>
-                            <a class="text-decoration-none" href="?{{ sort_querystring }}{% if sort_querystring %}&{% endif %}sort=status&dir={% if sort_by == 'status' and sort_dir == 'asc' %}desc{% else %}asc{% endif %}">Status</a>
-                        </th>
-                        <th>Enabled</th>
-                        <th>Actions</th>
+                        <th>Recipient & Course</th>
+                        <th>Serial ID</th>
+                        <th>Status</th>
+                        <th>Issuance Date</th>
+                        <th class="text-end pe-4">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for certificate in certificates %}
-                        <tr>
-                            <td class="text-center">
-                                <input
-                                    class="form-check-input"
-                                    type="checkbox"
-                                    name="selected_ids"
-                                    value="{{ certificate.id }}"
-                                    form="bulkCertificateForm"
-                                    data-bulk-select-item="certificates"
-                                    aria-label="Select certificate {{ certificate.serial_number }}"
-                                />
-                            </td>
-                            <td>{{ certificate.recipient_name }}</td>
-                            <td>{{ certificate.course_name }}</td>
-                            <td>{{ certificate.serial_number }}</td>
-                            <td>{{ certificate.issued_by.username }}</td>
-                            <td>{{ certificate.issue_date }}</td>
-                            <td>{{ certificate.status }}</td>
-                            <td>
-                                {% if certificate.is_enabled %}
-                                    <span class="badge bg-success">Yes</span>
-                                {% else %}
-                                    <span class="badge bg-secondary">No</span>
-                                {% endif %}
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
-                                        <i class="bi bi-three-dots-vertical"></i>
-                                    </button>
-                                    <ul class="dropdown-menu dropdown-menu-end">
-                                        {% if feature_flags.certificate_detail %}
-                                            <li>
-                                                <a class="dropdown-item" href="{% url 'admin-certificate-detail' certificate.id %}"><i class="bi bi-eye me-2"></i>View</a>
-                                            </li>
-                                        {% endif %}
-                                        {% if feature_flags.certificate_management %}
-                                            <li>
-                                                <a class="dropdown-item" href="{% url 'admin-certificate-status' certificate.id %}"><i class="bi bi-sliders me-2"></i>Status</a>
-                                            </li>
-                                        {% endif %}
-                                        {% if feature_flags.certificate_download %}
-                                            <li><hr class="dropdown-divider" /></li>
-                                            <li><h6 class="dropdown-header">Downloads</h6></li>
-                                            <li>
-                                                <a class="dropdown-item" href="{% url 'admin-download-certificate-pdf' certificate.id %}"><i class="bi bi-filetype-pdf me-2"></i>PDF</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="{% url 'admin-download-certificate-png' certificate.id %}"><i class="bi bi-filetype-png me-2"></i>PNG</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="{% url 'admin-download-certificate-jpg' certificate.id %}"><i class="bi bi-filetype-jpg me-2"></i>JPG</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="{% url 'admin-download-certificate-qr' certificate.id %}"><i class="bi bi-qr-code me-2"></i>QR</a>
-                                            </li>
-                                        {% endif %}
-
-                                        {% if feature_flags.certificate_management %}
-                                            <li><hr class="dropdown-divider" /></li>
-                                            <li>
-                                                <form method="post" action="{% url 'admin-certificate-delete' certificate.id %}" onsubmit="return confirm('Delete this certificate and its files?');">
-                                                    {% csrf_token %}
-                                                    <button type="submit" class="dropdown-item text-danger">
-                                                        <i class="bi bi-trash me-2"></i>Delete
-                                                    </button>
-                                                </form>
-                                            </li>
-                                        {% endif %}
-                                    </ul>
+                    {% for certificate in page_obj %}
+                    <tr>
+                        <td class="ps-4">
+                            <input class="form-check-input cert-check" type="checkbox" name="ids" value="{{ certificate.id }}" form="bulkActionFormStub">
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-square me-3">{{ certificate.recipient_name|slice:":1" }}</div>
+                                <div>
+                                    <div class="fw-bold text-dark">{{ certificate.recipient_name }}</div>
+                                    <div class="small text-muted">{{ certificate.course_name }}</div>
                                 </div>
-                            </td>
-                        </tr>
+                            </div>
+                        </td>
+                        <td><code class="text-primary small px-2 py-1 bg-light rounded">{{ certificate.serial_number|truncatechars:15 }}</code></td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                {% if certificate.is_enabled and certificate.status == 'VALID' %}
+                                    <span class="badge-dot bg-success me-2"></span>
+                                    <span class="small fw-semibold text-success">Active</span>
+                                {% elif certificate.status == 'REVOKED' %}
+                                    <span class="badge-dot bg-danger me-2"></span>
+                                    <span class="small fw-semibold text-danger">Revoked</span>
+                                {% else %}
+                                    <span class="badge-dot bg-secondary me-2"></span>
+                                    <span class="small fw-semibold text-secondary">Offline</span>
+                                {% endif %}
+                            </div>
+                        </td>
+                        <td class="text-muted small">
+                            {{ certificate.issued_at|date:"M d, Y" }}
+                        </td>
+                        <td class="text-end pe-4">
+                            <div class="btn-group shadow-sm bg-white rounded-3">
+                                <a href="{% url 'admin-certificate-detail' certificate.id %}" class="btn btn-sm btn-outline-light text-dark border-0 px-3 py-2" title="View">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+                                <button class="btn btn-sm btn-outline-light text-dark border-0 dropdown-toggle dropdown-toggle-split px-2" data-bs-toggle="dropdown">
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg mt-2">
+                                    <li><a class="dropdown-item py-2" href="{% url 'admin-certificate-status' certificate.id %}"><i class="bi bi-sliders2 me-2 text-muted"></i>Modify Status</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><h6 class="dropdown-header small text-uppercase fw-bold opacity-50">Export</h6></li>
+                                    <li><a class="dropdown-item py-2" href="{% url 'admin-download-certificate-pdf' certificate.id %}"><i class="bi bi-file-earmark-pdf me-2 text-danger"></i>Download PDF</a></li>
+                                    <li><a class="dropdown-item py-2" href="{% url 'admin-download-certificate-png' certificate.id %}"><i class="bi bi-file-earmark-image me-2 text-info"></i>Export PNG</a></li>
+                                    {% if request.user.is_superuser %}
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                        <form method="post" action="{% url 'admin-certificate-delete' certificate.id %}" onsubmit="return confirm('Permanent removal?');">
+                                            {% csrf_token %}
+                                            <button type="submit" class="dropdown-item py-2 text-danger"><i class="bi bi-trash3 me-2"></i>Delete</button>
+                                        </form>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
                     {% empty %}
-                        <tr>
-                            <td colspan="9">No certificates found.</td>
-                        </tr>
+                    <tr>
+                        <td colspan="6" class="text-center py-5 text-muted">
+                            <i class="bi bi-search display-1 opacity-10 mb-3 d-block"></i>
+                            No matching records found.
+                        </td>
+                    </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
-
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mt-3 gap-2">
-            <div class="text-muted small">
-                Page {{ page_obj.number }} of {{ paginator.num_pages }}
-                ({{ paginator.count }} total certificates)
-            </div>
-            <nav aria-label="Certificates pagination">
-                <ul class="pagination pagination-sm mb-0">
+        
+        <!-- Pagination -->
+        {% if page_obj.has_other_pages %}
+        <div class="card-footer bg-white border-0 py-4">
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center mb-0">
                     {% if page_obj.has_previous %}
                         <li class="page-item">
-                            <a class="page-link" href="?{{ querystring }}{% if querystring %}&{% endif %}page=1"><i class="bi bi-chevron-double-left me-1"></i>First</a>
+                            <a class="page-link border-0 rounded-3 mx-1" href="?{{ request.GET.urlencode }}&page={{ page_obj.previous_page_number }}">
+                                <i class="bi bi-chevron-left"></i>
+                            </a>
                         </li>
-                        <li class="page-item">
-                            <a class="page-link" href="?{{ querystring }}{% if querystring %}&{% endif %}page={{ page_obj.previous_page_number }}"><i class="bi bi-chevron-left me-1"></i>Prev</a>
-                        </li>
-                    {% else %}
-                        <li class="page-item disabled"><span class="page-link"><i class="bi bi-chevron-double-left me-1"></i>First</span></li>
-                        <li class="page-item disabled"><span class="page-link"><i class="bi bi-chevron-left me-1"></i>Prev</span></li>
                     {% endif %}
-
-                    <li class="page-item active"><span class="page-link">{{ page_obj.number }}</span></li>
+                    
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                            <li class="page-item active">
+                                <span class="page-link border-0 rounded-3 mx-1">{{ num }}</span>
+                            </li>
+                        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                            <li class="page-item">
+                                <a class="page-link border-0 rounded-3 mx-1 text-dark" href="?{{ request.GET.urlencode }}&page={{ num }}">{{ num }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
 
                     {% if page_obj.has_next %}
                         <li class="page-item">
-                            <a class="page-link" href="?{{ querystring }}{% if querystring %}&{% endif %}page={{ page_obj.next_page_number }}">Next<i class="bi bi-chevron-right ms-1"></i></a>
+                            <a class="page-link border-0 rounded-3 mx-1" href="?{{ request.GET.urlencode }}&page={{ page_obj.next_page_number }}">
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
                         </li>
-                        <li class="page-item">
-                            <a class="page-link" href="?{{ querystring }}{% if querystring %}&{% endif %}page={{ paginator.num_pages }}">Last<i class="bi bi-chevron-double-right ms-1"></i></a>
-                        </li>
-                    {% else %}
-                        <li class="page-item disabled"><span class="page-link">Next<i class="bi bi-chevron-right ms-1"></i></span></li>
-                        <li class="page-item disabled"><span class="page-link">Last<i class="bi bi-chevron-double-right ms-1"></i></span></li>
                     {% endif %}
                 </ul>
             </nav>
         </div>
+        {% endif %}
     </div>
 </div>
+
+<!-- Dummy form for bulk actions to pick up IDs -->
+<form id="bulkActionFormStub" method="post" action="{% url 'admin-certificate-bulk-actions' %}" class="d-none">
+    {% csrf_token %}
+    <input type="hidden" name="action" id="bulkActionInput">
+</form>
+
+<style>
+.avatar-square {
+    width: 42px;
+    height: 42px;
+    background: #f8fafc;
+    color: #3b82f6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    border: 1px solid #e2e8f0;
+}
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.pagination .page-link {
+    padding: 0.6rem 1rem;
+    transition: all 0.2s;
+}
+.pagination .page-item.active .page-link {
+    background-color: #0f172a;
+    color: white;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const selectAll = document.getElementById('selectAll');
+    const certChecks = document.querySelectorAll('.cert-check');
+    const bulkActions = document.getElementById('bulkActions');
+    const bulkActionFormStub = document.getElementById('bulkActionFormStub');
+
+    function updateBulkVisibility() {
+        const anyChecked = Array.from(certChecks).some(c => c.checked);
+        bulkActions.classList.toggle('d-none', !anyChecked);
+    }
+
+    selectAll.addEventListener('change', function() {
+        certChecks.forEach(c => c.checked = selectAll.checked);
+        updateBulkVisibility();
+    });
+
+    certChecks.forEach(c => {
+        c.addEventListener('change', updateBulkVisibility);
+    });
+
+    // Handle bulk action submission
+    const bulkActionForm = bulkActions.querySelector('form');
+    bulkActionForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const action = this.querySelector('select').value;
+        if (!action) return;
+        
+        // Prepare hidden form and submit
+        const tempForm = document.createElement('form');
+        tempForm.method = 'POST';
+        tempForm.action = this.action;
+        
+        // Add CSRF
+        const csrfToken = this.querySelector('[name=csrfmiddlewaretoken]').value;
+        const csrfInput = document.createElement('input');
+        csrfInput.type = 'hidden';
+        csrfInput.name = 'csrfmiddlewaretoken';
+        csrfInput.value = csrfToken;
+        tempForm.appendChild(csrfInput);
+        
+        // Add Action
+        const actionInput = document.createElement('input');
+        actionInput.type = 'hidden';
+        actionInput.name = 'action';
+        actionInput.value = action;
+        tempForm.appendChild(actionInput);
+        
+        // Add checked IDs
+        certChecks.forEach(c => {
+            if (c.checked) {
+                const idInput = document.createElement('input');
+                idInput.type = 'hidden';
+                idInput.name = 'ids';
+                idInput.value = c.value;
+                tempForm.appendChild(idInput);
+            }
+        });
+        
+        document.body.appendChild(tempForm);
+        tempForm.submit();
+    });
+});
+</script>
 {% endblock %}

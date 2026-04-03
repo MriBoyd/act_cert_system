@@ -1,62 +1,165 @@
 {% extends 'base.html' %}
-{% block title %}{% if is_edit %}Edit Template{% else %}Create Template{% endif %}{% endblock %}
+{% block title %}{% if form.instance.pk %}Edit Blueprint{% else %}New Blueprint{% endif %}{% endblock %}
 
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-lg-8">
-        <div class="card border-0 shadow-sm">
-            <div class="card-body p-4">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h4 class="mb-0"><i class="bi bi-layout-text-window-reverse me-1"></i>{% if is_edit %}Edit Certificate Template{% else %}Create Certificate Template{% endif %}</h4>
-                    <a href="{% url 'admin-template-list' %}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-arrow-left me-1"></i>Back</a>
+<div class="dashboard-container">
+    <div class="mb-4">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-2">
+            <li class="breadcrumb-item"><a href="{% url 'admin-dashboard' %}" class="text-decoration-none">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'admin-template-list' %}" class="text-decoration-none">Templates</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{% if form.instance.pk %}Edit{% else %}Draft{% endif %}</li>
+          </ol>
+        </nav>
+        <h2 class="fw-bold mb-0">{% if form.instance.pk %}Update Blueprint{% else %}Create Template{% endif %}</h2>
+        <p class="text-muted">Configure the visual and metadata structure of your certificates.</p>
+    </div>
+
+    <form method="post" enctype="multipart/form-data" class="row g-4">
+        {% csrf_token %}
+        
+        <!-- Main Configuration -->
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm rounded-4 mb-4">
+                <div class="card-header bg-white border-0 py-3">
+                    <h5 class="mb-0 fw-bold"><i class="bi bi-gear-fill me-2 text-primary"></i>Core Details</h5>
                 </div>
-                <form id="templateForm" method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {% if form.non_field_errors %}
-                        <div class="alert alert-danger p-2">{{ form.non_field_errors }}</div>
-                    {% endif %}
-                    {% for field in form %}
-                        <div class="mb-3">
-                            {% if field.is_hidden %}
-                                {{ field }}
-                            {% else %}
-                                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}{% if field.field.required %} <span class="text-danger">*</span>{% endif %}</label>
-                                {{ field }}
-                                {% if field.help_text %}<div class="form-text text-muted small mt-1">{{ field.help_text|safe }}</div>{% endif %}
-                                {% for error in field.errors %}<div class="invalid-feedback d-block">{{ error }}</div>{% endfor %}
-                            {% endif %}
+                <div class="card-body p-4">
+                    <div class="row g-3">
+                        <div class="col-md-12">
+                            <label class="form-label small fw-bold text-uppercase opacity-50">Template Name</label>
+                            {{ form.name }}
+                            {% if form.name.errors %}<div class="text-danger small mt-1">{{ form.name.errors }}</div>{% endif %}
                         </div>
-                    {% endfor %}
-                    <div class="d-flex gap-2 mt-4">
-                        <button id="submitBtn" class="btn btn-primary" type="submit">
-                            <span class="spinner-border spinner-border-sm d-none me-1" role="status" aria-hidden="true"></span>
-                            <i class="bi bi-save me-1"></i>
-                            <span class="btn-text">{% if is_edit %}Update Template{% else %}Save Template{% endif %}</span>
-                        </button>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-uppercase opacity-50">Issuer Authority</label>
+                            {{ form.issuer_name }}
+                            {% if form.issuer_name.errors %}<div class="text-danger small mt-1">{{ form.issuer_name.errors }}</div>{% endif %}
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-uppercase opacity-50">Course/Program Name</label>
+                            {{ form.course_name }}
+                            {% if form.course_name.errors %}<div class="text-danger small mt-1">{{ form.course_name.errors }}</div>{% endif %}
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label small fw-bold text-uppercase opacity-50">System Description (Optional)</label>
+                            {{ form.description }}
+                        </div>
                     </div>
-                </form>
+                </div>
+            </div>
+
+            <!-- Asset Management -->
+            <div class="card border-0 shadow-sm rounded-4 h-100">
+                <div class="card-header bg-white border-0 py-3">
+                    <h5 class="mb-0 fw-bold"><i class="bi bi-image-fill me-2 text-info"></i>Visual Assets</h5>
+                </div>
+                <div class="card-body p-4">
+                    <div class="row g-4">
+                        <div class="col-md-12">
+                            <div class="upload-zone p-4 text-center border-dashed rounded-4 mb-2">
+                                <i class="bi bi-cloud-arrow-up display-5 text-muted opacity-25"></i>
+                                <h6 class="mt-2">Background Image</h6>
+                                <p class="small text-muted">Recommended: 2000x1414px (A4 Landscape)</p>
+                                {{ form.background_image }}
+                                {% if form.background_image.value %}
+                                    <div class="mt-3">
+                                        <img src="{{ form.background_image.value.url }}" class="img-thumbnail" style="max-height: 120px">
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+
+        <!-- Sidebar Options -->
+        <div class="col-lg-4">
+            <div class="card border-0 shadow-sm rounded-4 mb-4">
+                <div class="card-body p-4">
+                    <h6 class="text-uppercase fw-bold text-muted small mb-3 opacity-50 border-bottom pb-2">Publication State</h6>
+                    <div class="form-check form-switch mb-4">
+                        {{ form.is_active }}
+                        <label class="form-check-label fw-bold" for="{{ form.is_active.id_for_label }}">Template Active</label>
+                        <p class="small text-muted">Inactive templates cannot be used for new issuance.</p>
+                    </div>
+
+                    <h6 class="text-uppercase fw-bold text-muted small mb-3 opacity-50 border-bottom pb-2">Verification Tools</h6>
+                    <div class="form-check mb-2">
+                        {{ form.include_qr_code }}
+                        <label class="form-check-label" for="{{ form.include_qr_code.id_for_label }}">Dynamic QR Code</label>
+                    </div>
+                    {% if form.qr_code_config %}
+                    <div class="mt-2 p-3 bg-light rounded-3 small">
+                        <i class="bi bi-info-circle me-1"></i> QR size and position is managed via global layout settings.
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="card-footer bg-white border-0 p-4 pt-0">
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary rounded-3 py-2 fw-bold">
+                            <i class="bi bi-check-lg me-2"></i>{% if form.instance.pk %}Update Blueprint{% else %}Save Blueprint{% endif %}
+                        </button>
+                        <a href="{% url 'admin-template-list' %}" class="btn btn-outline-secondary rounded-3 py-2">
+                            Cancel
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            {% if form.instance.pk %}
+            <div class="card border-0 shadow-sm rounded-4 bg-soft-primary border-0">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-bar-chart-fill h4 mb-0 me-2 text-primary"></i>
+                        <h6 class="mb-0 fw-bold">Historical Context</h6>
+                    </div>
+                    <p class="small text-muted mb-0">This template has been used to issue <span class="fw-bold text-dark">{{ form.instance.total_certificates }}</span> certificates since creation.</p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </form>
 </div>
-{% endblock %}
 
-{% block extra_js %}
+<style>
+.border-dashed {
+    border: 2px dashed #e2e8f0;
+    background: #f8fafc;
+    transition: all 0.2s;
+}
+.upload-zone:hover {
+    border-color: #3b82f6;
+    background: #eff6ff;
+}
+.form-control, .form-select {
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+}
+.card-header {
+    border-bottom: 1px solid #f1f5f9 !important;
+}
+</style>
+
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('templateForm');
-    if (!form) return;
-
-    const submitBtn = document.getElementById('submitBtn');
-    const btnSpinner = submitBtn.querySelector('.spinner-border');
-    const btnIcon = submitBtn.querySelector('.bi');
-    const btnText = submitBtn.querySelector('.btn-text');
-
-    form.addEventListener('submit', function (e) {
-        submitBtn.disabled = true;
-        btnSpinner.classList.remove('d-none');
-        btnIcon.classList.add('d-none');
-        btnText.textContent = 'Saving...';
+document.addEventListener('DOMContentLoaded', function() {
+    // Add Bootstrap classes to form fields if not already there
+    const fields = document.querySelectorAll('input[type=text], input[type=url], select, textarea');
+    fields.forEach(f => {
+        if (!f.classList.contains('form-control') && !f.classList.contains('form-select')) {
+            f.classList.add(f.tagName === 'SELECT' ? 'form-select' : 'form-control');
+        }
+    });
+    
+    // Switch class for checkboxes
+    const checkboxes = document.querySelectorAll('input[type=checkbox]');
+    checkboxes.forEach(c => {
+        if (c.id.includes('active')) {
+             c.classList.add('form-check-input');
+        } else {
+             c.classList.add('form-check-input');
+        }
     });
 });
 </script>
