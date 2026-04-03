@@ -61,3 +61,18 @@ INFO 2026-04-03 19:19:17,941 django.server [rid= uid= ip=]   - "GET /static/css/
 INFO 2026-04-03 19:19:17,944 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
 INFO 2026-04-03 19:19:17,945 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
 INFO 2026-04-03 19:19:18,433 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-03 19:19:41,944 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 8555
+INFO 2026-04-03 19:19:41,980 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-04-03 19:20:21,605 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-03 19:20:23,910 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 18064
+INFO 2026-04-03 19:20:23,968 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 5090
+INFO 2026-04-03 19:20:23,969 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-03 19:20:23,970 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-03 19:20:24,508 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-03 19:20:26,624 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 18064
+INFO 2026-04-03 19:20:26,668 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 5090
+INFO 2026-04-03 19:20:26,669 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-03 19:20:26,670 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-03 19:20:27,855 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-03 19:20:40,824 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 10362
+INFO 2026-04-03 19:20:43,514 django.server [rid= uid= ip=]   - "GET /admin/certificates/bulk/ HTTP/1.1" 200 5078
