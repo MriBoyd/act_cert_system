@@ -48,8 +48,14 @@
                     <div class="stat-icon bg-soft-success"><i class="bi bi-shield-check fs-4"></i></div>
                     <small class="text-secondary fw-semibold">Valid Entries</small>
                     <h2 class="fw-bold mt-1 mb-0">{{ valid_certificates }}</h2>
+                    {% if total_certificates %}
+                        {% widthratio valid_certificates total_certificates 100 as valid_percentage %}
+                    {% else %}
+                        {% with valid_percentage=0 %}
+                        {% endwith %}
+                    {% endif %}
                     <div class="progress mt-3" style="height: 4px;">
-                        <div class="progress-bar bg-success" style="width: {% widthratio valid_certificates total_certificates|default:1 100 %}%"></div>
+                        <div class="progress-bar bg-success {% if valid_percentage >= 100 %}w-100{% elif valid_percentage >= 75 %}w-75{% elif valid_percentage >= 50 %}w-50{% elif valid_percentage >= 25 %}w-25{% else %}w-0{% endif %}"></div>
                     </div>
                 </div>
             </div>
@@ -60,8 +66,14 @@
                     <div class="stat-icon bg-soft-danger"><i class="bi bi-shield-slash fs-4"></i></div>
                     <small class="text-secondary fw-semibold">Revoked</small>
                     <h2 class="fw-bold mt-1 mb-0">{{ revoked_certificates }}</h2>
+                    {% if total_certificates %}
+                        {% widthratio revoked_certificates total_certificates 100 as revoked_percentage %}
+                    {% else %}
+                        {% with revoked_percentage=0 %}
+                        {% endwith %}
+                    {% endif %}
                     <div class="progress mt-3" style="height: 4px;">
-                        <div class="progress-bar bg-danger" style="width: {% widthratio revoked_certificates total_certificates|default:1 100 %}%"></div>
+                        <div class="progress-bar bg-danger {% if revoked_percentage >= 100 %}w-100{% elif revoked_percentage >= 75 %}w-75{% elif revoked_percentage >= 50 %}w-50{% elif revoked_percentage >= 25 %}w-25{% else %}w-0{% endif %}"></div>
                     </div>
                 </div>
             </div>
@@ -221,6 +233,10 @@
     font-weight: 700;
     font-size: 0.9rem;
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.w-0 {
+    width: 0% !important;
 }
 </style>
 {% endblock %}

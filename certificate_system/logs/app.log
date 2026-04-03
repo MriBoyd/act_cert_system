@@ -28,3 +28,36 @@ INFO 2026-04-03 19:16:11,379 django.server [rid= uid= ip=]   - "GET /static/img/
 INFO 2026-04-03 19:16:23,773 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 8555
 INFO 2026-04-03 19:16:23,809 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
 INFO 2026-04-03 19:16:28,104 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 8555
+INFO 2026-04-03 19:16:58,767 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-03 19:17:00,633 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 8555
+INFO 2026-04-03 19:17:00,672 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 5090
+INFO 2026-04-03 19:17:03,047 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 10170
+INFO 2026-04-03 19:17:03,081 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-04-03 19:17:12,316 django.server [rid= uid= ip=]   - "GET /admin/templates/create/ HTTP/1.1" 200 6169
+INFO 2026-04-03 19:17:12,341 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-04-03 19:17:15,628 django.server [rid= uid= ip=]   - "GET /admin/logs/ HTTP/1.1" 200 12061
+INFO 2026-04-03 19:17:22,514 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 10965
+INFO 2026-04-03 19:17:22,552 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-04-03 19:17:25,268 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 8555
+INFO 2026-04-03 19:18:15,581 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 10352
+INFO 2026-04-03 19:18:15,638 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-04-03 19:18:16,672 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 10352
+INFO 2026-04-03 19:18:57,506 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 10965
+INFO 2026-04-03 19:18:57,555 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2026-04-03 19:19:03,307 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 10362
+INFO 2026-04-03 19:19:03,995 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 10362
+INFO 2026-04-03 19:19:04,036 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 5090
+INFO 2026-04-03 19:19:04,039 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-03 19:19:04,041 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-03 19:19:04,706 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-03 19:19:14,790 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-03 19:19:16,366 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 10362
+INFO 2026-04-03 19:19:16,416 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 5090
+INFO 2026-04-03 19:19:16,418 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-03 19:19:16,419 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-03 19:19:16,982 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-03 19:19:17,908 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 10362
+INFO 2026-04-03 19:19:17,941 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 5090
+INFO 2026-04-03 19:19:17,944 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-03 19:19:17,945 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-03 19:19:18,433 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
