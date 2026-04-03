@@ -6,29 +6,58 @@
     <div class="col-lg-8">
         <div class="card border-0 shadow-sm">
             <div class="card-body p-4">
-                <h4 class="mb-3"><i class="bi bi-layout-text-window-reverse me-1"></i>{% if is_edit %}Edit Certificate Template{% else %}Create Certificate Template{% endif %}</h4>
-                <form method="post" enctype="multipart/form-data">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="mb-0"><i class="bi bi-layout-text-window-reverse me-1"></i>{% if is_edit %}Edit Certificate Template{% else %}Create Certificate Template{% endif %}</h4>
+                    <a href="{% url 'admin-template-list' %}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-arrow-left me-1"></i>Back</a>
+                </div>
+                <form id="templateForm" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% if form.non_field_errors %}
-                        <div class="text-danger mb-2">{{ form.non_field_errors }}</div>
+                        <div class="alert alert-danger p-2">{{ form.non_field_errors }}</div>
                     {% endif %}
                     {% for field in form %}
-                        {% if field.is_hidden %}
-                            {{ field }}
-                        {% else %}
-                            <p>
-                                {{ field.label_tag }}{% if field.field.required %} <span class="text-danger">*</span>{% endif %}
+                        <div class="mb-3">
+                            {% if field.is_hidden %}
                                 {{ field }}
-                                {% if field.help_text %}<small class="form-text text-muted">{{ field.help_text }}</small>{% endif %}
-                                {% for error in field.errors %}<div class="text-danger small">{{ error }}</div>{% endfor %}
-                            </p>
-                        {% endif %}
+                            {% else %}
+                                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}{% if field.field.required %} <span class="text-danger">*</span>{% endif %}</label>
+                                {{ field }}
+                                {% if field.help_text %}<div class="form-text text-muted small mt-1">{{ field.help_text|safe }}</div>{% endif %}
+                                {% for error in field.errors %}<div class="invalid-feedback d-block">{{ error }}</div>{% endfor %}
+                            {% endif %}
+                        </div>
                     {% endfor %}
-                    <button class="btn btn-primary" type="submit"><i class="bi bi-save me-1"></i>{% if is_edit %}Update Template{% else %}Save Template{% endif %}</button>
-                    <a href="{% url 'admin-template-list' %}" class="btn btn-outline-secondary ms-1"><i class="bi bi-arrow-left me-1"></i>Back</a>
+                    <div class="d-flex gap-2 mt-4">
+                        <button id="submitBtn" class="btn btn-primary" type="submit">
+                            <span class="spinner-border spinner-border-sm d-none me-1" role="status" aria-hidden="true"></span>
+                            <i class="bi bi-save me-1"></i>
+                            <span class="btn-text">{% if is_edit %}Update Template{% else %}Save Template{% endif %}</span>
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('templateForm');
+    if (!form) return;
+
+    const submitBtn = document.getElementById('submitBtn');
+    const btnSpinner = submitBtn.querySelector('.spinner-border');
+    const btnIcon = submitBtn.querySelector('.bi');
+    const btnText = submitBtn.querySelector('.btn-text');
+
+    form.addEventListener('submit', function (e) {
+        submitBtn.disabled = true;
+        btnSpinner.classList.remove('d-none');
+        btnIcon.classList.add('d-none');
+        btnText.textContent = 'Saving...';
+    });
+});
+</script>
 {% endblock %}

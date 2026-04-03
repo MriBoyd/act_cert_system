@@ -1,0 +1,12 @@
+INFO 2026-03-11 17:12:18,293 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-03-11 17:12:20,460 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 3088
+INFO 2026-03-11 17:12:23,225 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 15226
+INFO 2026-03-11 17:12:24,689 django.server [rid= uid= ip=]   - "GET /admin/certificates/bulk/ HTTP/1.1" 200 5148
+INFO 2026-03-11 17:12:35,882 django.server [rid= uid= ip=]   - "GET /admin/certificates/bulk/ HTTP/1.1" 200 5148
+INFO 2026-03-11 17:13:04,829 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 15226
+INFO 2026-03-11 17:18:16,134 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 15226
+INFO 2026-03-11 17:18:16,227 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2934
+INFO 2026-03-11 17:18:16,228 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-03-11 17:18:16,241 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-03-11 17:18:17,026 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-03-11 17:18:22,836 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 15931

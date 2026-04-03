@@ -1,0 +1,18 @@
+INFO 2026-04-03 18:48:15,443 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-03 18:55:57,875 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-03 18:57:49,517 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-03 18:57:56,311 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-03 19:00:46,733 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-03 19:00:59,127 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-03 19:10:10,268 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-03 19:11:40,865 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-03 19:11:44,286 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 2660
+INFO 2026-04-03 19:11:44,357 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 2934
+INFO 2026-04-03 19:11:44,358 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-03 19:11:44,391 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-03 19:11:48,106 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3070
+INFO 2026-04-03 19:11:52,542 django.server [rid= uid= ip=]   - "POST /login/ HTTP/1.1" 200 3070
+INFO 2026-04-03 19:11:56,523 django.server [rid= uid= ip=]   - "POST /login/ HTTP/1.1" 200 3070
+INFO 2026-04-03 19:13:03,126 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-03 19:13:10,698 django.server [rid= uid= ip=]   - "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-03 19:13:10,781 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 7399
