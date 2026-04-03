@@ -2,185 +2,225 @@
 {% block title %}Admin Dashboard{% endblock %}
 
 {% block content %}
-<div class="mb-4">
-    <h2 class="mb-1"><i class="bi bi-briefcase me-1"></i>Admin Dashboard</h2>
-    <p class="text-muted mb-0">Issue, track, and verify credentials securely.</p>
-</div>
+<div class="dashboard-container">
+    <div class="welcome-section d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="display-5 fw-bold mb-2">Welcome Back, {{ request.user.username }}!</h1>
+            <p class="lead mb-0">Securely manage and track professional credentials at scale.</p>
+        </div>
+        <div class="d-none d-lg-block text-end">
+            <span class="badge bg-light text-primary px-3 py-2 rounded-pill shadow-sm mb-2 d-inline-block">
+                <i class="bi bi-calendar3 me-2"></i>{% now "l, d F Y" %}
+            </span>
+            <div class="text-white-50 small">System Status: <span class="text-white fw-bold">Online</span></div>
+        </div>
+    </div>
 
-<div class="row g-3">
-    <div class="col-12 col-lg-3">
-        <div class="card border-0 shadow-sm">
-            <div class="card-body">
-                <h5 class="mb-3"><i class="bi bi-grid-1x2 me-1"></i>Quick Actions</h5>
-                <div class="list-group">
-                    {% if feature_flags.certificate_generation %}
-                        <a class="list-group-item list-group-item-action" href="{% url 'admin-generate-certificate' %}"><i class="bi bi-file-earmark-plus me-2"></i>Generate Certificate</a>
-                    {% endif %}
-                    {% if feature_flags.bulk_generation %}
-                        <a class="list-group-item list-group-item-action" href="{% url 'admin-bulk-generate' %}"><i class="bi bi-upload me-2"></i>Bulk Upload</a>
-                    {% endif %}
-                    {% if feature_flags.certificate_management %}
-                        <a class="list-group-item list-group-item-action" href="{% url 'admin-certificate-list' %}"><i class="bi bi-table me-2"></i>Manage Certificates</a>
-                    {% endif %}
-                    {% if feature_flags.template_management %}
-                        <a class="list-group-item list-group-item-action" href="{% url 'admin-template-list' %}"><i class="bi bi-layout-text-window-reverse me-2"></i>Manage Templates</a>
-                        <a class="list-group-item list-group-item-action" href="{% url 'admin-create-template' %}"><i class="bi bi-plus-square me-2"></i>New Template</a>
-                    {% endif %}
-                    {% if feature_flags.log_management %}
-                        <a class="list-group-item list-group-item-action" href="{% url 'admin-log-management' %}"><i class="bi bi-journal-text me-2"></i>Logs</a>
-                    {% endif %}
-                    {% if request.user.is_superuser %}
-                        <a class="list-group-item list-group-item-action" href="{% url 'admin-feature-flags' %}"><i class="bi bi-toggles2 me-2"></i>Feature Flags</a>
-                    {% endif %}
+    <!-- Stats Row -->
+    <div class="row g-4 mb-5">
+        <div class="col-6 col-md-3">
+            <div class="card stat-card h-100">
+                <div class="card-body">
+                    <div class="stat-icon bg-soft-primary"><i class="bi bi-file-earmark-text fs-4"></i></div>
+                    <small class="text-secondary fw-semibold">Total Templates</small>
+                    <h2 class="fw-bold mt-1 mb-0">{{ total_templates }}</h2>
+                    <div class="progress mt-3" style="height: 4px;">
+                        <div class="progress-bar bg-primary" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card stat-card h-100">
+                <div class="card-body">
+                    <div class="stat-icon bg-soft-success"><i class="bi bi-patch-check fs-4"></i></div>
+                    <small class="text-secondary fw-semibold">Total Issued</small>
+                    <h2 class="fw-bold mt-1 mb-0">{{ total_certificates }}</h2>
+                    <div class="progress mt-3" style="height: 4px;">
+                        <div class="progress-bar bg-success" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card stat-card h-100">
+                <div class="card-body">
+                    <div class="stat-icon bg-soft-success"><i class="bi bi-shield-check fs-4"></i></div>
+                    <small class="text-secondary fw-semibold">Valid Entries</small>
+                    <h2 class="fw-bold mt-1 mb-0">{{ valid_certificates }}</h2>
+                    <div class="progress mt-3" style="height: 4px;">
+                        <div class="progress-bar bg-success" style="width: {% widthratio valid_certificates total_certificates|default:1 100 %}%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card stat-card h-100">
+                <div class="card-body">
+                    <div class="stat-icon bg-soft-danger"><i class="bi bi-shield-slash fs-4"></i></div>
+                    <small class="text-secondary fw-semibold">Revoked</small>
+                    <h2 class="fw-bold mt-1 mb-0">{{ revoked_certificates }}</h2>
+                    <div class="progress mt-3" style="height: 4px;">
+                        <div class="progress-bar bg-danger" style="width: {% widthratio revoked_certificates total_certificates|default:1 100 %}%"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="col-12 col-lg-9">
-        <div class="row g-3 mb-4">
-            <div class="col-md-3"><div class="card stat-card"><div class="card-body"><small>Total Templates</small><h3>{{ total_templates }}</h3></div></div></div>
-            <div class="col-md-3"><div class="card stat-card"><div class="card-body"><small>Total Certificates</small><h3>{{ total_certificates }}</h3></div></div></div>
-            <div class="col-md-3"><div class="card stat-card"><div class="card-body"><small>Valid Certificates</small><h3>{{ valid_certificates }}</h3></div></div></div>
-            <div class="col-md-3"><div class="card stat-card"><div class="card-body"><small>Revoked Certificates</small><h3>{{ revoked_certificates }}</h3></div></div></div>
+    <div class="row g-4">
+        <!-- Sidebar Actions -->
+        <div class="col-12 col-xl-3">
+            <div class="card quick-action-card shadow-sm border-0 mb-4">
+                <div class="card-header bg-white border-0 py-3">
+                    <h5 class="mb-0 fw-bold">Quick Actions</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    {% if feature_flags.certificate_generation %}
+                        <a class="list-group-item quick-action-item" href="{% url 'admin-generate-certificate' %}">
+                            <i class="bi bi-file-earmark-plus-fill me-3 text-primary"></i>Single Issue
+                        </a>
+                    {% endif %}
+                    {% if feature_flags.bulk_generation %}
+                        <a class="list-group-item quick-action-item" href="{% url 'admin-bulk-generate' %}">
+                            <i class="bi bi-lightning-charge-fill me-3 text-warning"></i>Bulk Issuance
+                        </a>
+                    {% endif %}
+                    {% if feature_flags.certificate_management %}
+                        <a class="list-group-item quick-action-item" href="{% url 'admin-certificate-list' %}">
+                            <i class="bi bi-journal-check me-3 text-success"></i>Manage Records
+                        </a>
+                    {% endif %}
+                    {% if feature_flags.template_management %}
+                        <a class="list-group-item quick-action-item border-top" href="{% url 'admin-template-list' %}">
+                            <i class="bi bi-palette2 me-3 text-danger"></i>Template Design
+                        </a>
+                        <a class="list-group-item quick-action-item" href="{% url 'admin-create-template' %}">
+                            <i class="bi bi-plus-circle-dotted me-3 text-dark"></i>New Canvas
+                        </a>
+                    {% endif %}
+                    {% if feature_flags.log_management %}
+                        <a class="list-group-item quick-action-item border-top" href="{% url 'admin-log-management' %}">
+                            <i class="bi bi-terminal-split me-3 text-info"></i>Audit Logs
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <div class="card border-0 shadow-sm h-100 mt-4 overflow-hidden rounded-4">
+                <div class="card-body">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-bar-chart-fill me-2 text-primary"></i>Analytics</h5>
+                    <ul class="list-group list-group-flush small">
+                        {% for item in certificates_by_course %}
+                            <li class="list-group-item d-flex justify-content-between px-0 border-0 py-2">
+                                <span class="text-truncate me-2" title="{{ item.course_name }}">{{ item.course_name }}</span>
+                                <span class="badge bg-soft-primary rounded-pill">{{ item.total }}</span>
+                            </li>
+                        {% empty %}
+                            <li class="list-group-item px-0 text-muted small">No issuance data yet.</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
         </div>
 
-        <div class="card border-0 shadow-sm mb-4">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h5 class="card-title mb-0"><i class="bi bi-clock-history me-1"></i>Recent Certificates</h5>
+        <!-- Main Table Area -->
+        <div class="col-12 col-xl-9">
+            <div class="card recent-table-card shadow-sm border-0">
+                <div class="card-header bg-white border-0 py-3 d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0 fw-bold">Recent Issuances</h5>
                     {% if feature_flags.certificate_management %}
-                        <a href="{% url 'admin-certificate-list' %}" class="btn btn-sm btn-outline-primary"><i class="bi bi-list-ul me-1"></i>View All</a>
+                        <a href="{% url 'admin-certificate-list' %}" class="btn btn-sm btn-link text-decoration-none">View All <i class="bi bi-arrow-right ms-1"></i></a>
                     {% endif %}
                 </div>
                 <div class="table-responsive">
-                    <table class="table table-sm align-middle">
+                    <table class="table table-modern align-middle mb-0">
                         <thead>
                             <tr>
-                                <th>Recipient</th><th>Course</th><th>Serial</th><th>Status</th><th>Actions</th>
+                                <th>Recipient</th>
+                                <th>Course/Program</th>
+                                <th>Serial ID</th>
+                                <th>Status</th>
+                                <th class="text-end">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for certificate in recent_certificates %}
                                 <tr>
-                                    <td>{{ certificate.recipient_name }}</td>
-                                    <td>{{ certificate.course_name }}</td>
-                                    <td>{{ certificate.serial_number }}</td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar-circle me-3">{{ certificate.recipient_name|slice:":1" }}</div>
+                                            <div>
+                                                <div class="fw-bold text-dark">{{ certificate.recipient_name }}</div>
+                                                <div class="small text-muted">{% if certificate.issued_at %}Issued {{ certificate.issued_at|date:"M d, Y" }}{% else %}Ready to issue{% endif %}</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="text-truncate d-inline-block text-secondary" style="max-width: 12rem;">{{ certificate.course_name }}</span></td>
+                                    <td><code class="text-primary small px-2 py-1 bg-light rounded">{{ certificate.serial_number|truncatechars:12 }}</code></td>
                                     <td>
                                         {% if certificate.is_verifiable %}
-                                            <span class="badge bg-success">Valid</span>
+                                            <span class="badge badge-status bg-soft-success">Active</span>
                                         {% else %}
-                                            <span class="badge bg-danger">{{ certificate.status }}</span>
+                                            <span class="badge badge-status bg-soft-danger">{{ certificate.status }}</span>
                                         {% endif %}
                                     </td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
-                                                <i class="bi bi-three-dots-vertical"></i>
+                                    <td class="text-end">
+                                        <div class="btn-group shadow-sm bg-white rounded-3">
+                                            {% if feature_flags.certificate_detail %}
+                                            <a href="{% url 'admin-certificate-detail' certificate.id %}" class="btn btn-sm btn-outline-light text-dark border-0 px-3 py-2" title="View Detail">
+                                                <i class="bi bi-eye"></i>
+                                            </a>
+                                            {% endif %}
+                                            <button class="btn btn-sm btn-outline-light text-dark border-0 dropdown-toggle dropdown-toggle-split px-2" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <span class="visually-hidden">Toggle</span>
                                             </button>
-                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                {% if feature_flags.certificate_detail %}
-                                                    <li>
-                                                        <a class="dropdown-item" href="{% url 'admin-certificate-detail' certificate.id %}"><i class="bi bi-eye me-2"></i>View</a>
-                                                    </li>
-                                                {% endif %}
+                                            <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg mt-2">
                                                 {% if feature_flags.certificate_management %}
-                                                    <li>
-                                                        <a class="dropdown-item" href="{% url 'admin-certificate-status' certificate.id %}"><i class="bi bi-sliders me-2"></i>Status</a>
-                                                    </li>
+                                                    <li><a class="dropdown-item py-2" href="{% url 'admin-certificate-status' certificate.id %}"><i class="bi bi-sliders2 me-2 text-muted"></i>Manage Status</a></li>
                                                 {% endif %}
                                                 {% if feature_flags.certificate_download %}
-                                                    <li><hr class="dropdown-divider" /></li>
-                                                    <li><h6 class="dropdown-header">Downloads</h6></li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="{% url 'admin-download-certificate-pdf' certificate.id %}"><i class="bi bi-filetype-pdf me-2"></i>PDF</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="{% url 'admin-download-certificate-png' certificate.id %}"><i class="bi bi-filetype-png me-2"></i>PNG</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="{% url 'admin-download-certificate-jpg' certificate.id %}"><i class="bi bi-filetype-jpg me-2"></i>JPG</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="{% url 'admin-download-certificate-qr' certificate.id %}"><i class="bi bi-qr-code me-2"></i>QR</a>
-                                                    </li>
-                                                {% endif %}
-
-                                                {% if feature_flags.certificate_management %}
-                                                    <li><hr class="dropdown-divider" /></li>
-                                                    <li>
-                                                        <form method="post" action="{% url 'admin-certificate-delete' certificate.id %}" onsubmit="return confirm('Delete this certificate and its files?');">
-                                                            {% csrf_token %}
-                                                            <button type="submit" class="dropdown-item text-danger">
-                                                                <i class="bi bi-trash me-2"></i>Delete
-                                                            </button>
-                                                        </form>
-                                                    </li>
+                                                    <li><hr class="dropdown-divider"></li>
+                                                    <li><h6 class="dropdown-header small text-uppercase fw-bold opacity-50">Downloads</h6></li>
+                                                    <li><a class="dropdown-item py-2" href="{% url 'admin-download-certificate-pdf' certificate.id %}"><i class="bi bi-file-earmark-pdf me-2 text-danger"></i>Professional PDF</a></li>
+                                                    <li><a class="dropdown-item py-2" href="{% url 'admin-download-certificate-png' certificate.id %}"><i class="bi bi-file-earmark-image me-2 text-info"></i>PNG Export</a></li>
                                                 {% endif %}
                                             </ul>
                                         </div>
                                     </td>
                                 </tr>
                             {% empty %}
-                                <tr><td colspan="5">No certificates yet.</td></tr>
+                                <tr>
+                                    <td colspan="5" class="text-center py-5">
+                                        <div class="py-4">
+                                            <i class="bi bi-inbox fs-1 d-block mb-3 opacity-25"></i>
+                                            <p class="text-muted mb-0">No certificates issued yet.</p>
+                                            <a href="{% url 'admin-generate-certificate' %}" class="btn btn-sm btn-primary mt-3">Issue First Certificate</a>
+                                        </div>
+                                    </td>
+                                </tr>
                             {% endfor %}
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-
-        <div class="row g-3">
-            <div class="col-lg-6">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="bi bi-bar-chart-line me-1"></i>Top Courses</h5>
-                        <ul class="list-group list-group-flush">
-                            {% for item in certificates_by_course %}
-                                <li class="list-group-item d-flex justify-content-between px-0">
-                                    <span>{{ item.course_name }}</span>
-                                    <span class="badge bg-primary rounded-pill">{{ item.total }}</span>
-                                </li>
-                            {% empty %}
-                                <li class="list-group-item px-0">No data available.</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="bi bi-journal-check me-1"></i>Recent Verification Logs</h5>
-                        <div class="table-responsive">
-                            <table class="table table-sm align-middle">
-                                <thead>
-                                    <tr><th>Certificate</th><th>Result</th><th>IP</th><th>Time</th></tr>
-                                </thead>
-                                <tbody>
-                                    {% for log in recent_logs %}
-                                        <tr>
-                                            <td>{{ log.certificate_uuid }}</td>
-                                            <td>
-                                                {% if log.is_valid %}
-                                                    <span class="badge bg-success">Valid</span>
-                                                {% else %}
-                                                    <span class="badge bg-danger">Invalid</span>
-                                                {% endif %}
-                                            </td>
-                                            <td>{{ log.requester_ip|default:'-' }}</td>
-                                            <td>{{ log.checked_at }}</td>
-                                        </tr>
-                                    {% empty %}
-                                        <tr><td colspan="4">No verification activity yet.</td></tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
+
+<style>
+.avatar-circle {
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(45deg, #f1f5f9, #e2e8f0);
+    color: #475569;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+</style>
 {% endblock %}
