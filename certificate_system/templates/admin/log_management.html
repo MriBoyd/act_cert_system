@@ -117,9 +117,7 @@
                     <div class="terminal-content p-4 font-monospace" id="terminalOutput">
                         {% if content %}
                             {% for line in content.splitlines %}
-                                <div class="terminal-line">
-                                    <span class="text-success opaicty-50 me-2">❯</span>{{ line }}
-                                </div>
+                                <div class="terminal-line"><span class="text-success opacity-50 me-2">❯</span>{{ line }}</div>
                             {% endfor %}
                         {% else %}
                             <div class="text-muted italic opacity-50 p-5 text-center">--- No log output available ---</div>

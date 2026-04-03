@@ -76,3 +76,13 @@ INFO 2026-04-03 19:20:26,670 django.server [rid= uid= ip=]   - "GET /static/img/
 INFO 2026-04-03 19:20:27,855 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
 INFO 2026-04-03 19:20:40,824 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 10362
 INFO 2026-04-03 19:20:43,514 django.server [rid= uid= ip=]   - "GET /admin/certificates/bulk/ HTTP/1.1" 200 5078
+INFO 2026-04-03 19:35:22,185 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-03 19:35:23,802 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-04-03 19:35:24,581 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-03 19:35:30,418 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=app&lines=200 HTTP/1.1" 200 32492
+INFO 2026-04-03 19:35:30,487 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-03 19:35:30,493 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-03 19:35:30,547 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-03 19:35:31,536 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-03 19:35:34,403 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=security&lines=200 HTTP/1.1" 200 12070
+INFO 2026-04-03 19:35:38,346 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=security&q=&lines=200&csrfmiddlewaretoken=8LhcdyAAYdGJBkLd2wtEwUBZhw10MyVDUYTF6XWfSHlwSidR29OsLsabphh7XBNw HTTP/1.1" 200 12070

@@ -1087,7 +1087,7 @@ def log_management(request):
 
     end = total_lines - (page - 1) * lines
     start = max(0, end - lines)
-    page_lines = recent_lines[start:end] if end > 0 else []
+    page_lines = [ln.strip() for ln in recent_lines[start:end]] if end > 0 else []
     content = "\n".join(page_lines)
 
     query_params = request.GET.copy()
