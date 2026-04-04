@@ -22,15 +22,22 @@ class MultipleImageField(forms.ImageField):
 class CertificateTemplateForm(forms.ModelForm):
     class Meta:
         model = CertificateTemplate
-        fields = ["name", "issuer_name", "background_image", "dynamic_fields", "is_active"]
+        fields = ["name", "issuer_name", "course_name", "description", "background_image", "dynamic_fields", "is_active"]
         widgets = {
+            "name": forms.TextInput(attrs={"class": "form-control", "placeholder": "Template Name"}),
+            "issuer_name": forms.TextInput(attrs={"class": "form-control", "placeholder": "Issuer Authority"}),
+            "course_name": forms.TextInput(attrs={"class": "form-control", "placeholder": "Course/Program Name"}),
+            "description": forms.Textarea(
+                attrs={"class": "form-control", "rows": 3, "placeholder": "System Description (Optional)"}
+            ),
+            "background_image": forms.ClearableFileInput(attrs={"class": "form-control"}),
             "dynamic_fields": forms.Textarea(
                 attrs={
                     "class": "form-control",
                     "rows": 6,
                     "placeholder": '[{"name":"recipient_name","x":200,"y":300,"font_size":20}]',
                 }
-            )
+            ),
         }
 
 
