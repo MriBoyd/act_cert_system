@@ -1075,6 +1075,15 @@ def download_certificate_jpg(request, certificate_uuid):
 @certificate_admin_required
 def access_analytics(request):
     """Business-focused view for tracking certificate access/verification attempts."""
+    if request.method == "POST" and request.POST.get("action") == "clear_logs":
+        if not getattr(request.user, "is_superuser", False):
+            messages.error(request, "Only superusers can clear analytics data.")
+        else:
+            VerificationLog.objects.exclude(source=VerificationLog.Source.ADMIN).delete()
+            messages.success(request, "Analytics logs cleared successfully.")
+            audit_logger.info("event=analytics_logs_cleared by=%s", request.user.username)
+        return redirect("admin-access-analytics")
+
     query = request.GET.get("q", "").strip()
     source_filter = request.GET.get("source", "").strip()
     valid_filter = request.GET.get("valid", "").strip()
