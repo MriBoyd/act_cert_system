@@ -86,3 +86,257 @@ INFO 2026-04-03 19:35:30,547 django.server [rid= uid= ip=]   - "GET /static/js/m
 INFO 2026-04-03 19:35:31,536 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
 INFO 2026-04-03 19:35:34,403 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=security&lines=200 HTTP/1.1" 200 12070
 INFO 2026-04-03 19:35:38,346 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=security&q=&lines=200&csrfmiddlewaretoken=8LhcdyAAYdGJBkLd2wtEwUBZhw10MyVDUYTF6XWfSHlwSidR29OsLsabphh7XBNw HTTP/1.1" 200 12070
+INFO 2026-04-04 11:20:17,712 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9610
+WARNING 2026-04-04 11:20:20,213 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:20:25,040 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9610
+WARNING 2026-04-04 11:20:25,069 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:20:54,186 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9610
+WARNING 2026-04-04 11:20:54,224 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:21:27,457 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9610
+WARNING 2026-04-04 11:21:27,493 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:21:28,757 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 11647
+WARNING 2026-04-04 11:21:28,788 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:21:31,228 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 11647
+WARNING 2026-04-04 11:21:31,256 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:21:31,263 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:21:31,264 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:21:31,293 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:21:31,511 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:21:33,120 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 22939
+WARNING 2026-04-04 11:21:33,158 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+WARNING 2026-04-04 11:21:34,914 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+WARNING 2026-04-04 11:21:34,945 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:21:40,367 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 6740
+WARNING 2026-04-04 11:21:40,401 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:21:42,142 django.server [rid= uid= ip=]   - "GET /admin/templates/create/ HTTP/1.1" 200 9571
+WARNING 2026-04-04 11:21:42,176 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:21:54,977 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 6740
+WARNING 2026-04-04 11:21:55,024 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:21:56,509 django.server [rid= uid= ip=]   - "GET /admin/templates/create/ HTTP/1.1" 200 9571
+WARNING 2026-04-04 11:21:56,558 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+WARNING 2026-04-04 11:21:58,435 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+WARNING 2026-04-04 11:21:58,458 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:21:59,517 django.server [rid= uid= ip=]   - "GET /admin/templates/create/ HTTP/1.1" 200 9571
+WARNING 2026-04-04 11:21:59,577 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:23:04,109 django.server [rid= uid= ip=]   - "GET /admin/templates/create/ HTTP/1.1" 200 9569
+WARNING 2026-04-04 11:23:04,192 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:23:04,192 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:23:04,193 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:23:04,224 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:23:04,480 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:23:08,643 django.server [rid= uid= ip=]   - "GET /admin/templates/create/ HTTP/1.1" 200 9569
+WARNING 2026-04-04 11:23:08,674 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:23:08,675 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:23:08,675 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:23:08,700 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:23:08,956 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:23:09,527 django.server [rid= uid= ip=]   - "GET /admin/templates/create/ HTTP/1.1" 200 9569
+WARNING 2026-04-04 11:23:09,593 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:23:09,593 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:23:09,594 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:23:09,621 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:23:09,851 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:23:10,393 django.server [rid= uid= ip=]   - "GET /admin/templates/create/ HTTP/1.1" 200 9569
+WARNING 2026-04-04 11:23:10,435 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:23:10,435 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:23:10,436 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:23:10,468 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:23:10,698 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:23:34,073 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9608
+WARNING 2026-04-04 11:23:34,101 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:24:17,130 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9607
+WARNING 2026-04-04 11:24:17,161 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:24:17,162 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:24:17,162 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:24:17,192 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:24:17,432 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:24:24,597 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9607
+WARNING 2026-04-04 11:24:24,626 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:26:59,938 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9737
+WARNING 2026-04-04 11:26:59,982 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:26:59,982 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:26:59,982 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:27:00,010 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:27:00,261 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:27:12,312 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9737
+WARNING 2026-04-04 11:27:12,341 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:27:25,298 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9737
+WARNING 2026-04-04 11:27:25,331 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:27:39,065 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9739
+INFO 2026-04-04 11:27:39,099 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+WARNING 2026-04-04 11:27:39,099 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:27:39,099 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:27:39,133 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:27:39,374 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:27:47,774 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9625
+WARNING 2026-04-04 11:27:47,804 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:27:47,807 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:27:47,808 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:27:47,846 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:27:48,072 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:27:54,593 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9625
+WARNING 2026-04-04 11:27:54,622 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:28:02,685 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 6740
+WARNING 2026-04-04 11:28:02,727 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:28:04,620 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 6740
+WARNING 2026-04-04 11:28:04,657 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:28:04,658 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:28:04,658 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:28:04,662 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:28:04,903 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:28:06,426 django.server [rid= uid= ip=]   - "GET /admin/templates/create/ HTTP/1.1" 200 9586
+WARNING 2026-04-04 11:28:06,466 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:28:14,563 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9625
+WARNING 2026-04-04 11:28:14,604 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:28:29,848 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9625
+WARNING 2026-04-04 11:28:29,886 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:28:41,704 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9625
+WARNING 2026-04-04 11:28:41,746 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+WARNING 2026-04-04 11:29:16,905 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:29:26,602 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9625
+WARNING 2026-04-04 11:29:26,643 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:30:26,966 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:31:26,881 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-04-04 11:31:27,191 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:31:34,492 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-04-04 11:31:34,789 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:31:53,575 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9932
+WARNING 2026-04-04 11:31:53,614 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:31:53,617 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:31:53,618 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:31:53,642 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:31:53,892 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:31:59,945 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9932
+WARNING 2026-04-04 11:31:59,977 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:32:30,902 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9932
+WARNING 2026-04-04 11:32:30,935 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:33:15,453 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-04-04 11:33:15,779 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:33:23,607 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9939
+WARNING 2026-04-04 11:33:23,648 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:33:23,665 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:33:23,669 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:33:23,693 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:33:23,948 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:33:29,889 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 9939
+WARNING 2026-04-04 11:33:29,921 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:34:48,743 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 10953
+INFO 2026-04-04 11:34:48,774 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:34:48,777 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+WARNING 2026-04-04 11:34:48,786 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:34:48,786 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:34:49,052 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:35:11,005 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 10953
+WARNING 2026-04-04 11:35:11,036 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:35:30,401 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 302 0
+ERROR 2026-04-04 11:35:30,457 django.request [rid= uid= ip=]   - Internal Server Error: /admin/templates/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py", line 107, in _wrapped
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/feature_flags.py", line 57, in _wrapped
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py", line 303, in template_list
+    return render(
+           ^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 979, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 979, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 979, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/base.py", line 979, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'admin-update-template' not found. 'admin-update-template' is not a valid view function or pattern name.
+ERROR 2026-04-04 11:35:30,460 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 500 208174
+WARNING 2026-04-04 11:35:30,501 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+WARNING 2026-04-04 11:35:30,758 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 14159
+INFO 2026-04-04 11:36:01,415 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-04-04 11:36:01,720 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:36:25,172 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 11315
+WARNING 2026-04-04 11:36:25,206 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:36:25,229 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:36:25,229 django.server [rid= uid= ip=]   - "GET /media/templates/backgrounds/images.jpeg HTTP/1.1" 200 11318
+INFO 2026-04-04 11:36:25,232 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:36:25,257 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:36:32,611 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 11315
+WARNING 2026-04-04 11:36:32,634 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:36:32,638 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:36:32,638 django.server [rid= uid= ip=]   - "GET /media/templates/backgrounds/images.jpeg HTTP/1.1" 200 11318
+INFO 2026-04-04 11:36:32,639 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:36:32,646 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:36:33,439 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:36:34,066 django.server [rid= uid= ip=]   - "GET /admin/templates/3de8202a-0083-4a72-90a0-7099ccf3fc67/edit/ HTTP/1.1" 200 11054
+WARNING 2026-04-04 11:36:34,090 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+INFO 2026-04-04 11:36:41,539 django.server [rid= uid= ip=]   - "GET /media/templates/backgrounds/images.jpeg HTTP/1.1" 304 0
+WARNING 2026-04-04 11:36:41,573 django.server [rid= uid= ip=]   - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 14270
+WARNING 2026-04-04 11:36:41,753 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 14159
+WARNING 2026-04-04 11:36:45,042 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 14159
+INFO 2026-04-04 11:36:51,551 django.server [rid= uid= ip=]   - "GET /admin/templates/ HTTP/1.1" 200 11315
+INFO 2026-04-04 11:36:51,569 django.server [rid= uid= ip=]   - "GET /media/templates/backgrounds/images.jpeg HTTP/1.1" 304 0
+INFO 2026-04-04 11:36:57,040 django.server [rid= uid= ip=]   - "GET /admin/certificates/?template=3de8202a-0083-4a72-90a0-7099ccf3fc67 HTTP/1.1" 200 12149
+INFO 2026-04-04 11:36:59,520 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 23009
+INFO 2026-04-04 11:37:37,122 django.server [rid= uid= ip=]   - "POST /admin/certificates/generate/ HTTP/1.1" 302 0
+INFO 2026-04-04 11:37:37,151 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14993
+INFO 2026-04-04 11:37:42,951 django.server [rid= uid= ip=]   - "GET /admin/certificates/1a91adc0-57ec-464e-966d-341b0c3d1b1a/ HTTP/1.1" 200 10477
+INFO 2026-04-04 11:37:42,965 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/1a91adc0-57ec-464e-966d-341b0c3d1b1a.png HTTP/1.1" 200 966
+INFO 2026-04-04 11:37:42,969 django.server [rid= uid= ip=]   - "GET /media/templates/backgrounds/images.jpeg HTTP/1.1" 304 0
+INFO 2026-04-04 11:37:42,974 django.server [rid= uid= ip=]   - "GET /media/certificates/images/1a91adc0-57ec-464e-966d-341b0c3d1b1a.png HTTP/1.1" 200 4134403

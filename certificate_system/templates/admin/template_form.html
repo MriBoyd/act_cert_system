@@ -8,15 +8,23 @@
           <ol class="breadcrumb mb-2">
             <li class="breadcrumb-item"><a href="{% url 'admin-dashboard' %}" class="text-decoration-none">Dashboard</a></li>
             <li class="breadcrumb-item"><a href="{% url 'admin-template-list' %}" class="text-decoration-none">Templates</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{% if form.instance.pk %}Edit{% else %}Draft{% endif %}</li>
+            <li class="breadcrumb-item active" aria-current="page">{% if is_edit %}Edit{% else %}New{% endif %}</li>
           </ol>
         </nav>
-        <h2 class="fw-bold mb-0">{% if form.instance.pk %}Update Blueprint{% else %}Create Template{% endif %}</h2>
+        <h2 class="fw-bold mb-0">{% if is_edit %}Update Blueprint{% else %}Create Template{% endif %}</h2>
         <p class="text-muted">Configure the visual and metadata structure of your certificates.</p>
     </div>
 
     <form method="post" enctype="multipart/form-data" class="row g-4">
         {% csrf_token %}
+        
+        {% if form.non_field_errors %}
+        <div class="col-12">
+            {% for error in form.non_field_errors %}
+                <div class="alert alert-danger py-2 mb-0">{{ error }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
         
         <!-- Main Configuration -->
         <div class="col-lg-8">
@@ -44,6 +52,12 @@
                         <div class="col-12">
                             <label class="form-label small fw-bold text-uppercase opacity-50">System Description (Optional)</label>
                             {{ form.description }}
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label small fw-bold text-uppercase opacity-50">Dynamic Fields</label>
+                            {{ form.dynamic_fields }}
+                            <div class="form-text">Provide JSON like: [{"name":"recipient_name","x":200,"y":300,"font_size":20}]</div>
+                            {% if form.dynamic_fields.errors %}<div class="text-danger small mt-1">{{ form.dynamic_fields.errors }}</div>{% endif %}
                         </div>
                     </div>
                 </div>
@@ -98,8 +112,8 @@
                 </div>
                 <div class="card-footer bg-white border-0 p-4 pt-0">
                     <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-primary rounded-3 py-2 fw-bold">
-                            <i class="bi bi-check-lg me-2"></i>{% if form.instance.pk %}Update Blueprint{% else %}Save Blueprint{% endif %}
+                        <button type="submit" class="btn btn-primary rounded-3 py-2 fw-bold" name="_save">
+                            <i class="bi bi-check-lg me-2"></i>{% if is_edit %}Update Blueprint{% else %}Create Template{% endif %}
                         </button>
                         <a href="{% url 'admin-template-list' %}" class="btn btn-outline-secondary rounded-3 py-2">
                             Cancel

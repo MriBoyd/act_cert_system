@@ -1,4 +1,2 @@
-INFO 2026-04-03 19:11:52,528 audit [rid=6421874a1e2b49ed85c30977ab4c72f4 uid= ip=127.0.0.1] POST /login/ - event=auth_login_failed username=test ip=127.0.0.1
-INFO 2026-04-03 19:11:56,506 audit [rid=4c741c07454c45f7b454eb4086b2fe33 uid= ip=127.0.0.1] POST /login/ - event=auth_login_failed username=root123 ip=127.0.0.1
-INFO 2026-04-03 19:13:10,681 audit [rid=6b41bc3f3f1a4f4bbac9958ef3632432 uid= ip=127.0.0.1] POST /login/ - event=auth_login_success username=mriboy
-INFO 2026-04-03 19:24:34,936 audit [rid=df2820e0cca04bfdad34ee382e8d4125 uid= ip=127.0.0.1] POST /django-admin/login/ - event=auth_login_success username=mriboy
+INFO 2026-04-04 11:35:30,400 audit [rid=99022d08545642fdbca994a7c1963467 uid= ip=127.0.0.1] POST /admin/templates/create/ - event=template_created template_id=3de8202a-0083-4a72-90a0-7099ccf3fc67 name=test
+INFO 2026-04-04 11:37:37,121 audit [rid=5f87c8abc0884bf796f475a57e8cd9e1 uid= ip=127.0.0.1] POST /admin/certificates/generate/ - event=certificate_generated certificate_id=1a91adc0-57ec-464e-966d-341b0c3d1b1a serial=12121212121212121 template_id=3de8202a-0083-4a72-90a0-7099ccf3fc67

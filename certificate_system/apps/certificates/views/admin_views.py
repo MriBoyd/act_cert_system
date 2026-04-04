@@ -230,6 +230,10 @@ def create_template(request):
             )
             messages.success(request, "Certificate template created successfully.")
             return redirect("admin-template-list")
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field.replace('_', ' ').title()}: {error}")
     else:
         form = CertificateTemplateForm()
 
