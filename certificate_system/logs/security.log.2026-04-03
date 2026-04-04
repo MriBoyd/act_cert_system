@@ -1,4 +1,0 @@
-WARNING 2026-04-03 19:11:52,527 security [rid=6421874a1e2b49ed85c30977ab4c72f4 uid= ip=127.0.0.1] POST /login/ - event=auth_login_failed username=test ip=127.0.0.1
-WARNING 2026-04-03 19:11:56,506 security [rid=4c741c07454c45f7b454eb4086b2fe33 uid= ip=127.0.0.1] POST /login/ - event=auth_login_failed username=root123 ip=127.0.0.1
-INFO 2026-04-03 19:13:10,680 security [rid=6b41bc3f3f1a4f4bbac9958ef3632432 uid= ip=127.0.0.1] POST /login/ - event=auth_login_success username=mriboy
-INFO 2026-04-03 19:24:34,936 security [rid=df2820e0cca04bfdad34ee382e8d4125 uid= ip=127.0.0.1] POST /django-admin/login/ - event=auth_login_success username=mriboy
