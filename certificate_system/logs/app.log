@@ -1190,3 +1190,14 @@ INFO 2026-04-04 12:25:21,949 django.server [rid= uid= ip=]   - "POST /admin/feat
 INFO 2026-04-04 12:25:21,973 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 49145
 INFO 2026-04-04 12:25:31,134 django.server [rid= uid= ip=]   - "POST /admin/feature-flags/ HTTP/1.1" 302 0
 INFO 2026-04-04 12:25:31,159 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 49447
+INFO 2026-04-04 12:26:47,811 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 30580
+INFO 2026-04-04 12:26:58,873 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 30785
+INFO 2026-04-04 12:27:01,070 django.server [rid= uid= ip=]   - "GET /admin/certificates/ff6eea88-85b5-45ef-85ff-60a146c23a9a/ HTTP/1.1" 200 15185
+INFO 2026-04-04 12:27:01,087 django.server [rid= uid= ip=]   - "GET /media/certificates/images/ff6eea88-85b5-45ef-85ff-60a146c23a9a.png HTTP/1.1" 304 0
+INFO 2026-04-04 12:27:01,087 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/ff6eea88-85b5-45ef-85ff-60a146c23a9a.png HTTP/1.1" 304 0
+INFO 2026-04-04 12:27:03,073 django.server [rid= uid= ip=]   - "GET /verify/ff6eea88-85b5-45ef-85ff-60a146c23a9a/ HTTP/1.1" 200 8646
+INFO 2026-04-04 12:27:11,837 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 31266
+INFO 2026-04-04 12:27:13,200 django.server [rid= uid= ip=]   - "GET /admin/certificates/generate/ HTTP/1.1" 200 23214
+INFO 2026-04-04 12:27:16,347 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 30785
+INFO 2026-04-04 12:27:20,106 django.server [rid= uid= ip=]   - "GET /admin/templates/create/ HTTP/1.1" 200 10616
+INFO 2026-04-04 12:27:43,575 django.server [rid= uid= ip=]   - "POST /admin/templates/create/ HTTP/1.1" 200 11720
