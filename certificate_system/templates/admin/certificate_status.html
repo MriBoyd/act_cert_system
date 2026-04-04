@@ -51,7 +51,7 @@
                                 <label class="form-check-label fw-bold" for="{{ form.is_enabled.id_for_label }}">
                                     Enable Public Verification
                                 </label>
-                                <p class="small text-muted mb-0">If disabled, the certificate cannot be verified via public QR/Link even if marked VALID.</p>
+                                <p class="small text-muted mb-0">This only controls public QR/link access. The certificate can still remain <strong>VALID</strong> in the system while public verification is disabled.</p>
                                 {% if form.is_enabled.errors %}<div class="text-danger small mt-1">{{ form.is_enabled.errors }}</div>{% endif %}
                             </div>
                         </div>

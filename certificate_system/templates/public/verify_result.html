@@ -6,10 +6,12 @@
     <div class="col-lg-10">
         {% if certificate %}
             <div class="card border-0 shadow-lg rounded-4 overflow-hidden mb-4">
-                <div class="card-header border-0 py-4 {% if is_valid %}bg-success{% else %}bg-danger{% endif %} text-white text-center">
+                <div class="card-header border-0 py-4 {% if is_valid %}bg-success text-white{% elif certificate.status == 'VALID' and not certificate.is_enabled %}bg-warning text-dark{% else %}bg-danger text-white{% endif %} text-center">
                     <div class="mb-2">
                         {% if is_valid %}
                             <i class="bi bi-patch-check-fill display-1"></i>
+                        {% elif certificate.status == 'VALID' and not certificate.is_enabled %}
+                            <i class="bi bi-shield-exclamation display-1"></i>
                         {% else %}
                             <i class="bi bi-x-circle-fill display-1"></i>
                         {% endif %}
@@ -17,6 +19,8 @@
                     <h2 class="fw-bold mb-1">
                         {% if is_valid %}
                             Verified Authentic
+                        {% elif certificate.status == 'VALID' and not certificate.is_enabled %}
+                            Valid, but Public Verification Disabled
                         {% else %}
                             Verification Failed
                         {% endif %}
@@ -24,8 +28,10 @@
                     <p class="mb-0 opacity-75">
                         {% if is_valid %}
                             This certificate is a valid and official record.
+                        {% elif certificate.status == 'VALID' and not certificate.is_enabled %}
+                            The certificate record is valid, but public verification has been turned off.
                         {% else %}
-                            This certificate has been revoked or is no longer valid.
+                            This certificate has been revoked, disabled, or is no longer valid.
                         {% endif %}
                     </p>
                 </div>
@@ -58,8 +64,14 @@
                                 </div>
                                 <div class="col-6">
                                     <label class="small text-uppercase fw-bold text-muted opacity-50 d-block mb-1">Status</label>
-                                    <span class="badge {% if is_valid %}bg-soft-success text-success{% else %}bg-soft-danger text-danger{% endif %} rounded-pill px-3 py-2 border">
+                                    <span class="badge {% if certificate.status == 'VALID' %}bg-soft-success text-success{% elif certificate.status == 'REVOKED' %}bg-soft-danger text-danger{% else %}bg-soft-warning text-warning{% endif %} rounded-pill px-3 py-2 border">
                                         {{ certificate.status }}
+                                    </span>
+                                </div>
+                                <div class="col-12">
+                                    <label class="small text-uppercase fw-bold text-muted opacity-50 d-block mb-1">Public Verification</label>
+                                    <span class="badge {% if certificate.is_enabled %}bg-soft-success text-success{% else %}bg-soft-danger text-danger{% endif %} rounded-pill px-3 py-2 border">
+                                        {% if certificate.is_enabled %}Enabled{% else %}Disabled{% endif %}
                                     </span>
                                 </div>
                             </div>
