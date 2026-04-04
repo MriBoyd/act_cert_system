@@ -95,21 +95,25 @@
                             {% endif %}
                         </td>
                         <td class="pe-4 text-end">
-                            <form method="POST" action="{% url 'admin-feature-flags' %}" class="d-inline-flex gap-1 justify-content-end align-items-center">
-                                {% csrf_token %}
-                                <input type="hidden" name="name" value="{{ row.name }}">
-                                
-                                <div class="btn-group btn-group-sm rounded-3 overflow-hidden border shadow-sm" role="group">
-                                    <input type="radio" class="btn-check" name="state" value="on" id="on_{{ forloop.index }}" {% if row.state == 'on' %}checked{% endif %} onchange="this.form.submit()">
-                                    <label class="btn btn-outline-success border-0 px-3 fw-bold" for="on_{{ forloop.index }}">ON</label>
+                            {% if row.name == 'admin_dashboard' %}
+                                <span class="badge bg-dark rounded-pill px-3 py-2">LOCKED ON</span>
+                            {% else %}
+                                <form method="POST" action="{% url 'admin-feature-flags' %}" class="d-inline-flex gap-1 justify-content-end align-items-center">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="name" value="{{ row.name }}">
+                                    
+                                    <div class="btn-group btn-group-sm rounded-3 overflow-hidden border shadow-sm" role="group">
+                                        <input type="radio" class="btn-check" name="state" value="on" id="on_{{ forloop.index }}" {% if row.state == 'on' %}checked{% endif %} onchange="this.form.submit()">
+                                        <label class="btn btn-outline-success border-0 px-3 fw-bold" for="on_{{ forloop.index }}">ON</label>
 
-                                    <input type="radio" class="btn-check" name="state" value="off" id="off_{{ forloop.index }}" {% if row.state == 'off' %}checked{% endif %} onchange="this.form.submit()">
-                                    <label class="btn btn-outline-danger border-0 px-3 fw-bold" for="off_{{ forloop.index }}">OFF</label>
+                                        <input type="radio" class="btn-check" name="state" value="off" id="off_{{ forloop.index }}" {% if row.state == 'off' %}checked{% endif %} onchange="this.form.submit()">
+                                        <label class="btn btn-outline-danger border-0 px-3 fw-bold" for="off_{{ forloop.index }}">OFF</label>
 
-                                    <input type="radio" class="btn-check" name="state" value="inherit" id="inherit_{{ forloop.index }}" {% if row.state == 'inherit' %}checked{% endif %} onchange="this.form.submit()">
-                                    <label class="btn btn-outline-secondary border-0 px-3 fw-bold" for="inherit_{{ forloop.index }}">AUTO</label>
-                                </div>
-                            </form>
+                                        <input type="radio" class="btn-check" name="state" value="inherit" id="inherit_{{ forloop.index }}" {% if row.state == 'inherit' %}checked{% endif %} onchange="this.form.submit()">
+                                        <label class="btn btn-outline-secondary border-0 px-3 fw-bold" for="inherit_{{ forloop.index }}">AUTO</label>
+                                    </div>
+                                </form>
+                            {% endif %}
                         </td>
                     </tr>
                     {% empty %}

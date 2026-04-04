@@ -28,3 +28,8 @@ INFO 2026-04-04 12:15:34,044 audit [rid=13ffe54f02eb4dac98109156f294b27b uid= ip
 INFO 2026-04-04 12:15:35,230 audit [rid=dad104fd6f06442196a9f1813e14350e uid= ip=127.0.0.1] POST /admin/feature-flags/ - event=feature_flag_override_deleted name=admin_dashboard by=mriboy
 INFO 2026-04-04 12:15:59,962 audit [rid=74726026b88e40b981b468fa1630b3ed uid= ip=127.0.0.1] POST /admin/feature-flags/ - event=feature_flag_override_set name=admin_dashboard enabled=False by=mriboy
 INFO 2026-04-04 12:16:11,970 audit [rid=2cf5e61d73c7485f80b9f515feda5df4 uid= ip=127.0.0.1] POST /admin/feature-flags/ - event=feature_flag_override_deleted name=admin_dashboard by=mriboy
+INFO 2026-04-04 12:17:46,703 audit [rid=682a607b554747ba824b23823eb91fd9 uid= ip=127.0.0.1] POST /admin/feature-flags/ - event=feature_flag_override_set name=bulk_generation enabled=False by=mriboy
+INFO 2026-04-04 12:18:00,807 audit [rid=3df58626074b4b189141ddad76dda2cf uid= ip=127.0.0.1] POST /admin/feature-flags/ - event=feature_flag_override_set name=bulk_generation enabled=True by=mriboy
+INFO 2026-04-04 12:18:02,957 audit [rid=4290e0a544a1411d9e33ceb23e09cd31 uid= ip=127.0.0.1] POST /admin/feature-flags/ - event=feature_flag_override_set name=bulk_generation enabled=False by=mriboy
+INFO 2026-04-04 12:18:04,574 audit [rid=96e46d9fc15b4724970d31e36d299f66 uid= ip=127.0.0.1] POST /admin/feature-flags/ - event=feature_flag_override_deleted name=bulk_generation by=mriboy
+INFO 2026-04-04 12:18:07,473 audit [rid=0c8327817eb64d4a8c17b0dc20eb1c71 uid= ip=127.0.0.1] POST /admin/feature-flags/ - event=feature_flag_override_set name=bulk_generation enabled=False by=mriboy

@@ -150,6 +150,10 @@ def feature_flags_management(request):
         name = (request.POST.get("name") or "").strip()
         state = (request.POST.get("state") or "").strip()
 
+        if name == "admin_dashboard":
+            messages.error(request, "Admin Dashboard is always on and cannot be disabled.")
+            return redirect("admin-feature-flags")
+
         if name not in DEFAULT_FLAGS:
             messages.error(request, "Unknown feature flag.")
             return redirect("admin-feature-flags")

@@ -1049,3 +1049,55 @@ INFO 2026-04-04 12:15:59,983 django.server [rid= uid= ip=]   - "GET /admin/featu
 INFO 2026-04-04 12:16:10,117 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 44707
 INFO 2026-04-04 12:16:11,971 django.server [rid= uid= ip=]   - "POST /admin/feature-flags/ HTTP/1.1" 302 0
 INFO 2026-04-04 12:16:11,990 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 44974
+INFO 2026-04-04 12:17:07,796 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/feature_flags.py changed, reloading.
+INFO 2026-04-04 12:17:08,201 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 12:17:35,309 django.server [rid= uid= ip=]   - "POST /admin/feature-flags/ HTTP/1.1" 302 0
+INFO 2026-04-04 12:17:35,333 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 44988
+INFO 2026-04-04 12:17:37,604 django.server [rid= uid= ip=]   - "POST /admin/feature-flags/ HTTP/1.1" 302 0
+INFO 2026-04-04 12:17:37,625 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 44988
+INFO 2026-04-04 12:17:40,884 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 44674
+INFO 2026-04-04 12:17:40,908 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 12:17:40,908 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 12:17:40,909 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:17:41,554 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 44674
+INFO 2026-04-04 12:17:41,579 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 12:17:41,579 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 12:17:41,580 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:17:43,051 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 44726
+INFO 2026-04-04 12:17:43,076 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 12:17:43,076 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 12:17:43,077 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:17:44,856 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:17:46,704 django.server [rid= uid= ip=]   - "POST /admin/feature-flags/ HTTP/1.1" 302 0
+INFO 2026-04-04 12:17:46,726 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 45203
+INFO 2026-04-04 12:17:52,365 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 44912
+INFO 2026-04-04 12:17:52,386 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 12:17:52,386 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 12:17:52,387 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:17:54,413 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:17:55,680 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 44912
+INFO 2026-04-04 12:17:55,698 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 12:17:55,699 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 12:17:55,700 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:17:57,553 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:18:00,808 django.server [rid= uid= ip=]   - "POST /admin/feature-flags/ HTTP/1.1" 302 0
+INFO 2026-04-04 12:18:00,828 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 45206
+INFO 2026-04-04 12:18:02,957 django.server [rid= uid= ip=]   - "POST /admin/feature-flags/ HTTP/1.1" 302 0
+INFO 2026-04-04 12:18:02,978 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 45203
+INFO 2026-04-04 12:18:04,574 django.server [rid= uid= ip=]   - "POST /admin/feature-flags/ HTTP/1.1" 302 0
+INFO 2026-04-04 12:18:04,595 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 45026
+INFO 2026-04-04 12:18:07,474 django.server [rid= uid= ip=]   - "POST /admin/feature-flags/ HTTP/1.1" 302 0
+INFO 2026-04-04 12:18:07,495 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 45203
+INFO 2026-04-04 12:18:12,590 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 44912
+INFO 2026-04-04 12:18:12,606 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 12:18:12,607 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:18:12,609 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 12:18:14,494 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:18:27,583 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 44912
+INFO 2026-04-04 12:18:28,230 django.server [rid= uid= ip=]   - "GET /admin/feature-flags/ HTTP/1.1" 200 44912
+INFO 2026-04-04 12:18:28,246 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 12:18:28,246 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:18:28,249 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 12:18:30,077 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:18:47,791 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/feature_flags.py changed, reloading.
+INFO 2026-04-04 12:18:48,068 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
