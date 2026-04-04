@@ -106,6 +106,12 @@ class Certificate(models.Model):
 
 
 class VerificationLog(models.Model):
+    class Source(models.TextChoices):
+        SEARCH = "search", "Search Form"
+        QR_SCAN = "qr_scan", "QR Scan Link"
+        API = "api", "External API"
+        ADMIN = "admin", "Admin Preview"
+
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     certificate = models.ForeignKey(
         Certificate,
@@ -119,16 +125,23 @@ class VerificationLog(models.Model):
     user_agent = models.TextField(blank=True)
     is_valid = models.BooleanField(default=False, db_index=True)
     checked_at = models.DateTimeField(auto_now_add=True, db_index=True)
+    source = models.CharField(
+        max_length=20,
+        choices=Source.choices,
+        default=Source.SEARCH,
+        db_index=True,
+    )
 
     class Meta:
         ordering = ["-checked_at"]
         indexes = [
             models.Index(fields=["certificate_uuid", "checked_at"]),
             models.Index(fields=["is_valid", "checked_at"]),
+            models.Index(fields=["source", "checked_at"]),
         ]
 
     def __str__(self) -> str:
-        return f"{self.certificate_uuid} ({'valid' if self.is_valid else 'invalid'})"
+        return f"{self.certificate_uuid} ({'valid' if self.is_valid else 'invalid'}) [{self.source}]"
 
 
 class FeatureFlagOverride(models.Model):

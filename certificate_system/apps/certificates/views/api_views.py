@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from apps.certificates.feature_flags import is_feature_enabled
+from apps.certificates.models import VerificationLog
 from apps.certificates.serializers import CertificateVerificationSerializer
 from apps.certificates.services.verification import verify_certificate
 
@@ -15,7 +16,11 @@ class VerifyCertificateAPIView(APIView):
         if not is_feature_enabled("verification_api"):
             return Response({"detail": "Feature disabled."}, status=status.HTTP_404_NOT_FOUND)
 
-        certificate, is_valid = verify_certificate(certificate_uuid, request)
+        certificate, is_valid = verify_certificate(
+            certificate_uuid, 
+            request, 
+            source=VerificationLog.Source.API
+        )
         if not certificate:
             return Response(
                 {

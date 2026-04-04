@@ -340,3 +340,449 @@ INFO 2026-04-04 11:37:42,951 django.server [rid= uid= ip=]   - "GET /admin/certi
 INFO 2026-04-04 11:37:42,965 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/1a91adc0-57ec-464e-966d-341b0c3d1b1a.png HTTP/1.1" 200 966
 INFO 2026-04-04 11:37:42,969 django.server [rid= uid= ip=]   - "GET /media/templates/backgrounds/images.jpeg HTTP/1.1" 304 0
 INFO 2026-04-04 11:37:42,974 django.server [rid= uid= ip=]   - "GET /media/certificates/images/1a91adc0-57ec-464e-966d-341b0c3d1b1a.png HTTP/1.1" 200 4134403
+INFO 2026-04-04 11:38:51,956 django.server [rid= uid= ip=]   - "GET /admin/certificates/1a91adc0-57ec-464e-966d-341b0c3d1b1a/ HTTP/1.1" 200 14938
+INFO 2026-04-04 11:38:51,987 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:38:51,988 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/1a91adc0-57ec-464e-966d-341b0c3d1b1a.png HTTP/1.1" 200 966
+INFO 2026-04-04 11:38:51,989 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:38:51,991 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:38:52,001 django.server [rid= uid= ip=]   - "GET /media/certificates/images/1a91adc0-57ec-464e-966d-341b0c3d1b1a.png HTTP/1.1" 200 4134403
+INFO 2026-04-04 11:38:52,272 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:39:06,390 django.server [rid= uid= ip=]   - "GET /admin/templates/3de8202a-0083-4a72-90a0-7099ccf3fc67/edit/ HTTP/1.1" 200 11054
+INFO 2026-04-04 11:39:06,407 django.server [rid= uid= ip=]   - "GET /media/templates/backgrounds/images.jpeg HTTP/1.1" 304 0
+INFO 2026-04-04 11:39:15,922 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 11008
+INFO 2026-04-04 11:39:25,461 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 11191
+INFO 2026-04-04 11:39:29,699 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14662
+INFO 2026-04-04 11:39:47,351 django.server [rid= uid= ip=]   - "GET /admin/certificates/1a91adc0-57ec-464e-966d-341b0c3d1b1a/status/ HTTP/1.1" 200 4627
+INFO 2026-04-04 11:39:58,695 django.server [rid= uid= ip=]   - "GET /admin/certificates/1a91adc0-57ec-464e-966d-341b0c3d1b1a/ HTTP/1.1" 200 14938
+INFO 2026-04-04 11:39:58,711 django.server [rid= uid= ip=]   - "GET /media/certificates/images/1a91adc0-57ec-464e-966d-341b0c3d1b1a.png HTTP/1.1" 304 0
+INFO 2026-04-04 11:39:58,711 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/1a91adc0-57ec-464e-966d-341b0c3d1b1a.png HTTP/1.1" 304 0
+INFO 2026-04-04 11:40:01,142 django.server [rid= uid= ip=]   - "GET /verify/1a91adc0-57ec-464e-966d-341b0c3d1b1a/ HTTP/1.1" 200 4392
+INFO 2026-04-04 11:40:01,232 django.server [rid= uid= ip=]   - "GET /media/certificates/pdf/1a91adc0-57ec-464e-966d-341b0c3d1b1a.pdf HTTP/1.1" 200 26641
+INFO 2026-04-04 11:40:17,537 django.server [rid= uid= ip=]   - "GET /admin/certificates/1a91adc0-57ec-464e-966d-341b0c3d1b1a/ HTTP/1.1" 200 15356
+INFO 2026-04-04 11:40:17,554 django.server [rid= uid= ip=]   - "GET /media/certificates/images/1a91adc0-57ec-464e-966d-341b0c3d1b1a.png HTTP/1.1" 304 0
+INFO 2026-04-04 11:40:17,554 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/1a91adc0-57ec-464e-966d-341b0c3d1b1a.png HTTP/1.1" 304 0
+INFO 2026-04-04 11:40:18,622 django.server [rid= uid= ip=]   - "GET /admin/certificates/1a91adc0-57ec-464e-966d-341b0c3d1b1a/ HTTP/1.1" 200 15356
+INFO 2026-04-04 11:40:35,853 django.server [rid= uid= ip=]   - "GET /verify/1a91adc0-57ec-464e-966d-341b0c3d1b1a/ HTTP/1.1" 200 4392
+INFO 2026-04-04 11:40:35,947 django.server [rid= uid= ip=]   - "GET /media/certificates/pdf/1a91adc0-57ec-464e-966d-341b0c3d1b1a.pdf HTTP/1.1" 304 0
+INFO 2026-04-04 11:40:37,672 django.server [rid= uid= ip=]   - "GET /verify/1a91adc0-57ec-464e-966d-341b0c3d1b1a/ HTTP/1.1" 200 4392
+INFO 2026-04-04 11:40:37,690 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:40:37,690 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:40:37,691 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:40:37,798 django.server [rid= uid= ip=]   - "GET /media/certificates/pdf/1a91adc0-57ec-464e-966d-341b0c3d1b1a.pdf HTTP/1.1" 200 26641
+INFO 2026-04-04 11:40:38,007 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:40:38,726 django.server [rid= uid= ip=]   - "GET /verify/1a91adc0-57ec-464e-966d-341b0c3d1b1a/ HTTP/1.1" 200 4392
+INFO 2026-04-04 11:40:38,740 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:40:38,741 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:40:38,743 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:40:38,847 django.server [rid= uid= ip=]   - "GET /media/certificates/pdf/1a91adc0-57ec-464e-966d-341b0c3d1b1a.pdf HTTP/1.1" 200 26641
+INFO 2026-04-04 11:40:39,025 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:40:47,958 django.server [rid= uid= ip=]   - "GET /admin/certificates/1a91adc0-57ec-464e-966d-341b0c3d1b1a/status/ HTTP/1.1" 200 10107
+INFO 2026-04-04 11:40:48,965 django.server [rid= uid= ip=]   - "GET /admin/certificates/1a91adc0-57ec-464e-966d-341b0c3d1b1a/status/ HTTP/1.1" 200 10107
+INFO 2026-04-04 11:40:48,981 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:40:48,981 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:40:48,984 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:40:49,272 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:40:58,249 django.server [rid= uid= ip=]   - "GET /admin/certificates/1a91adc0-57ec-464e-966d-341b0c3d1b1a/ HTTP/1.1" 200 17240
+INFO 2026-04-04 11:40:58,265 django.server [rid= uid= ip=]   - "GET /media/certificates/images/1a91adc0-57ec-464e-966d-341b0c3d1b1a.png HTTP/1.1" 304 0
+INFO 2026-04-04 11:40:58,268 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/1a91adc0-57ec-464e-966d-341b0c3d1b1a.png HTTP/1.1" 304 0
+INFO 2026-04-04 11:41:02,779 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 11469
+INFO 2026-04-04 11:41:42,784 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:41:44,083 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 11747
+INFO 2026-04-04 11:41:44,302 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:41:48,628 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14662
+INFO 2026-04-04 11:41:56,711 django.server [rid= uid= ip=]   - "GET /admin/certificates/1a91adc0-57ec-464e-966d-341b0c3d1b1a/ HTTP/1.1" 200 17236
+INFO 2026-04-04 11:41:56,728 django.server [rid= uid= ip=]   - "GET /media/certificates/images/1a91adc0-57ec-464e-966d-341b0c3d1b1a.png HTTP/1.1" 304 0
+INFO 2026-04-04 11:41:56,729 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/1a91adc0-57ec-464e-966d-341b0c3d1b1a.png HTTP/1.1" 304 0
+INFO 2026-04-04 11:42:01,559 django.server [rid= uid= ip=]   - "GET /verify/1a91adc0-57ec-464e-966d-341b0c3d1b1a/ HTTP/1.1" 200 8404
+INFO 2026-04-04 11:42:10,578 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 5205
+INFO 2026-04-04 11:42:14,304 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 14662
+INFO 2026-04-04 11:42:15,525 django.server [rid= uid= ip=]   - "GET /admin/certificates/bulk/ HTTP/1.1" 200 13520
+ERROR 2026-04-04 11:43:29,712 django.request [rid= uid= ip=]   - Internal Server Error: /admin/certificates/bulk/
+Traceback (most recent call last):
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/.venv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py", line 107, in _wrapped
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/feature_flags.py", line 57, in _wrapped
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py", line 756, in bulk_generate_certificates
+    rows = form.parse_rows()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/mriboy/Project/ACT/certificate_system/apps/certificates/forms.py", line 106, in parse_rows
+    raise forms.ValidationError(
+django.core.exceptions.ValidationError: ['CSV must include: recipient_name, recipient_email, course_name, issue_date, serial_number']
+ERROR 2026-04-04 11:43:29,713 django.server [rid= uid= ip=]   - "POST /admin/certificates/bulk/ HTTP/1.1" 500 100034
+WARNING 2026-04-04 11:43:29,812 django.server [rid= uid= ip=]   - "GET /favicon.ico HTTP/1.1" 404 14159
+INFO 2026-04-04 11:45:05,849 django.server [rid= uid= ip=]   - "POST /admin/certificates/bulk/ HTTP/1.1" 302 0
+INFO 2026-04-04 11:45:05,883 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 34375
+INFO 2026-04-04 11:45:22,350 django.server [rid= uid= ip=]   - "GET /admin/certificates/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 14981
+INFO 2026-04-04 11:45:22,364 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 200 970
+INFO 2026-04-04 11:45:22,374 django.server [rid= uid= ip=]   - "GET /media/certificates/images/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 200 4140590
+INFO 2026-04-04 11:45:31,954 django.server [rid= uid= ip=]   - "GET /verify/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 8449
+INFO 2026-04-04 11:45:32,021 django.server [rid= uid= ip=]   - "GET /media/certificates/images/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 304 0
+INFO 2026-04-04 11:45:56,882 django.server [rid= uid= ip=]   - "GET /verify/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 8449
+INFO 2026-04-04 11:45:56,902 django.server [rid= uid= ip=]   - "GET /media/certificates/images/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 304 0
+INFO 2026-04-04 11:47:12,378 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/services/verification.py changed, reloading.
+INFO 2026-04-04 11:47:12,675 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:47:27,031 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/public_views.py changed, reloading.
+INFO 2026-04-04 11:47:27,347 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:47:31,595 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-04-04 11:47:31,908 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:47:40,781 django.server [rid= uid= ip=]   - "GET /admin/certificates/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 16026
+INFO 2026-04-04 11:47:40,814 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:47:40,818 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 200 970
+INFO 2026-04-04 11:47:40,818 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:47:40,819 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:47:40,827 django.server [rid= uid= ip=]   - "GET /media/certificates/images/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 200 4140590
+INFO 2026-04-04 11:47:41,396 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:47:42,946 django.server [rid= uid= ip=]   - "GET /verify/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 8449
+INFO 2026-04-04 11:47:45,139 django.server [rid= uid= ip=]   - "GET /verify/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 8449
+INFO 2026-04-04 11:47:50,243 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 35257
+INFO 2026-04-04 11:47:55,441 django.server [rid= uid= ip=]   - "GET /admin/certificates/1a91adc0-57ec-464e-966d-341b0c3d1b1a/ HTTP/1.1" 200 17868
+INFO 2026-04-04 11:47:55,457 django.server [rid= uid= ip=]   - "GET /media/certificates/images/1a91adc0-57ec-464e-966d-341b0c3d1b1a.png HTTP/1.1" 304 0
+INFO 2026-04-04 11:47:55,480 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/1a91adc0-57ec-464e-966d-341b0c3d1b1a.png HTTP/1.1" 304 0
+INFO 2026-04-04 11:47:56,191 django.server [rid= uid= ip=]   - "GET /admin/certificates/1a91adc0-57ec-464e-966d-341b0c3d1b1a/ HTTP/1.1" 200 17868
+INFO 2026-04-04 11:47:56,966 django.server [rid= uid= ip=]   - "GET /admin/certificates/1a91adc0-57ec-464e-966d-341b0c3d1b1a/ HTTP/1.1" 200 17868
+INFO 2026-04-04 11:47:58,214 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 12025
+INFO 2026-04-04 11:47:59,561 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 12303
+INFO 2026-04-04 11:47:59,581 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:47:59,581 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:47:59,582 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:47:59,951 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:00,283 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 12581
+INFO 2026-04-04 11:48:00,301 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:48:00,301 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:48:00,302 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:00,678 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:01,260 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 12859
+INFO 2026-04-04 11:48:01,278 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:48:01,279 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:48:01,279 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:01,636 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:02,255 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 13137
+INFO 2026-04-04 11:48:02,271 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:48:02,271 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:02,276 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:48:02,666 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:02,956 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 13415
+INFO 2026-04-04 11:48:02,984 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:48:02,985 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:02,986 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:48:03,300 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 13694
+INFO 2026-04-04 11:48:03,317 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:48:03,318 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:03,320 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:48:03,911 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 13972
+INFO 2026-04-04 11:48:03,950 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:48:03,950 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:48:03,951 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:04,333 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 14250
+INFO 2026-04-04 11:48:04,350 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:48:04,350 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:04,355 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:48:04,614 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 14528
+INFO 2026-04-04 11:48:04,664 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:48:04,664 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:48:04,665 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:05,506 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:05,634 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 14806
+INFO 2026-04-04 11:48:05,652 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:48:05,652 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:05,654 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:48:06,477 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 15084
+INFO 2026-04-04 11:48:06,495 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:48:06,495 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:06,497 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:48:07,121 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 15362
+INFO 2026-04-04 11:48:07,323 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:48:07,323 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:48:07,324 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:07,847 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 15640
+INFO 2026-04-04 11:48:07,894 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:48:07,894 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:48:07,895 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:08,831 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:18,209 django.server [rid= uid= ip=]   - "GET /verify/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 8449
+INFO 2026-04-04 11:48:18,230 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:48:18,232 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:18,234 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:48:18,238 django.server [rid= uid= ip=]   - "GET /media/certificates/images/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 200 4140590
+INFO 2026-04-04 11:48:19,403 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:21,265 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=12121212121212121 HTTP/1.1" 200 15918
+INFO 2026-04-04 11:48:21,286 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:48:21,287 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:48:21,287 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:22,316 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:32,755 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 34086
+INFO 2026-04-04 11:48:40,078 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/public_views.py changed, reloading.
+INFO 2026-04-04 11:48:40,374 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:48:42,965 django.server [rid= uid= ip=]   - "GET /admin/certificates/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 17910
+INFO 2026-04-04 11:48:42,985 django.server [rid= uid= ip=]   - "GET /media/certificates/images/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 304 0
+INFO 2026-04-04 11:48:42,985 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 304 0
+INFO 2026-04-04 11:48:47,819 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=CERT-2026-005 HTTP/1.1" 200 10988
+INFO 2026-04-04 11:48:51,941 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=CERT-2026-005 HTTP/1.1" 200 11167
+INFO 2026-04-04 11:48:51,968 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:48:51,968 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:48:51,969 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:53,070 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:57,549 django.server [rid= uid= ip=]   - "GET /admin/certificates/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 17909
+INFO 2026-04-04 11:48:57,567 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:48:57,571 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 200 970
+INFO 2026-04-04 11:48:57,571 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:57,572 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:48:57,577 django.server [rid= uid= ip=]   - "GET /media/certificates/images/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 200 4140590
+INFO 2026-04-04 11:48:58,897 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:48:59,148 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=CERT-2026-005 HTTP/1.1" 200 11441
+INFO 2026-04-04 11:49:49,600 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/models.py changed, reloading.
+INFO 2026-04-04 11:49:49,927 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:50:18,480 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/services/verification.py changed, reloading.
+INFO 2026-04-04 11:50:18,760 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:50:24,014 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/public_views.py changed, reloading.
+INFO 2026-04-04 11:50:24,300 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:50:29,482 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-04-04 11:50:29,762 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:50:58,014 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:51:25,539 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/public_views.py changed, reloading.
+INFO 2026-04-04 11:51:25,818 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:51:30,562 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 5205
+INFO 2026-04-04 11:51:32,333 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 34086
+INFO 2026-04-04 11:51:34,826 django.server [rid= uid= ip=]   - "GET /admin/certificates/b4d39e09-06c7-47c9-9d5f-828a06985419/ HTTP/1.1" 200 14961
+INFO 2026-04-04 11:51:34,851 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/b4d39e09-06c7-47c9-9d5f-828a06985419.png HTTP/1.1" 200 1040
+INFO 2026-04-04 11:51:34,858 django.server [rid= uid= ip=]   - "GET /media/certificates/images/b4d39e09-06c7-47c9-9d5f-828a06985419.png HTTP/1.1" 200 4137120
+INFO 2026-04-04 11:51:36,950 django.server [rid= uid= ip=]   - "GET /admin/certificates/b4d39e09-06c7-47c9-9d5f-828a06985419/ HTTP/1.1" 200 14961
+INFO 2026-04-04 11:51:36,966 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:51:36,967 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:51:36,973 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/b4d39e09-06c7-47c9-9d5f-828a06985419.png HTTP/1.1" 200 1040
+INFO 2026-04-04 11:51:36,973 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:51:36,975 django.server [rid= uid= ip=]   - "GET /media/certificates/images/b4d39e09-06c7-47c9-9d5f-828a06985419.png HTTP/1.1" 200 4137120
+INFO 2026-04-04 11:51:38,862 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:51:39,116 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=CERT-2026-001 HTTP/1.1" 200 10988
+INFO 2026-04-04 11:51:42,164 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=CERT-2026-001 HTTP/1.1" 200 11167
+INFO 2026-04-04 11:51:42,183 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:51:42,184 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:51:42,184 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:51:44,467 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:52:15,014 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 35257
+INFO 2026-04-04 11:52:17,907 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 34086
+INFO 2026-04-04 11:52:19,955 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 34086
+INFO 2026-04-04 11:52:19,974 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:52:19,974 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:52:19,974 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:52:21,465 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:52:22,803 django.server [rid= uid= ip=]   - "GET /admin/certificates/ HTTP/1.1" 200 35257
+INFO 2026-04-04 11:52:31,106 django.server [rid= uid= ip=]   - "GET /admin/certificates/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 18531
+INFO 2026-04-04 11:52:31,120 django.server [rid= uid= ip=]   - "GET /media/certificates/images/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 304 0
+INFO 2026-04-04 11:52:31,120 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 304 0
+INFO 2026-04-04 11:52:42,442 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=CERT-2026-005 HTTP/1.1" 200 11715
+INFO 2026-04-04 11:53:24,817 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-04-04 11:53:25,114 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:53:37,453 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-04-04 11:53:37,726 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:53:52,095 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/config/logging_config.py changed, reloading.
+INFO 2026-04-04 11:53:52,380 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:53:55,621 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/config/logging_config.py changed, reloading.
+INFO 2026-04-04 11:53:55,908 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:53:59,129 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/services/verification.py changed, reloading.
+INFO 2026-04-04 11:53:59,433 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:53:59,869 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=CERT-2026-005 HTTP/1.1" 200 11989
+INFO 2026-04-04 11:53:59,908 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:53:59,909 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:53:59,909 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:54:01,081 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:54:01,101 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=CERT-2026-005 HTTP/1.1" 200 12263
+INFO 2026-04-04 11:54:01,123 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:54:01,124 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:54:01,127 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:54:01,984 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=CERT-2026-005 HTTP/1.1" 200 12537
+INFO 2026-04-04 11:54:02,001 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:54:02,002 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:54:02,003 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:54:02,679 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/services/verification.py changed, reloading.
+INFO 2026-04-04 11:54:03,158 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:54:03,850 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:54:04,608 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=CERT-2026-005 HTTP/1.1" 200 12811
+INFO 2026-04-04 11:54:04,624 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:54:04,625 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:54:04,627 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:54:06,781 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:54:11,333 django.server [rid= uid= ip=]   - "GET /admin/logs/?q=CERT-2026-005 HTTP/1.1" 200 13442
+INFO 2026-04-04 11:54:11,351 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:54:11,352 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:54:11,352 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:54:13,687 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:54:14,431 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=access&lines=200&q=CERT-2026-005 HTTP/1.1" 200 10440
+INFO 2026-04-04 11:54:16,666 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=audit&lines=200&q=CERT-2026-005 HTTP/1.1" 200 11346
+INFO 2026-04-04 11:54:17,561 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=security&lines=200&q=CERT-2026-005 HTTP/1.1" 200 11365
+INFO 2026-04-04 11:54:18,330 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=app&lines=200&q=CERT-2026-005 HTTP/1.1" 200 14627
+INFO 2026-04-04 11:54:19,921 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=access&lines=200&q=CERT-2026-005 HTTP/1.1" 200 10440
+INFO 2026-04-04 11:54:24,537 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 34086
+INFO 2026-04-04 11:54:27,049 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 34086
+INFO 2026-04-04 11:54:27,068 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:54:27,069 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:54:27,069 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:54:29,526 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:54:30,255 django.server [rid= uid= ip=]   - "GET /admin/certificates/ff6eea88-85b5-45ef-85ff-60a146c23a9a/ HTTP/1.1" 200 15009
+INFO 2026-04-04 11:54:30,279 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/ff6eea88-85b5-45ef-85ff-60a146c23a9a.png HTTP/1.1" 200 1000
+INFO 2026-04-04 11:54:30,280 django.server [rid= uid= ip=]   - "GET /media/certificates/images/ff6eea88-85b5-45ef-85ff-60a146c23a9a.png HTTP/1.1" 200 4141075
+INFO 2026-04-04 11:54:32,218 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=access&q=ff6eea88-85b5-45ef-85ff-60a146c23a9a HTTP/1.1" 200 10578
+INFO 2026-04-04 11:54:35,536 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=access&q=ff6eea88-85b5-45ef-85ff-60a146c23a9a HTTP/1.1" 200 10578
+INFO 2026-04-04 11:54:35,553 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:54:35,553 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:54:35,557 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:54:37,786 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:54:46,069 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=access&q=ff6eea88-85b5-45ef-85ff-60a146c23a9a HTTP/1.1" 200 10578
+INFO 2026-04-04 11:55:43,822 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/config/logging_config.py changed, reloading.
+INFO 2026-04-04 11:55:44,110 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:55:54,443 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/urls.py changed, reloading.
+INFO 2026-04-04 11:55:54,720 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:56:02,944 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/admin_views.py changed, reloading.
+INFO 2026-04-04 11:56:03,200 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:56:49,174 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=access&q=ff6eea88-85b5-45ef-85ff-60a146c23a9a HTTP/1.1" 200 10578
+INFO 2026-04-04 11:56:49,207 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:56:49,208 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:56:49,209 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:56:51,085 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:56:53,498 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=access&q=ff6eea88-85b5-45ef-85ff-60a146c23a9a&lines=200&csrfmiddlewaretoken=e7gb3rse91HlNj7YqwQBRq804qvZIoxcml8bbZbFdhldNZCtAsiwEfjQWsrK7dOe HTTP/1.1" 200 10578
+INFO 2026-04-04 11:56:55,017 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 34086
+INFO 2026-04-04 11:56:56,281 django.server [rid= uid= ip=]   - "GET /admin/certificates/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 18538
+INFO 2026-04-04 11:56:56,299 django.server [rid= uid= ip=]   - "GET /media/certificates/images/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 304 0
+INFO 2026-04-04 11:56:56,299 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 304 0
+INFO 2026-04-04 11:56:58,223 django.server [rid= uid= ip=]   - "GET /admin/analytics/?q=CERT-2026-005 HTTP/1.1" 200 17595
+INFO 2026-04-04 11:56:59,448 django.server [rid= uid= ip=]   - "GET /admin/analytics/?q=CERT-2026-005 HTTP/1.1" 200 17595
+INFO 2026-04-04 11:56:59,463 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:56:59,464 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:56:59,466 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:57:01,040 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:57:10,280 django.server [rid= uid= ip=]   - "GET /admin/analytics/?q=CERT-2026-005 HTTP/1.1" 200 17595
+INFO 2026-04-04 11:57:10,299 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:57:10,299 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:57:10,301 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:57:11,746 django.server [rid= uid= ip=]   - "GET /admin/analytics/?q=CERT-2026-005 HTTP/1.1" 200 17595
+INFO 2026-04-04 11:57:11,766 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:57:11,766 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:57:11,767 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:57:12,680 django.server [rid= uid= ip=]   - "GET /admin/analytics/?q=CERT-2026-005 HTTP/1.1" 200 17595
+INFO 2026-04-04 11:57:12,699 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:57:12,699 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:57:12,700 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:57:15,556 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:57:16,143 django.server [rid= uid= ip=]   - "GET /admin/analytics/ HTTP/1.1" 200 28252
+INFO 2026-04-04 11:57:18,497 django.server [rid= uid= ip=]   - "GET /admin/analytics/ HTTP/1.1" 200 28252
+INFO 2026-04-04 11:57:20,615 django.server [rid= uid= ip=]   - "GET /admin/analytics/ HTTP/1.1" 200 28252
+INFO 2026-04-04 11:57:20,632 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:57:20,632 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:57:20,634 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:57:22,481 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:57:24,086 django.server [rid= uid= ip=]   - "GET /admin/analytics/ HTTP/1.1" 200 28252
+INFO 2026-04-04 11:57:27,540 django.server [rid= uid= ip=]   - "GET /admin/analytics/?q=&source=&valid=&sort=-checked_at HTTP/1.1" 200 28252
+INFO 2026-04-04 11:57:31,751 django.server [rid= uid= ip=]   - "GET /admin/logs/?log=access HTTP/1.1" 200 10347
+INFO 2026-04-04 11:57:34,780 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 34086
+INFO 2026-04-04 11:59:02,109 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 11:59:06,392 django.server [rid= uid= ip=]   - code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00#\x00\x00\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00-\x00\x02\x01\x01\x00\x12\x00\x00\x00\x1b\x00\x03\x02\x00\x02\x00+\x00\x07\x06\x1a\x1a\x03\x04\x03\x03\x00')
+INFO 2026-04-04 11:59:06,392 django.server [rid= uid= ip=]   - code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')
+ERROR 2026-04-04 11:59:06,392 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-04-04 11:59:06,393 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-04-04 11:59:06,393 django.server [rid= uid= ip=]   - code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03æ*\x1a\x99¥Nød\x1ag\x91bë§\x8a4]evrÜ\x03^iÒn¡h¦%Ï\x9c')
+ERROR 2026-04-04 11:59:06,394 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-04-04 11:59:06,394 django.server [rid= uid= ip=]   - code 400, message Bad request syntax ('\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03DÙ¤')
+ERROR 2026-04-04 11:59:06,394 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-04-04 11:59:06,958 django.server [rid= uid= ip=]   - code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03')
+ERROR 2026-04-04 11:59:06,958 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-04-04 11:59:06,959 django.server [rid= uid= ip=]   - code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00#\x00\x00\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00+\x00\x07\x06\x9a\x9a\x03\x04\x03\x03\x00')
+ERROR 2026-04-04 11:59:06,959 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-04-04 11:59:06,959 django.server [rid= uid= ip=]   - code 400, message Bad request version ("\x05=bà\x8aª('å\x97èî°i4]\x8dþ,\x99>_\x14\x8a\x00")
+ERROR 2026-04-04 11:59:06,959 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-04-04 11:59:06,960 django.server [rid= uid= ip=]   - code 400, message Bad request version (')\x15±¯©&£X\xadõÆ8ûì\x04øÀpÅa\x91Ù\x81|\x9fç\x1bÆ')
+ERROR 2026-04-04 11:59:06,960 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-04-04 11:59:07,529 django.server [rid= uid= ip=]   - code 400, message Bad request version ('¥»èDÍ\x00\x05\x00\x03\x02h2\x00')
+INFO 2026-04-04 11:59:07,529 django.server [rid= uid= ip=]   - code 400, message Bad request version ('ÚÚ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063')
+ERROR 2026-04-04 11:59:07,529 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-04-04 11:59:07,529 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-04-04 11:59:07,530 django.server [rid= uid= ip=]   - code 400, message Bad request version ('w\x9dYêyqè\x0fÐ¥\x13þÇ¬\x7f\\_J¦·\x00\x03\x14¹\x86§§!\x90Ú(\x00\x18æ°g\x96')
+INFO 2026-04-04 11:59:07,530 django.server [rid= uid= ip=]   - code 400, message Bad request version ('$')
+ERROR 2026-04-04 11:59:07,530 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-04-04 11:59:07,531 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-04-04 11:59:08,303 django.server [rid= uid= ip=]   - code 400, message Bad request version ('\x93ÙÅTÍ;\x94\x12¡§Áø')
+ERROR 2026-04-04 11:59:08,303 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-04-04 11:59:08,303 django.server [rid= uid= ip=]   - code 400, message Bad request version ('L\x8e$Nê\x9dÔã\x8c\x08Äì\x8a^\xad¼!3dh\x00')
+ERROR 2026-04-04 11:59:08,304 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-04-04 11:59:08,304 django.server [rid= uid= ip=]   - code 400, message Bad request version ('\\')
+ERROR 2026-04-04 11:59:08,305 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-04-04 11:59:08,305 django.server [rid= uid= ip=]   - code 400, message Bad request version ('\x13\x86\x84e,,')
+ERROR 2026-04-04 11:59:08,305 django.server [rid= uid= ip=]   - You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2026-04-04 11:59:11,877 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 4777
+INFO 2026-04-04 11:59:11,901 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:59:11,902 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:59:11,923 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:59:15,515 django.server [rid= uid= ip=]   - "GET /login/ HTTP/1.1" 200 3070
+INFO 2026-04-04 11:59:19,338 django.server [rid= uid= ip=]   - "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-04 11:59:19,368 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 34086
+INFO 2026-04-04 11:59:31,412 django.server [rid= uid= ip=]   - "GET /admin/certificates/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 18541
+INFO 2026-04-04 11:59:31,435 django.server [rid= uid= ip=]   - "GET /media/certificates/qr/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 200 970
+INFO 2026-04-04 11:59:31,442 django.server [rid= uid= ip=]   - "GET /media/certificates/images/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 200 4140590
+INFO 2026-04-04 11:59:44,492 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 5205
+INFO 2026-04-04 11:59:46,166 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 34086
+INFO 2026-04-04 11:59:49,449 django.server [rid= uid= ip=]   - "GET /admin/certificates/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 18541
+INFO 2026-04-04 11:59:51,971 django.server [rid= uid= ip=]   - "GET /verify/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 8449
+INFO 2026-04-04 11:59:53,466 django.server [rid= uid= ip=]   - "GET /verify/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 8449
+INFO 2026-04-04 11:59:53,486 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:59:53,488 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:59:53,488 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:59:53,497 django.server [rid= uid= ip=]   - "GET /media/certificates/images/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 200 4140590
+INFO 2026-04-04 11:59:54,242 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:59:54,399 django.server [rid= uid= ip=]   - "GET /verify/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 8449
+INFO 2026-04-04 11:59:54,425 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:59:54,425 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:59:54,426 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:59:54,435 django.server [rid= uid= ip=]   - "GET /media/certificates/images/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 200 4140590
+INFO 2026-04-04 11:59:55,327 django.server [rid= uid= ip=]   - "GET /verify/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 8449
+INFO 2026-04-04 11:59:55,346 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 11:59:55,346 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:59:55,353 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 11:59:55,355 django.server [rid= uid= ip=]   - "GET /media/certificates/images/98234b73-29b7-44c4-9146-9541d003bdcf.png HTTP/1.1" 200 4140590
+INFO 2026-04-04 11:59:57,213 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 11:59:59,529 django.server [rid= uid= ip=]   - "GET / HTTP/1.1" 200 5205
+INFO 2026-04-04 12:00:00,839 django.server [rid= uid= ip=]   - "GET /admin/dashboard/ HTTP/1.1" 200 34086
+INFO 2026-04-04 12:00:02,737 django.server [rid= uid= ip=]   - "GET /admin/certificates/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 18553
+INFO 2026-04-04 12:00:05,340 django.server [rid= uid= ip=]   - "GET /admin/analytics/?q=CERT-2026-005 HTTP/1.1" 200 26167
+INFO 2026-04-04 12:00:07,016 django.server [rid= uid= ip=]   - "GET /admin/analytics/?q=CERT-2026-005 HTTP/1.1" 200 26167
+INFO 2026-04-04 12:00:07,033 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 12:00:07,033 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 12:00:07,033 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:00:07,697 django.server [rid= uid= ip=]   - "GET /admin/analytics/?q=CERT-2026-005 HTTP/1.1" 200 26167
+INFO 2026-04-04 12:00:07,718 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 12:00:07,718 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:00:07,722 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 12:00:10,127 django.server [rid= uid= ip=]   - "GET /admin/analytics/?q=CERT-2026-005 HTTP/1.1" 200 26167
+INFO 2026-04-04 12:00:10,147 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 12:00:10,147 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 12:00:10,148 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:00:10,815 django.server [rid= uid= ip=]   - "GET /admin/analytics/?q=CERT-2026-005 HTTP/1.1" 200 26167
+INFO 2026-04-04 12:00:10,835 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 12:00:10,835 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 12:00:10,836 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:00:15,059 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:00:16,392 django.server [rid= uid= ip=]   - "GET /admin/analytics/?q=CERT-2026-005 HTTP/1.1" 200 26167
+INFO 2026-04-04 12:00:16,408 django.server [rid= uid= ip=]   - "GET /static/css/main.css HTTP/1.1" 200 6558
+INFO 2026-04-04 12:00:16,409 django.server [rid= uid= ip=]   - "GET /static/js/main.js HTTP/1.1" 200 4882
+INFO 2026-04-04 12:00:16,410 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:00:19,657 django.server [rid= uid= ip=]   - "GET /static/img/act-dev-community.png HTTP/1.1" 200 163874
+INFO 2026-04-04 12:00:31,446 django.server [rid= uid= ip=]   - "GET /verify/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 8449
+INFO 2026-04-04 12:00:36,983 django.server [rid= uid= ip=]   - "GET /admin/analytics/?q=CERT-2026-005 HTTP/1.1" 200 28310
+INFO 2026-04-04 12:00:38,243 django.server [rid= uid= ip=]   - "GET /admin/analytics/?q=CERT-2026-005 HTTP/1.1" 200 28310
+INFO 2026-04-04 12:00:38,956 django.server [rid= uid= ip=]   - "GET /admin/analytics/?q=CERT-2026-005 HTTP/1.1" 200 28310
+INFO 2026-04-04 12:00:41,768 django.server [rid= uid= ip=]   - "GET /verify/98234b73-29b7-44c4-9146-9541d003bdcf/ HTTP/1.1" 200 8449
+INFO 2026-04-04 12:00:43,904 django.server [rid= uid= ip=]   - "GET /admin/analytics/?q=CERT-2026-005 HTTP/1.1" 200 30453
+INFO 2026-04-04 12:01:14,319 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/urls.py changed, reloading.
+INFO 2026-04-04 12:01:14,616 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader
+INFO 2026-04-04 12:01:21,902 django.utils.autoreload [rid= uid= ip=]   - /home/mriboy/Project/ACT/certificate_system/apps/certificates/views/public_views.py changed, reloading.
+INFO 2026-04-04 12:01:22,194 django.utils.autoreload [rid= uid= ip=]   - Watching for file changes with StatReloader

@@ -1,0 +1,6 @@
+recipient_name,recipient_email,course_name,issue_date,serial_number
+"John Doe","john@example.com","Advanced Web Development","2026-04-04","CERT-2026-001"
+"Jane Smith","jane@example.com","Systems Architecture & Design","2026-03-15","CERT-2026-002"
+"Robert Wilson","robert@example.com","Security Compliance 101","2026-02-10","CERT-2026-003"
+"Alice Johnson","alice@example.com","Data Science Fundamentals","2026-04-01","CERT-2026-004"
+"Michael Brown","michael@example.com","Cloud Infrastructure Management","2026-03-22","CERT-2026-005"

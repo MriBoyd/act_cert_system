@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% block title %}Access Analytics - Admin Console{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h3 mb-0 text-gray-800 fw-bold">Access & Verification Analytics</h1>
+            <p class="text-muted small mb-0">Track real-time certificate verification and public viewing activity.</p>
+        </div>
+        <div class="btn-group">
+            <a href="{% url 'admin-log-management' %}?log=access" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-terminal me-1"></i> View Raw Logs
+            </a>
+        </div>
+    </div>
+
+    <!-- Analytics Summary / Filters -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <form method="get" class="row g-3 align-items-end">
+                <div class="col-lg-4 col-md-6">
+                    <label class="form-label small fw-bold">Search</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0"><i class="bi bi-search py-1"></i></span>
+                        <input type="text" name="q" value="{{ q }}" class="form-control border-start-0" placeholder="Recipient, Serial, IP...">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3">
+                    <label class="form-label small fw-bold">Traffic Source</label>
+                    <select name="source" class="form-select">
+                        <option value="">All Sources</option>
+                        {% for value, label in sources %}
+                            <option value="{{ value }}" {% if source_filter == value %}selected{% endif %}>{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-lg-2 col-md-3">
+                    <label class="form-label small fw-bold">Validity</label>
+                    <select name="valid" class="form-select">
+                        <option value="">All Attempts</option>
+                        <option value="1" {% if valid_filter == "1" %}selected{% endif %}>Valid (Verified)</option>
+                        <option value="0" {% if valid_filter == "0" %}selected{% endif %}>Invalid (Failed)</option>
+                    </select>
+                </div>
+                <div class="col-lg-2 col-md-3">
+                  <label class="form-label small fw-bold">Sort By</label>
+                  <select name="sort" class="form-select">
+                      <option value="-checked_at" {% if sort == "-checked_at" %}selected{% endif %}>Recent First</option>
+                      <option value="checked_at" {% if sort == "checked_at" %}selected{% endif %}>Oldest First</option>
+                      <option value="source" {% if sort == "source" %}selected{% endif %}>By Source</option>
+                      <option value="certificate__recipient_name" {% if sort == "certificate__recipient_name" %}selected{% endif %}>By Recipient</option>
+                  </select>
+                </div>
+                <div class="col-lg-2 col-md-3 d-flex gap-2">
+                    <button type="submit" class="btn btn-primary w-100 rounded-3">Filter</button>
+                    <a href="{% url 'admin-access-analytics' %}" class="btn btn-light w-100 rounded-3">Reset</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Data Table -->
+    <div class="card border-0 shadow-sm rounded-4">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="bg-light">
+                        <tr>
+                            <th class="ps-4 py-3 text-uppercase small fw-bold text-muted border-0">Timestamp</th>
+                            <th class="py-3 text-uppercase small fw-bold text-muted border-0">Certificate / Recipient</th>
+                            <th class="py-3 text-uppercase small fw-bold text-muted border-0">Traffic Source</th>
+                            <th class="py-3 text-uppercase small fw-bold text-muted border-0">Location (IP)</th>
+                            <th class="py-3 text-uppercase small fw-bold text-muted border-0 text-center">Status</th>
+                            <th class="pe-4 py-3 text-uppercase small fw-bold text-muted border-0 text-end">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for log in page_obj %}
+                        <tr>
+                            <td class="ps-4 py-3">
+                                <div class="fw-bold">{{ log.checked_at|date:"M d, Y" }}</div>
+                                <div class="small text-muted">{{ log.checked_at|date:"H:i:s" }}</div>
+                            </td>
+                            <td class="py-3">
+                                {% if log.certificate %}
+                                    <div class="fw-bold text-truncate" style="max-width: 250px;">{{ log.certificate.recipient_name }}</div>
+                                    <div class="small text-muted font-monospace">{{ log.certificate.serial_number }}</div>
+                                {% else %}
+                                    <div class="text-danger fw-bold">Removed Record</div>
+                                    <div class="small text-muted font-monospace">{{ log.certificate_uuid }}</div>
+                                {% endif %}
+                            </td>
+                            <td class="py-3">
+                                <span class="badge rounded-pill bg-soft-info text-info border">
+                                    {{ log.get_source_display }}
+                                </span>
+                            </td>
+                            <td class="py-3">
+                                <div class="font-monospace small">{{ log.requester_ip }}</div>
+                                <div class="text-muted smaller fw-light text-truncate" style="max-width: 200px;" title="{{ log.user_agent }}">
+                                    {{ log.user_agent|truncatechars:50 }}
+                                </div>
+                            </td>
+                            <td class="py-3 text-center">
+                                {% if log.is_valid %}
+                                    <i class="bi bi-patch-check-fill text-success fs-4" title="Verified Authentic"></i>
+                                {% else %}
+                                    <i class="bi bi-shield-x text-danger fs-4" title="Failed Verification"></i>
+                                {% endif %}
+                            </td>
+                            <td class="pe-4 py-3 text-end">
+                                {% if log.certificate %}
+                                    <a href="{% url 'admin-certificate-detail' log.certificate.id %}" class="btn btn-sm btn-light rounded-pill px-3">
+                                        Details
+                                    </a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="6" class="text-center py-5">
+                                <i class="bi bi-search display-1 text-light mb-3 d-block"></i>
+                                <h3 class="fw-bold text-muted">No analytics data found</h3>
+                                <p class="text-muted mb-0">Adjust your filters or wait for more public activity.</p>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Pagination -->
+        {% if page_obj.has_other_pages %}
+        <div class="card-footer bg-white border-top py-3">
+            <nav aria-label="Page navigation">
+                <ul class="pagination pagination-sm justify-content-center mb-0">
+                    {% if page_obj.has_previous %}
+                        <li class="page-item"><a class="page-link" href="?page=1{% if q %}&q={{ q }}{% endif %}{% if source_filter %}&source={{ source_filter }}{% endif %}{% if valid_filter %}&valid={{ valid_filter }}{% endif %}{% if sort %}&sort={{ sort }}{% endif %}">&laquo; First</a></li>
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if q %}&q={{ q }}{% endif %}{% if source_filter %}&source={{ source_filter }}{% endif %}{% if valid_filter %}&valid={{ valid_filter }}{% endif %}{% if sort %}&sort={{ sort }}{% endif %}">Previous</a></li>
+                    {% endif %}
+
+                    <li class="page-item active"><span class="page-link">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span></li>
+
+                    {% if page_obj.has_next %}
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}{% if q %}&q={{ q }}{% endif %}{% if source_filter %}&source={{ source_filter }}{% endif %}{% if valid_filter %}&valid={{ valid_filter }}{% endif %}{% if sort %}&sort={{ sort }}{% endif %}">Next</a></li>
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% if q %}&q={{ q }}{% endif %}{% if source_filter %}&source={{ source_filter }}{% endif %}{% if valid_filter %}&valid={{ valid_filter }}{% endif %}{% if sort %}&sort={{ sort }}{% endif %}">Last &raquo;</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+.bg-soft-info { background-color: rgba(13, 110, 253, 0.05); }
+.smaller { font-size: 0.75rem; }
+.rounded-4 { border-radius: 1rem !important; }
+.table > :not(caption) > * > * { padding: 1rem 0.5rem; }
+</style>
+{% endblock %}

@@ -124,6 +124,11 @@ urlpatterns = [
         admin_views.manage_certificate_status,
         name="admin-certificate-status",
     ),
+    path(
+        "admin/analytics/",
+        admin_views.access_analytics,
+        name="admin-access-analytics",
+    ),
     path("admin/logs/", admin_views.log_management, name="admin-log-management"),
     path(
         "admin/logs/<str:log_key>/download/",

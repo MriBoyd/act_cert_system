@@ -51,6 +51,7 @@ LOG_FILES: Final[dict[str, str]] = {
     "app": "app.log",
     "security": "security.log",
     "audit": "audit.log",
+    "access": "access.log",
 }
 
 
@@ -820,6 +821,9 @@ def manage_certificate_status(request, certificate_uuid):
     return render(request, "admin/certificate_status.html", {"form": form, "certificate": certificate})
 
 
+from apps.certificates.services.verification import verify_certificate, _extract_ip
+
+
 @certificate_admin_required
 @require_feature("certificate_detail")
 def certificate_detail(request, certificate_uuid):
@@ -827,7 +831,18 @@ def certificate_detail(request, certificate_uuid):
         Certificate.objects.select_related("template", "issued_by").prefetch_related("overlay_images"),
         id=certificate_uuid,
     )
-    verification_logs = certificate.verification_logs.all()[:20]
+    # Verification check WITHOUT tracking it as a real "hit"
+    _, is_valid = verify_certificate(
+        certificate_uuid, 
+        request, 
+        track=False, 
+        source=VerificationLog.Source.ADMIN
+    )
+    
+    # Only show real verification logs (excluded system/admin previews)
+    verification_logs = certificate.verification_logs.exclude(
+        source=VerificationLog.Source.ADMIN
+    )[:20]
 
     return render(
         request,
@@ -835,6 +850,7 @@ def certificate_detail(request, certificate_uuid):
         {
             "certificate": certificate,
             "verification_logs": verification_logs,
+            "is_valid": is_valid,
         },
     )
 
@@ -1053,6 +1069,59 @@ def download_certificate_jpg(request, certificate_uuid):
         as_attachment=True,
         filename=f"certificate-{certificate.serial_number}.jpg",
         content_type="image/jpeg",
+    )
+
+
+@certificate_admin_required
+def access_analytics(request):
+    """Business-focused view for tracking certificate access/verification attempts."""
+    query = request.GET.get("q", "").strip()
+    source_filter = request.GET.get("source", "").strip()
+    valid_filter = request.GET.get("valid", "").strip()
+    sort = request.GET.get("sort", "-checked_at")
+
+    logs = VerificationLog.objects.select_related("certificate").all()
+
+    # Exclude admin internal checks by default to keep it focused on external traffic
+    logs = logs.exclude(source=VerificationLog.Source.ADMIN)
+
+    if query:
+        logs = logs.filter(
+            Q(certificate__recipient_name__icontains=query) |
+            Q(certificate__serial_number__icontains=query) |
+            Q(certificate_uuid__icontains=query) |
+            Q(requester_ip__icontains=query)
+        )
+
+    if source_filter:
+        logs = logs.filter(source=source_filter)
+
+    if valid_filter in ["1", "0"]:
+        logs = logs.filter(is_valid=(valid_filter == "1"))
+
+    # Sorting
+    allowed_sorts = ["checked_at", "-checked_at", "source", "is_valid", "certificate__recipient_name"]
+    if sort not in allowed_sorts:
+        sort = "-checked_at"
+    logs = logs.order_by(sort)
+
+    paginator = Paginator(logs, 50)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
+    sources = VerificationLog.Source.choices
+
+    return render(
+        request,
+        "admin/access_analytics.html",
+        {
+            "page_obj": page_obj,
+            "q": query,
+            "source_filter": source_filter,
+            "valid_filter": valid_filter,
+            "sort": sort,
+            "sources": sources,
+        },
     )
 
 

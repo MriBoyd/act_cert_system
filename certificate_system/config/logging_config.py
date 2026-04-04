@@ -88,6 +88,16 @@ def build_logging_config(base_dir: Path) -> dict:
             "formatter": formatter_name,
             "filters": ["request_context"],
         },
+        "access_file": {
+            "class": "logging.handlers.TimedRotatingFileHandler",
+            "filename": str(log_dir / "access.log"),
+            "when": "midnight",
+            "backupCount": 30,
+            "encoding": "utf-8",
+            "delay": True,
+            "formatter": formatter_name,
+            "filters": ["request_context"],
+        },
     }
 
     return {
@@ -126,6 +136,11 @@ def build_logging_config(base_dir: Path) -> dict:
             "audit": {
                 "handlers": ["audit_file"],
                 "level": audit_level,
+                "propagate": False,
+            },
+            "access": {
+                "handlers": ["access_file"],
+                "level": base_level,
                 "propagate": False,
             },
             "apps": {
