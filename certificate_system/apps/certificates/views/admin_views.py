@@ -149,6 +149,54 @@ def feature_flags_management(request):
     if request.method == "POST":
         name = (request.POST.get("name") or "").strip()
         state = (request.POST.get("state") or "").strip()
+        bulk_state = (request.POST.get("bulk_state") or "").strip()
+        selected_names = [value.strip() for value in request.POST.getlist("selected_names") if value.strip()]
+
+        if selected_names and bulk_state:
+            allowed_bulk_states = {"on", "off", "inherit"}
+            if bulk_state not in allowed_bulk_states:
+                messages.error(request, "Invalid bulk state.")
+                return redirect("admin-feature-flags")
+
+            valid_names = [flag_name for flag_name in selected_names if flag_name in DEFAULT_FLAGS and flag_name != "admin_dashboard"]
+            if not valid_names:
+                messages.error(request, "Select at least one editable feature flag.")
+                return redirect("admin-feature-flags")
+
+            updated_count = 0
+            deleted_count = 0
+            for flag_name in valid_names:
+                if bulk_state == "inherit":
+                    deleted, _ = FeatureFlagOverride.objects.filter(name=flag_name).delete()
+                    deleted_count += deleted
+                    continue
+
+                enabled = bulk_state == "on"
+                FeatureFlagOverride.objects.update_or_create(
+                    name=flag_name,
+                    defaults={
+                        "enabled": enabled,
+                        "updated_by": request.user,
+                    },
+                )
+                updated_count += 1
+
+            if bulk_state == "inherit":
+                audit_logger.info(
+                    "event=feature_flag_bulk_reverted names=%s by=%s",
+                    ",".join(valid_names),
+                    request.user.get_username(),
+                )
+                messages.success(request, f"Reverted {len(valid_names)} feature flag(s) to default.")
+            else:
+                audit_logger.info(
+                    "event=feature_flag_bulk_set state=%s names=%s by=%s",
+                    bulk_state,
+                    ",".join(valid_names),
+                    request.user.get_username(),
+                )
+                messages.success(request, f"Updated {updated_count} feature flag(s).")
+            return redirect("admin-feature-flags")
 
         if name == "admin_dashboard":
             messages.error(request, "Admin Dashboard is always on and cannot be disabled.")
