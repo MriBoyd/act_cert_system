@@ -38,9 +38,8 @@
                             <input type="text" class="form-control border-start-0" name="search" value="{{ search }}" placeholder="Recipient or Serial ID..." />
                         </div>
                     </div>
-                    <div class="col-md-2">
+                        <div class="col-md-2">
                         <label class="form-label small fw-bold text-uppercase opacity-50">Status</label>
-                        {{ form.status }}
                         <select name="status" class="form-select rounded-3">
                             <option value="">All Statuses</option>
                             {% for value, label in status_choices %}
@@ -82,17 +81,19 @@
             </div>
             
             {% if feature_flags.certificate_management %}
-            <div id="bulkActions" class="d-none animate-fade-in">
-                <form method="post" action="{% url 'admin-certificate-bulk-actions' %}" class="d-flex gap-2">
+            <div id="bulkActions" class="d-none animate-fade-in bg-light p-2 rounded-3 border">
+                <form id="bulkActionForm" method="post" action="{% url 'admin-certificate-bulk-actions' %}" class="d-flex gap-2 align-items-center mb-0">
                     {% csrf_token %}
-                    <select name="action" class="form-select form-select-sm w-auto rounded-3" required>
-                        <option value="" selected disabled>Bulk Action...</option>
+                    <span class="small fw-bold text-muted ms-2 text-nowrap"><i class="bi bi-check2-all me-1"></i>With Selected:</span>
+                    <select name="action" class="form-select form-select-sm w-auto rounded-3 border-secondary" required>
+                        <option value="" selected disabled>Choose Action...</option>
                         <option value="enable">Activate</option>
                         <option value="disable">Deactivate</option>
                         <option value="mark_revoked">Revoke</option>
                         <option value="delete">Delete Permanently</option>
                     </select>
-                    <button type="submit" class="btn btn-sm btn-primary px-3 rounded-3" onclick="return confirm('Apply this action to all selected records?')">Execute</button>
+                    <button type="submit" class="btn btn-sm btn-primary px-4 rounded-3 fw-bold shadow-sm">Execute</button>
+                    <button type="button" id="cancelBulk" class="btn btn-sm btn-link text-muted text-decoration-none">Cancel</button>
                 </form>
             </div>
             {% endif %}
@@ -116,7 +117,7 @@
                     {% for certificate in page_obj %}
                     <tr>
                         <td class="ps-4">
-                            <input class="form-check-input cert-check" type="checkbox" name="ids" value="{{ certificate.id }}" form="bulkActionFormStub">
+                            <input class="form-check-input cert-check" type="checkbox" name="selected_ids" value="{{ certificate.id }}" form="bulkActionForm">
                         </td>
                         <td>
                             <div class="d-flex align-items-center">
@@ -143,7 +144,7 @@
                             </div>
                         </td>
                         <td class="text-muted small">
-                            {{ certificate.issued_at|date:"M d, Y" }}
+                            {{ certificate.issue_date|date:"M d, Y" }}
                         </td>
                         <td class="text-end pe-4">
                             <div class="btn-group shadow-sm bg-white rounded-3">
@@ -222,12 +223,6 @@
     </div>
 </div>
 
-<!-- Dummy form for bulk actions to pick up IDs -->
-<form id="bulkActionFormStub" method="post" action="{% url 'admin-certificate-bulk-actions' %}" class="d-none">
-    {% csrf_token %}
-    <input type="hidden" name="action" id="bulkActionInput">
-</form>
-
 <style>
 .avatar-square {
     width: 42px;
@@ -270,11 +265,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectAll = document.getElementById('selectAll');
     const certChecks = document.querySelectorAll('.cert-check');
     const bulkActions = document.getElementById('bulkActions');
-    const bulkActionFormStub = document.getElementById('bulkActionFormStub');
+    const cancelBulk = document.getElementById('cancelBulk');
+    const bulkActionForm = document.getElementById('bulkActionForm');
+
+    if (!selectAll || !bulkActionForm || !bulkActions) {
+        return;
+    }
 
     function updateBulkVisibility() {
-        const anyChecked = Array.from(certChecks).some(c => c.checked);
-        bulkActions.classList.toggle('d-none', !anyChecked);
+        const checkedCount = Array.from(certChecks).filter(c => c.checked).length;
+        if (checkedCount > 0) {
+            bulkActions.classList.remove('d-none');
+        } else {
+            bulkActions.classList.add('d-none');
+            selectAll.checked = false;
+        }
+    }
+
+    if (cancelBulk) {
+        cancelBulk.addEventListener('click', function() {
+            certChecks.forEach(c => c.checked = false);
+            selectAll.checked = false;
+            updateBulkVisibility();
+        });
     }
 
     selectAll.addEventListener('change', function() {
@@ -286,46 +299,24 @@ document.addEventListener('DOMContentLoaded', function() {
         c.addEventListener('change', updateBulkVisibility);
     });
 
-    // Handle bulk action submission
-    const bulkActionForm = bulkActions.querySelector('form');
     bulkActionForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const action = this.querySelector('select').value;
-        if (!action) return;
-        
-        // Prepare hidden form and submit
-        const tempForm = document.createElement('form');
-        tempForm.method = 'POST';
-        tempForm.action = this.action;
-        
-        // Add CSRF
-        const csrfToken = this.querySelector('[name=csrfmiddlewaretoken]').value;
-        const csrfInput = document.createElement('input');
-        csrfInput.type = 'hidden';
-        csrfInput.name = 'csrfmiddlewaretoken';
-        csrfInput.value = csrfToken;
-        tempForm.appendChild(csrfInput);
-        
-        // Add Action
-        const actionInput = document.createElement('input');
-        actionInput.type = 'hidden';
-        actionInput.name = 'action';
-        actionInput.value = action;
-        tempForm.appendChild(actionInput);
-        
-        // Add checked IDs
-        certChecks.forEach(c => {
-            if (c.checked) {
-                const idInput = document.createElement('input');
-                idInput.type = 'hidden';
-                idInput.name = 'ids';
-                idInput.value = c.value;
-                tempForm.appendChild(idInput);
-            }
-        });
-        
-        document.body.appendChild(tempForm);
-        tempForm.submit();
+        const checkedCount = Array.from(certChecks).filter(c => c.checked).length;
+        if (checkedCount === 0) {
+            e.preventDefault();
+            alert('Select at least one certificate first.');
+            return;
+        }
+
+        const action = this.querySelector('select[name="action"]').value;
+        if (!action) {
+            e.preventDefault();
+            alert('Choose a bulk action first.');
+            return;
+        }
+
+        if (!confirm('Apply this action to all selected records?')) {
+            e.preventDefault();
+        }
     });
 });
 </script>

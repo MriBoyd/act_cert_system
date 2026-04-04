@@ -184,7 +184,7 @@
                                             <div class="avatar-circle me-3">{{ certificate.recipient_name|slice:":1" }}</div>
                                             <div>
                                                 <div class="fw-bold text-dark">{{ certificate.recipient_name }}</div>
-                                                <div class="small text-muted">{% if certificate.issued_at %}Issued {{ certificate.issued_at|date:"M d, Y" }}{% else %}Ready to issue{% endif %}</div>
+                                                <div class="small text-muted">{% if certificate.issue_date %}Issued {{ certificate.issue_date|date:"M d, Y" }}{% else %}Ready to issue{% endif %}</div>
                                             </div>
                                         </div>
                                     </td>
